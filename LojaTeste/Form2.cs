@@ -10,11 +10,42 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class FrmTela2 : Form
+    public partial class frmUsuario : Form
     {
-        public FrmTela2()
+        public frmUsuario()
         {
             InitializeComponent();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (txtLogin.Text.Equals(""))
+            {
+                MessageBox.Show("Informar o Login!");
+            }
+            else
+            {
+                if (txtNomeCompleto.Text.Equals(""))
+                {
+                    MessageBox.Show("Informar Nome Completo!");
+                }
+                else
+                {
+                    if (txtSenha.Text.Equals(""))
+                    {
+                        MessageBox.Show("Informar a Senha!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dados Conformados!");
+                    }
+                }
+            }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

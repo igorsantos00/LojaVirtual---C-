@@ -10,44 +10,78 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class Form1 : Form
+    public partial class frmMenuPrincipal : Form
     {
-        public Form1()
+        public frmMenuPrincipal()
         {
             InitializeComponent();
+            mnuPrincipal.Enabled = false;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (TxtNome.Text.Equals(""))
-            {
-                MessageBox.Show("Informe o nome!");
-            }
-            else
-            {
-                MessageBox.Show("Olá mundo " + TxtNome.Text);
-                lblTexto.Text = "Olá mundo " + TxtNome.Text;
-                //FrmTela2.sh
-            }
-                           
-        }
 
         private void frnTeste2_Click(object sender, EventArgs e)
         {
-            Form tela = new FrmTela2();
+            Form tela = new frmUsuario();
             tela.ShowDialog();
             //this.Close();
         }
 
         private void fileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form tela = new FrmTela2();
+            this.Close();
+        }
+
+        private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmUsuario();
             tela.ShowDialog();
+        }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            if (txtLogin.Text.Equals(""))
+            {
+                MessageBox.Show("Informe o login!");
+            }
+            else
+            {
+                if(txtSenha.Text.Equals(""))
+                {
+                    MessageBox.Show("Informe a senha!");
+                }
+                else
+                {
+                    //Verifica usuário e senha implantar verificação no BD
+                    if(txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
+                    {
+                        mnuPrincipal.Enabled = true;
+                        MessageBox.Show("Seja bem vindo!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login ou Senha não válido!");
+                    }
+                }
+            }
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            txtLogin.Text = "";
+            txtSenha.Text = "";
+            mnuPrincipal.Enabled = false;
+            
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Obrigado por usar nosso sistema!");
+            this.Close();
         }
     }
 }
