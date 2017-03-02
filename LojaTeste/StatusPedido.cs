@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class frnStatusPedido : Form
+    public partial class frmStatusPedido : Form
     {
-        public frnStatusPedido()
+        public frmStatusPedido()
         {
             InitializeComponent();
         }

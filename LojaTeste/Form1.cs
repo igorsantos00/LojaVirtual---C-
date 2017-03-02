@@ -83,5 +83,17 @@ namespace LojaTeste
             MessageBox.Show("Obrigado por usar nosso sistema!");
             this.Close();
         }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmCategoria();
+            tela.ShowDialog();
+        }
+
+        private void pedidoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmPedido();
+            tela.ShowDialog();
+        }
     }
 }

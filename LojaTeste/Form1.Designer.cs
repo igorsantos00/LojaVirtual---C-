@@ -113,6 +113,7 @@
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
             this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
+            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
@@ -150,14 +151,15 @@
             // pedidoToolStripMenuItem
             // 
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.pedidoToolStripMenuItem.Text = "Estoque";
             // 
             // pedidoToolStripMenuItem1
             // 
             this.pedidoToolStripMenuItem1.Name = "pedidoToolStripMenuItem1";
-            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.pedidoToolStripMenuItem1.Text = "Pedido";
+            this.pedidoToolStripMenuItem1.Click += new System.EventHandler(this.pedidoToolStripMenuItem1_Click);
             // 
             // label1
             // 
@@ -204,7 +206,7 @@
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(280, 282);
+            this.btnSair.Location = new System.Drawing.Point(271, 282);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 4;
