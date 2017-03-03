@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class frmUsuario : Form
+    public partial class frmLogin : Form
     {
-        public frmUsuario()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -21,24 +21,24 @@ namespace LojaTeste
         {
             if (txtLogin.Text.Equals(""))
             {
-                MessageBox.Show("Informar o Login!");
+                MessageBox.Show("Informe o login!");
             }
             else
             {
-                if (txtNomeCompleto.Text.Equals(""))
+                if (txtSenha.Text.Equals(""))
                 {
-                    MessageBox.Show("Informar Nome Completo!");
+                    MessageBox.Show("Informe a senha!");
                 }
                 else
                 {
-                    if (txtSenha.Text.Equals(""))
+                    //Verifica usuário e senha implantar verificação no BD
+                    if (txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
                     {
-                        MessageBox.Show("Informar a Senha!");
+                        MessageBox.Show("Seja bem vindo!");
                     }
                     else
                     {
-                        MessageBox.Show("Dados Confirmados!");
-
+                        MessageBox.Show("Login ou Senha não válido!");
                     }
                 }
             }
@@ -46,6 +46,7 @@ namespace LojaTeste
 
         private void btnSair_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Obrigado por usar nosso sistema!");
             this.Close();
         }
     }

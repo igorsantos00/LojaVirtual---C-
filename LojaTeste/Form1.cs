@@ -42,47 +42,12 @@ namespace LojaTeste
 
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-            if (txtLogin.Text.Equals(""))
-            {
-                MessageBox.Show("Informe o login!");
-            }
-            else
-            {
-                if(txtSenha.Text.Equals(""))
-                {
-                    MessageBox.Show("Informe a senha!");
-                }
-                else
-                {
-                    //Verifica usuário e senha implantar verificação no BD
-                    if(txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
-                    {
-                        mnuPrincipal.Enabled = true;
-                        MessageBox.Show("Seja bem vindo!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login ou Senha não válido!");
-                    }
-                }
-            }
-        }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            txtLogin.Text = "";
-            txtSenha.Text = "";
-            mnuPrincipal.Enabled = false;
-            
+            mnuPrincipal.Enabled = false;     
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Obrigado por usar nosso sistema!");
-            this.Close();
-        }
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -94,6 +59,11 @@ namespace LojaTeste
         {
             Form tela = new frmPedido();
             tela.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
