@@ -37,7 +37,8 @@ namespace LojaTeste
                     }
                     else
                     {
-                        MessageBox.Show("Dados Conformados!");
+                        MessageBox.Show("Dados Confirmados!");
+
                     }
                 }
             }
