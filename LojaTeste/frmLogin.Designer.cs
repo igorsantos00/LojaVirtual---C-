@@ -34,11 +34,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(147, 182);
+            this.btnSair.Location = new System.Drawing.Point(147, 238);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(75, 23);
             this.btnSair.TabIndex = 9;
@@ -48,7 +50,7 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(66, 182);
+            this.btnConfirmar.Location = new System.Drawing.Point(66, 238);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmar.TabIndex = 8;
@@ -58,7 +60,7 @@
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(66, 130);
+            this.txtSenha.Location = new System.Drawing.Point(66, 186);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 20);
             this.txtSenha.TabIndex = 7;
@@ -67,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 113);
+            this.label2.Location = new System.Drawing.Point(63, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 10;
@@ -75,7 +77,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(66, 72);
+            this.txtLogin.Location = new System.Drawing.Point(66, 128);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 20);
             this.txtLogin.TabIndex = 6;
@@ -83,26 +85,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 55);
+            this.label1.Location = new System.Drawing.Point(63, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(33, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Login";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::LojaTeste.Properties.Resources.lojavirtual;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(308, 83);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(336, 293);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLogin);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login do Usuário";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +130,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
