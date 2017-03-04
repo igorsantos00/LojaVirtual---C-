@@ -35,6 +35,8 @@ namespace LojaTeste
                     if (txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
                     {
                         MessageBox.Show("Seja bem vindo!");
+                        Form tela = new frmMenuPrincipal();
+                        tela.ShowDialog();
                     }
                     else
                     {
