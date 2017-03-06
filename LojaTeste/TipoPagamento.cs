@@ -16,5 +16,23 @@ namespace LojaTeste
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // TipoPagamento
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "TipoPagamento";
+            this.Load += new System.EventHandler(this.TipoPagamento_Load);
+            this.ResumeLayout(false);
+
+        }
+        //teste
+        private void TipoPagamento_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
