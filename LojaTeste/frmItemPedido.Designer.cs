@@ -1,6 +1,6 @@
 ﻿namespace LojaTeste
 {
-    partial class ItemPedido
+    partial class frmItemPedido
     {
         /// <summary>
         /// Required designer variable.
@@ -125,7 +125,7 @@
             this.TbValorPedido.Size = new System.Drawing.Size(100, 20);
             this.TbValorPedido.TabIndex = 3;
             // 
-            // ItemPedido
+            // frmItemPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,7 +140,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BtCancelarPedido);
             this.Controls.Add(this.BtEnviarPedido);
-            this.Name = "ItemPedido";
+            this.Name = "frmItemPedido";
             this.Text = "ItemPedido";
             this.ResumeLayout(false);
             this.PerformLayout();

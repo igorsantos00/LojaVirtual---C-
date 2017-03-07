@@ -1,6 +1,6 @@
 ﻿namespace LojaTeste
 {
-    partial class Estoque
+    partial class frmEstoque
     {
         /// <summary>
         /// Required designer variable.

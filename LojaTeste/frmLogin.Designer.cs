@@ -72,6 +72,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 29);
             this.txtSenha.TabIndex = 7;
+            this.txtSenha.Text = "suporte";
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label2
@@ -91,6 +92,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 29);
             this.txtLogin.TabIndex = 6;
+            this.txtLogin.Text = "suporte";
             // 
             // label1
             // 

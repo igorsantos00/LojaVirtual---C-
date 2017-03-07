@@ -72,8 +72,8 @@ namespace LojaTeste
 
         private void imgCategoria_Click(object sender, EventArgs e)
         {
-            //Form tela = new frmCategoria();
-            //tela.ShowDialog();
+            Form tela = new frmCategoria();
+            tela.ShowDialog();
         }
 
         private void imgProduto_Click(object sender, EventArgs e)
@@ -102,14 +102,14 @@ namespace LojaTeste
 
         private void imgEstoque_Click(object sender, EventArgs e)
         {
-            //Form tela = new frmEstoque();
-            //tela.ShowDialog();
+            Form tela = new frmEstoque();
+            tela.ShowDialog();
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            //Form tela = new frmPedido();
-            //tela.ShowDialog();
+            Form tela = new frmPedido();
+            tela.ShowDialog();
         }
     }
 }

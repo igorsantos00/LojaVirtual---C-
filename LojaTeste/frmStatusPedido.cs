@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class frmStatusPedido : Form
+    public partial class frmStatusPedido: Form
     {
         public frmStatusPedido()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

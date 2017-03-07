@@ -239,7 +239,7 @@
             this.Controls.Add(this.BTcancelarEnde);
             this.Controls.Add(this.BTinserirEnd);
             this.Name = "EnderecoCliente";
-            this.Text = "EnderecoCliente";
+            this.Text = "fmrEnderecoCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class frmTipoPagamento : Form
+    public partial class frmTipoPagamento: Form
     {
         public frmTipoPagamento()
         {
