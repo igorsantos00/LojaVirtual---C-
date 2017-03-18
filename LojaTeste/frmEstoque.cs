@@ -20,6 +20,8 @@ namespace LojaTeste
         private void frmEstoque_Load(object sender, EventArgs e)
         {
             //estoque
+
+            //eduardo alterado em 17_03
         }
     }
 }
