@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategoria));
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.lblIdCategoria = new System.Windows.Forms.Label();
             this.txtNomeCategoria = new System.Windows.Forms.TextBox();
@@ -119,6 +120,7 @@
             this.Controls.Add(this.txtDescCategoria);
             this.Controls.Add(this.txtNomeCategoria);
             this.Controls.Add(this.txtIdCategoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria";

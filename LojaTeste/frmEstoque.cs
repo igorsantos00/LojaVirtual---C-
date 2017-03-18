@@ -16,5 +16,10 @@ namespace LojaTeste
         {
             InitializeComponent();
         }
+
+        private void frmEstoque_Load(object sender, EventArgs e)
+        {
+            //estoque
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnderecoCliente));
             this.BTinserirEnd = new System.Windows.Forms.Button();
             this.BTcancelarEnde = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -238,6 +239,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BTcancelarEnde);
             this.Controls.Add(this.BTinserirEnd);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnderecoCliente";
             this.Text = "fmrEnderecoCliente";
             this.ResumeLayout(false);

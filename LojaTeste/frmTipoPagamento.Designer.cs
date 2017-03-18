@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoPagamento));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TbTipoPagamento = new System.Windows.Forms.TextBox();
@@ -86,7 +87,7 @@
             this.BtCancelarPagamento.Text = "Cancelar";
             this.BtCancelarPagamento.UseVisualStyleBackColor = true;
             // 
-            // TipoPagamento
+            // frmTipoPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -97,7 +98,8 @@
             this.Controls.Add(this.TbTipoPagamento);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "TipoPagamento";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmTipoPagamento";
             this.Text = "TipoPagamento";
             this.ResumeLayout(false);
             this.PerformLayout();

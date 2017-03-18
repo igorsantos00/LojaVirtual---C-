@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuario));
             this.lblLogin = new System.Windows.Forms.Label();
             this.lblNomeCompleto = new System.Windows.Forms.Label();
             this.txtLogin = new System.Windows.Forms.TextBox();
@@ -170,6 +171,7 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.lblNomeCompleto);
             this.Controls.Add(this.lblLogin);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuário";

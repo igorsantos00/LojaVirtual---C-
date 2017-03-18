@@ -21,6 +21,7 @@ namespace LojaTeste
         {
             InitializeComponent();
             lblLogin.Text = text;
+            timer1.Enabled = true;
         }
 
         private void frnTeste2_Click(object sender, EventArgs e)
@@ -102,7 +103,9 @@ namespace LojaTeste
 
         private void imgEstoque_Click(object sender, EventArgs e)
         {
-            Form tela = new frmEstoque();
+           
+
+            Form tela = new frmStatusPedido();
             tela.ShowDialog();
         }
 
@@ -110,6 +113,44 @@ namespace LojaTeste
         {
             Form tela = new frmPedido();
             tela.ShowDialog();
+        }
+
+        private void pictureBox11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblHora.Text = DateTime.Now.ToString();
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmEstoque();
+            tela.ShowDialog();
+        }
+
+        private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

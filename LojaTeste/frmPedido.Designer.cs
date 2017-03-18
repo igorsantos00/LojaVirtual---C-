@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPedido));
             this.lblIdPedido = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.txtIdPedido = new System.Windows.Forms.TextBox();
@@ -178,6 +179,7 @@
             this.Controls.Add(this.txtIdPedido);
             this.Controls.Add(this.lblIdCliente);
             this.Controls.Add(this.lblIdPedido);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";

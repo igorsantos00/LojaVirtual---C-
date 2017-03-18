@@ -239,6 +239,111 @@
   <ItemGroup>
     <None Include="Resources\pedido1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeWrite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Risco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Risco1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClienetWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verdana 16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriasWhit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadoraWhathi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProdutosWhite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
