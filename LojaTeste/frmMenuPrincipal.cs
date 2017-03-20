@@ -103,9 +103,7 @@ namespace LojaTeste
 
         private void imgEstoque_Click(object sender, EventArgs e)
         {
-           
-
-            Form tela = new frmStatusPedido();
+            Form tela = new frmCliente();
             tela.ShowDialog();
         }
 

@@ -22,5 +22,11 @@ namespace LojaTeste
             //estoque
             //Suele 1703
         }
+
+        private void TbCancelarProduto_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

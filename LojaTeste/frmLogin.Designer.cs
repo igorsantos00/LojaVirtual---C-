@@ -46,7 +46,7 @@
             this.btnSair.AutoSize = true;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Image = global::LojaTeste.Properties.Resources.sair1;
-            this.btnSair.Location = new System.Drawing.Point(242, 299);
+            this.btnSair.Location = new System.Drawing.Point(310, 332);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(136, 56);
             this.btnSair.TabIndex = 9;
@@ -59,7 +59,7 @@
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.confirmar2;
-            this.btnConfirmar.Location = new System.Drawing.Point(67, 299);
+            this.btnConfirmar.Location = new System.Drawing.Point(135, 332);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(136, 56);
             this.btnConfirmar.TabIndex = 8;
@@ -69,7 +69,7 @@
             // txtSenha
             // 
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(275, 209);
+            this.txtSenha.Location = new System.Drawing.Point(343, 242);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 29);
             this.txtSenha.TabIndex = 7;
@@ -80,7 +80,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(197, 214);
+            this.label2.Location = new System.Drawing.Point(265, 247);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 24);
             this.label2.TabIndex = 10;
@@ -89,7 +89,7 @@
             // txtLogin
             // 
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLogin.Location = new System.Drawing.Point(275, 152);
+            this.txtLogin.Location = new System.Drawing.Point(343, 185);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 29);
             this.txtLogin.TabIndex = 6;
@@ -100,7 +100,7 @@
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(197, 157);
+            this.label1.Location = new System.Drawing.Point(265, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::LojaTeste.Properties.Resources.fundo;
             this.pictureBox1.Image = global::LojaTeste.Properties.Resources.lojavirtual;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(135, 60);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(308, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -120,7 +120,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::LojaTeste.Properties.Resources.cadeado2;
-            this.pictureBox2.Location = new System.Drawing.Point(67, 131);
+            this.pictureBox2.Location = new System.Drawing.Point(135, 164);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(92, 130);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(434, 382);
+            this.ClientSize = new System.Drawing.Size(584, 471);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSair);

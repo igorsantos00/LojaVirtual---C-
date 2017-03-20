@@ -68,6 +68,7 @@
             this.BTcancelarEnde.TabIndex = 1;
             this.BTcancelarEnde.Text = "Cancelar";
             this.BTcancelarEnde.UseVisualStyleBackColor = true;
+            this.BTcancelarEnde.Click += new System.EventHandler(this.BTcancelarEnde_Click);
             // 
             // label1
             // 
@@ -218,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 329);
+            this.ClientSize = new System.Drawing.Size(584, 471);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -241,6 +242,7 @@
             this.Controls.Add(this.BTinserirEnd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnderecoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fmrEnderecoCliente";
             this.ResumeLayout(false);
             this.PerformLayout();

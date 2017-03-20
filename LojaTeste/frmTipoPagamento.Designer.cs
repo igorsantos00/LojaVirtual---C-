@@ -86,12 +86,13 @@
             this.BtCancelarPagamento.TabIndex = 2;
             this.BtCancelarPagamento.Text = "Cancelar";
             this.BtCancelarPagamento.UseVisualStyleBackColor = true;
+            this.BtCancelarPagamento.Click += new System.EventHandler(this.BtCancelarPagamento_Click);
             // 
             // frmTipoPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(584, 471);
             this.Controls.Add(this.BtCancelarPagamento);
             this.Controls.Add(this.BtEnviarPagamento);
             this.Controls.Add(this.TbDescricao);

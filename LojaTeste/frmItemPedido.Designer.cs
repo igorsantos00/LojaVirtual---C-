@@ -58,6 +58,7 @@
             this.BtCancelarPedido.TabIndex = 1;
             this.BtCancelarPedido.Text = "Cancelar";
             this.BtCancelarPedido.UseVisualStyleBackColor = true;
+            this.BtCancelarPedido.Click += new System.EventHandler(this.BtCancelarPedido_Click);
             // 
             // label1
             // 
@@ -130,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(584, 471);
             this.Controls.Add(this.TbValorPedido);
             this.Controls.Add(this.TbQuantidadePedido);
             this.Controls.Add(this.TbCodigoProduto);
@@ -143,6 +144,7 @@
             this.Controls.Add(this.BtEnviarPedido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmItemPedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ItemPedido";
             this.ResumeLayout(false);
             this.PerformLayout();
