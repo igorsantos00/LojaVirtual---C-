@@ -41,8 +41,8 @@
             this.txtIdTipoPagto = new System.Windows.Forms.TextBox();
             this.lblIdEndereco = new System.Windows.Forms.Label();
             this.txtIdEndereco = new System.Windows.Forms.TextBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblIdPedido
@@ -141,24 +141,32 @@
             this.txtIdEndereco.Size = new System.Drawing.Size(100, 20);
             this.txtIdEndereco.TabIndex = 2;
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(83, 364);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 3;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(164, 364);
+            this.btnSair.AutoSize = true;
+            this.btnSair.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::LojaTeste.Properties.Resources.ImgSair;
+            this.btnSair.Location = new System.Drawing.Point(257, 364);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 3;
-            this.btnSair.Text = "Sair";
+            this.btnSair.Size = new System.Drawing.Size(101, 95);
+            this.btnSair.TabIndex = 13;
             this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoSize = true;
+            this.btnConfirmar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.ImgConfirmar;
+            this.btnConfirmar.Location = new System.Drawing.Point(82, 364);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(101, 95);
+            this.btnConfirmar.TabIndex = 12;
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmPedido
             // 
@@ -202,7 +210,7 @@
         private System.Windows.Forms.TextBox txtIdTipoPagto;
         private System.Windows.Forms.Label lblIdEndereco;
         private System.Windows.Forms.TextBox txtIdEndereco;
-        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

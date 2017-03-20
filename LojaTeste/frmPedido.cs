@@ -17,9 +17,15 @@ namespace LojaTeste
             InitializeComponent();
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+
+        private void btnSair_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

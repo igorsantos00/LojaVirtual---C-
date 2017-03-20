@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbTipoPagamento = new System.Windows.Forms.TextBox();
             this.TbDescricao = new System.Windows.Forms.TextBox();
-            this.BtEnviarPagamento = new System.Windows.Forms.Button();
-            this.BtCancelarPagamento = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -69,32 +69,40 @@
             this.TbDescricao.Size = new System.Drawing.Size(100, 20);
             this.TbDescricao.TabIndex = 1;
             // 
-            // BtEnviarPagamento
+            // btnSair
             // 
-            this.BtEnviarPagamento.Location = new System.Drawing.Point(12, 217);
-            this.BtEnviarPagamento.Name = "BtEnviarPagamento";
-            this.BtEnviarPagamento.Size = new System.Drawing.Size(75, 23);
-            this.BtEnviarPagamento.TabIndex = 2;
-            this.BtEnviarPagamento.Text = "Enviar";
-            this.BtEnviarPagamento.UseVisualStyleBackColor = true;
+            this.btnSair.AutoSize = true;
+            this.btnSair.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::LojaTeste.Properties.Resources.ImgSair;
+            this.btnSair.Location = new System.Drawing.Point(191, 298);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(101, 95);
+            this.btnSair.TabIndex = 13;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // BtCancelarPagamento
+            // btnConfirmar
             // 
-            this.BtCancelarPagamento.Location = new System.Drawing.Point(185, 217);
-            this.BtCancelarPagamento.Name = "BtCancelarPagamento";
-            this.BtCancelarPagamento.Size = new System.Drawing.Size(75, 23);
-            this.BtCancelarPagamento.TabIndex = 2;
-            this.BtCancelarPagamento.Text = "Cancelar";
-            this.BtCancelarPagamento.UseVisualStyleBackColor = true;
-            this.BtCancelarPagamento.Click += new System.EventHandler(this.BtCancelarPagamento_Click);
+            this.btnConfirmar.AutoSize = true;
+            this.btnConfirmar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.ImgConfirmar;
+            this.btnConfirmar.Location = new System.Drawing.Point(16, 298);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(101, 95);
+            this.btnConfirmar.TabIndex = 12;
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmTipoPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 471);
-            this.Controls.Add(this.BtCancelarPagamento);
-            this.Controls.Add(this.BtEnviarPagamento);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.TbDescricao);
             this.Controls.Add(this.TbTipoPagamento);
             this.Controls.Add(this.label2);
@@ -113,7 +121,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbTipoPagamento;
         private System.Windows.Forms.TextBox TbDescricao;
-        private System.Windows.Forms.Button BtEnviarPagamento;
-        private System.Windows.Forms.Button BtCancelarPagamento;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

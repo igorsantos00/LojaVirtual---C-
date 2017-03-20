@@ -34,8 +34,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbNomeProduto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TbPesquisarProduto = new System.Windows.Forms.Button();
-            this.TbCancelarProduto = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,32 +79,39 @@
             this.dataGridView1.Size = new System.Drawing.Size(345, 150);
             this.dataGridView1.TabIndex = 2;
             // 
-            // TbPesquisarProduto
+            // btnSair
             // 
-            this.TbPesquisarProduto.Location = new System.Drawing.Point(12, 292);
-            this.TbPesquisarProduto.Name = "TbPesquisarProduto";
-            this.TbPesquisarProduto.Size = new System.Drawing.Size(75, 23);
-            this.TbPesquisarProduto.TabIndex = 3;
-            this.TbPesquisarProduto.Text = "Pesquisar";
-            this.TbPesquisarProduto.UseVisualStyleBackColor = true;
+            this.btnSair.AutoSize = true;
+            this.btnSair.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::LojaTeste.Properties.Resources.ImgSair;
+            this.btnSair.Location = new System.Drawing.Point(190, 326);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(101, 95);
+            this.btnSair.TabIndex = 11;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // TbCancelarProduto
+            // btnConfirmar
             // 
-            this.TbCancelarProduto.Location = new System.Drawing.Point(282, 292);
-            this.TbCancelarProduto.Name = "TbCancelarProduto";
-            this.TbCancelarProduto.Size = new System.Drawing.Size(75, 23);
-            this.TbCancelarProduto.TabIndex = 3;
-            this.TbCancelarProduto.Text = "Cancelar";
-            this.TbCancelarProduto.UseVisualStyleBackColor = true;
-            this.TbCancelarProduto.Click += new System.EventHandler(this.TbCancelarProduto_Click);
+            this.btnConfirmar.AutoSize = true;
+            this.btnConfirmar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.ImgConfirmar;
+            this.btnConfirmar.Location = new System.Drawing.Point(15, 326);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(101, 95);
+            this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.UseVisualStyleBackColor = true;
             // 
             // frmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 471);
-            this.Controls.Add(this.TbCancelarProduto);
-            this.Controls.Add(this.TbPesquisarProduto);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TbNomeProduto);
             this.Controls.Add(this.TbCodigoProduto);
@@ -128,7 +135,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbNomeProduto;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button TbPesquisarProduto;
-        private System.Windows.Forms.Button TbCancelarProduto;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

@@ -27,7 +27,7 @@ namespace LojaTeste
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }

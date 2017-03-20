@@ -23,10 +23,11 @@ namespace LojaTeste
             //Suele 1703
         }
 
-        private void TbCancelarProduto_Click(object sender, EventArgs e)
+
+
+        private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }
