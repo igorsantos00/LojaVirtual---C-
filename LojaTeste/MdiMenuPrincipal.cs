@@ -113,9 +113,7 @@ namespace LojaTeste
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            Form tela = new frmPedido();
-            tela.MdiParent = this;
-            tela.Show();
+
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
@@ -163,6 +161,13 @@ namespace LojaTeste
         private void toolStripButton8_Click(object sender, EventArgs e)
         {
             Form tela = new frmProduto();
+            tela.MdiParent = this;
+            tela.Show();
+        }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmPedido();
             tela.MdiParent = this;
             tela.Show();
         }

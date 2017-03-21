@@ -52,12 +52,6 @@
     <Compile Include="EnderecoCliente.designer.cs">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,12 +75,6 @@
     </Compile>
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MDIParent1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MDIParent1.Designer.cs">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
     <Compile Include="testefrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -147,9 +135,6 @@
     <EmbeddedResource Include="EnderecoCliente.resx">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -167,9 +152,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MDIParent1.resx">
-      <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="testefrmPrincipal.resx">
       <DependentUpon>testefrmPrincipal.cs</DependentUpon>

@@ -82,9 +82,19 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton14 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton15 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton16 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -365,6 +375,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.BackgroundImage = global::LojaTeste.Properties.Resources.inicial8;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton2,
@@ -433,10 +444,75 @@
             this.toolStripButton8.Name = "toolStripButton8";
             this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.BackgroundImage = global::LojaTeste.Properties.Resources.inicial8;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton9,
+            this.toolStripButton10,
+            this.toolStripButton11,
+            this.toolStripButton12,
+            this.toolStripButton13,
+            this.toolStripButton14,
+            this.toolStripButton15,
+            this.toolStripButton16});
+            resources.ApplyResources(this.toolStrip2, "toolStrip2");
+            this.toolStrip2.Name = "toolStrip2";
+            // 
+            // toolStripButton9
+            // 
+            this.toolStripButton9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton9, "toolStripButton9");
+            this.toolStripButton9.Name = "toolStripButton9";
+            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
+            // 
+            // toolStripButton10
+            // 
+            this.toolStripButton10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton10, "toolStripButton10");
+            this.toolStripButton10.Name = "toolStripButton10";
+            // 
+            // toolStripButton11
+            // 
+            this.toolStripButton11.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton11, "toolStripButton11");
+            this.toolStripButton11.Name = "toolStripButton11";
+            // 
+            // toolStripButton12
+            // 
+            this.toolStripButton12.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton12, "toolStripButton12");
+            this.toolStripButton12.Name = "toolStripButton12";
+            // 
+            // toolStripButton13
+            // 
+            this.toolStripButton13.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton13, "toolStripButton13");
+            this.toolStripButton13.Name = "toolStripButton13";
+            // 
+            // toolStripButton14
+            // 
+            this.toolStripButton14.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton14, "toolStripButton14");
+            this.toolStripButton14.Name = "toolStripButton14";
+            // 
+            // toolStripButton15
+            // 
+            this.toolStripButton15.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton15, "toolStripButton15");
+            this.toolStripButton15.Name = "toolStripButton15";
+            // 
+            // toolStripButton16
+            // 
+            this.toolStripButton16.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            resources.ApplyResources(this.toolStripButton16, "toolStripButton16");
+            this.toolStripButton16.Name = "toolStripButton16";
+            // 
             // MdiMenuPrincipal
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
@@ -451,6 +527,8 @@
             this.statusStrip.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,6 +580,15 @@
         private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton toolStripButton9;
+        private System.Windows.Forms.ToolStripButton toolStripButton10;
+        private System.Windows.Forms.ToolStripButton toolStripButton11;
+        private System.Windows.Forms.ToolStripButton toolStripButton12;
+        private System.Windows.Forms.ToolStripButton toolStripButton13;
+        private System.Windows.Forms.ToolStripButton toolStripButton14;
+        private System.Windows.Forms.ToolStripButton toolStripButton15;
+        private System.Windows.Forms.ToolStripButton toolStripButton16;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
