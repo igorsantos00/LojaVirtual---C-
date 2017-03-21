@@ -52,6 +52,12 @@
     <Compile Include="EnderecoCliente.designer.cs">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,11 +76,11 @@
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuPrincipal.cs">
+    <Compile Include="testefrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuPrincipal.Designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <Compile Include="testefrmPrincipal.Designer.cs">
+      <DependentUpon>testefrmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,12 @@
     <Compile Include="frmItemPedido.Designer.cs">
       <DependentUpon>frmItemPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="MdiMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MdiMenuPrincipal.Designer.cs">
+      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmStatusPedido.cs">
@@ -123,6 +135,12 @@
     <EmbeddedResource Include="EnderecoCliente.resx">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiMenuPrincipal.pt-BR.resx">
+      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,8 +153,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="testefrmPrincipal.resx">
+      <DependentUpon>testefrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
@@ -149,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmItemPedido.resx">
       <DependentUpon>frmItemPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MdiMenuPrincipal.resx">
+      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

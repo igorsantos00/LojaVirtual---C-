@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class frmMenuPrincipal : Form
+    public partial class testefrmPrincipal : Form
     {
-        public frmMenuPrincipal()
+        public testefrmPrincipal()
         {
             
         }
 
-        public frmMenuPrincipal(string text)
+        public testefrmPrincipal(string text)
         {
             InitializeComponent();
             lblLogin.Text = text;
@@ -103,9 +103,7 @@ namespace LojaTeste
 
         private void imgEstoque_Click(object sender, EventArgs e)
         {
-           
-
-            Form tela = new frmStatusPedido();
+            Form tela = new frmUsuario();
             tela.ShowDialog();
         }
 
@@ -149,6 +147,11 @@ namespace LojaTeste
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }

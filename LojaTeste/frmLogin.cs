@@ -40,8 +40,10 @@ namespace LojaTeste
                     if (txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
                     {
                         MessageBox.Show("Seja bem vindo!");
-                        Form tela = new frmMenuPrincipal(txtLogin.Text);
+                        //Form tela = new TestefrmMenuPrincipal(txtLogin.Text);
+                        Form tela = new MdiMenuPrincipal();
                         tela.ShowDialog();
+
                     }
                     else
                     {

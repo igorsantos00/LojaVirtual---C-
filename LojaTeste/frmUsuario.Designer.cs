@@ -140,7 +140,7 @@
             this.btnSair.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.Image = global::LojaTeste.Properties.Resources.ImgSair;
-            this.btnSair.Location = new System.Drawing.Point(194, 322);
+            this.btnSair.Location = new System.Drawing.Point(134, 364);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(101, 95);
             this.btnSair.TabIndex = 13;
@@ -154,7 +154,7 @@
             this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.ImgConfirmar;
-            this.btnConfirmar.Location = new System.Drawing.Point(19, 322);
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 364);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(101, 95);
             this.btnConfirmar.TabIndex = 12;
