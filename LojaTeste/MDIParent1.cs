@@ -10,25 +10,21 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class MdiMenuPrincipal : Form
+    public partial class MDIParent1 : Form
     {
         private int childFormNumber = 0;
 
-        public MdiMenuPrincipal()
+        public MDIParent1()
         {
             InitializeComponent();
         }
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            // childForm = new frmPrincipal();
-            //childForm.MdiParent = this;
-            //childForm.Text = "Window " + childFormNumber++;
-            //childForm.Show();
-
-            //frmMenu frmp = new frmMenu();
-            //frmp.MdiParent = this;
-            //frmp.Show();
+            Form childForm = new Form();
+            childForm.MdiParent = this;
+            childForm.Text = "Window " + childFormNumber++;
+            childForm.Show();
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -70,6 +66,10 @@ namespace LojaTeste
         {
         }
 
+        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            toolStrip.Visible = toolBarToolStripMenuItem.Checked;
+        }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -102,69 +102,6 @@ namespace LojaTeste
             {
                 childForm.Close();
             }
-        }
-
-        private void frmMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            //Form tela = new Form1();
-            //tela.MdiParent = this;
-            //tela.Show();
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmPedido();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmUsuario();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmCliente();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton4_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmStatusPedido();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton5_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmCategoria();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton6_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmEstoque();
-            tela.MdiParent = this;
-            tela.Show();
-        }
-
-        private void toolStripButton7_Click(object sender, EventArgs e)
-        {
-            //Form tela = new frmp();
-            //tela.MdiParent = this;
-            //tela.Show();
-        }
-
-        private void toolStripButton8_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmProduto();
-            tela.MdiParent = this;
-            tela.Show();
         }
     }
 }
