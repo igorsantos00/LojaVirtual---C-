@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnderecoCliente));
-            this.BTinserirEnd = new System.Windows.Forms.Button();
-            this.BTcancelarEnde = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TBcodigoCliente = new System.Windows.Forms.TextBox();
             this.LBruaCli = new System.Windows.Forms.Label();
@@ -49,25 +47,9 @@
             this.TbCidadeCli = new System.Windows.Forms.TextBox();
             this.TbPaisCli = new System.Windows.Forms.TextBox();
             this.TbUfeCli = new System.Windows.Forms.TextBox();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // BTinserirEnd
-            // 
-            this.BTinserirEnd.Location = new System.Drawing.Point(12, 326);
-            this.BTinserirEnd.Name = "BTinserirEnd";
-            this.BTinserirEnd.Size = new System.Drawing.Size(75, 23);
-            this.BTinserirEnd.TabIndex = 0;
-            this.BTinserirEnd.Text = "Inserir";
-            this.BTinserirEnd.UseVisualStyleBackColor = true;
-            // 
-            // BTcancelarEnde
-            // 
-            this.BTcancelarEnde.Location = new System.Drawing.Point(386, 326);
-            this.BTcancelarEnde.Name = "BTcancelarEnde";
-            this.BTcancelarEnde.Size = new System.Drawing.Size(75, 23);
-            this.BTcancelarEnde.TabIndex = 1;
-            this.BTcancelarEnde.Text = "Cancelar";
-            this.BTcancelarEnde.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -214,11 +196,38 @@
             this.TbUfeCli.Size = new System.Drawing.Size(322, 20);
             this.TbUfeCli.TabIndex = 3;
             // 
+            // btnSair
+            // 
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(161, 330);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 330);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.TabIndex = 7;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
             // EnderecoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 361);
+            this.ClientSize = new System.Drawing.Size(473, 392);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -237,8 +246,6 @@
             this.Controls.Add(this.TbPaisCli);
             this.Controls.Add(this.TBcodigoCliente);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BTcancelarEnde);
-            this.Controls.Add(this.BTinserirEnd);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EnderecoCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -249,9 +256,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BTinserirEnd;
-        private System.Windows.Forms.Button BTcancelarEnde;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TBcodigoCliente;
         private System.Windows.Forms.Label LBruaCli;
@@ -270,5 +274,7 @@
         private System.Windows.Forms.TextBox TbCidadeCli;
         private System.Windows.Forms.TextBox TbPaisCli;
         private System.Windows.Forms.TextBox TbUfeCli;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

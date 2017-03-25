@@ -35,8 +35,6 @@
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
@@ -55,6 +53,8 @@
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,26 +107,6 @@
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Location = new System.Drawing.Point(79, 280);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // btnSair
-            // 
-            this.btnSair.Location = new System.Drawing.Point(172, 280);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
-            this.btnSair.TabIndex = 7;
-            this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -178,7 +158,7 @@
             this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(484, 24);
+            this.mnuPrincipal.Size = new System.Drawing.Size(634, 24);
             this.mnuPrincipal.TabIndex = 8;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -273,17 +253,42 @@
             this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
+            // btnSair
+            // 
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(234, 329);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.TabIndex = 9;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(85, 329);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.ClientSize = new System.Drawing.Size(634, 561);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.mnuPrincipal);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmbTipo);
-            this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
@@ -311,8 +316,6 @@
         private System.Windows.Forms.TextBox txtNomeCompleto;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipo;
@@ -331,5 +334,7 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

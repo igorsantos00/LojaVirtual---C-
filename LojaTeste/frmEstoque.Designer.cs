@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbNomeProduto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TbPesquisarProduto = new System.Windows.Forms.Button();
-            this.TbCancelarProduto = new System.Windows.Forms.Button();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +48,8 @@
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -94,24 +94,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(445, 203);
             this.dataGridView1.TabIndex = 2;
             // 
-            // TbPesquisarProduto
-            // 
-            this.TbPesquisarProduto.Location = new System.Drawing.Point(12, 332);
-            this.TbPesquisarProduto.Name = "TbPesquisarProduto";
-            this.TbPesquisarProduto.Size = new System.Drawing.Size(75, 23);
-            this.TbPesquisarProduto.TabIndex = 3;
-            this.TbPesquisarProduto.Text = "Pesquisar";
-            this.TbPesquisarProduto.UseVisualStyleBackColor = true;
-            // 
-            // TbCancelarProduto
-            // 
-            this.TbCancelarProduto.Location = new System.Drawing.Point(382, 332);
-            this.TbCancelarProduto.Name = "TbCancelarProduto";
-            this.TbCancelarProduto.Size = new System.Drawing.Size(75, 23);
-            this.TbCancelarProduto.TabIndex = 3;
-            this.TbCancelarProduto.Text = "Cancelar";
-            this.TbCancelarProduto.UseVisualStyleBackColor = true;
-            // 
             // mnuPrincipal
             // 
             this.mnuPrincipal.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -121,7 +103,7 @@
             this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(469, 24);
+            this.mnuPrincipal.Size = new System.Drawing.Size(630, 24);
             this.mnuPrincipal.TabIndex = 5;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -216,15 +198,40 @@
             this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
+            // btnSair
+            // 
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(161, 322);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 322);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.TabIndex = 7;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
             // frmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(469, 367);
+            this.ClientSize = new System.Drawing.Size(630, 557);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.mnuPrincipal);
-            this.Controls.Add(this.TbCancelarProduto);
-            this.Controls.Add(this.TbPesquisarProduto);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.TbNomeProduto);
             this.Controls.Add(this.TbCodigoProduto);
@@ -250,8 +257,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbNomeProduto;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button TbPesquisarProduto;
-        private System.Windows.Forms.Button TbCancelarProduto;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -266,5 +271,7 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

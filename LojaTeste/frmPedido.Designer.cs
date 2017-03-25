@@ -158,21 +158,27 @@
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(83, 364);
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(83, 351);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
             this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(164, 364);
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(232, 351);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
             this.btnSair.TabIndex = 3;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // mnuPrincipal
@@ -184,7 +190,7 @@
             this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(484, 24);
+            this.mnuPrincipal.Size = new System.Drawing.Size(630, 24);
             this.mnuPrincipal.TabIndex = 5;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -284,7 +290,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.ClientSize = new System.Drawing.Size(630, 557);
             this.Controls.Add(this.mnuPrincipal);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnConfirmar);

@@ -33,8 +33,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.TbTipoPagamento = new System.Windows.Forms.TextBox();
             this.TbDescricao = new System.Windows.Forms.TextBox();
-            this.BtEnviarPagamento = new System.Windows.Forms.Button();
-            this.BtCancelarPagamento = new System.Windows.Forms.Button();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,6 +47,8 @@
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,24 +84,6 @@
             this.TbDescricao.Size = new System.Drawing.Size(100, 20);
             this.TbDescricao.TabIndex = 1;
             // 
-            // BtEnviarPagamento
-            // 
-            this.BtEnviarPagamento.Location = new System.Drawing.Point(11, 239);
-            this.BtEnviarPagamento.Name = "BtEnviarPagamento";
-            this.BtEnviarPagamento.Size = new System.Drawing.Size(75, 23);
-            this.BtEnviarPagamento.TabIndex = 2;
-            this.BtEnviarPagamento.Text = "Enviar";
-            this.BtEnviarPagamento.UseVisualStyleBackColor = true;
-            // 
-            // BtCancelarPagamento
-            // 
-            this.BtCancelarPagamento.Location = new System.Drawing.Point(184, 239);
-            this.BtCancelarPagamento.Name = "BtCancelarPagamento";
-            this.BtCancelarPagamento.Size = new System.Drawing.Size(75, 23);
-            this.BtCancelarPagamento.TabIndex = 2;
-            this.BtCancelarPagamento.Text = "Cancelar";
-            this.BtCancelarPagamento.UseVisualStyleBackColor = true;
-            // 
             // mnuPrincipal
             // 
             this.mnuPrincipal.BackColor = System.Drawing.Color.MediumTurquoise;
@@ -111,7 +93,7 @@
             this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(284, 24);
+            this.mnuPrincipal.Size = new System.Drawing.Size(630, 24);
             this.mnuPrincipal.TabIndex = 5;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -206,15 +188,40 @@
             this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
             this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
+            // btnSair
+            // 
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(161, 204);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.TabIndex = 6;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 204);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.TabIndex = 7;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
             // frmTipoPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(284, 278);
+            this.ClientSize = new System.Drawing.Size(630, 557);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.mnuPrincipal);
-            this.Controls.Add(this.BtCancelarPagamento);
-            this.Controls.Add(this.BtEnviarPagamento);
             this.Controls.Add(this.TbDescricao);
             this.Controls.Add(this.TbTipoPagamento);
             this.Controls.Add(this.label2);
@@ -237,8 +244,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox TbTipoPagamento;
         private System.Windows.Forms.TextBox TbDescricao;
-        private System.Windows.Forms.Button BtEnviarPagamento;
-        private System.Windows.Forms.Button BtCancelarPagamento;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
@@ -253,5 +258,7 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

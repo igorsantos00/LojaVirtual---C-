@@ -51,5 +51,10 @@ namespace LojaTeste
 
             }
         }
+
+        private void btnSair_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -21,5 +21,15 @@ namespace LojaTeste
         {
 
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmItemPedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

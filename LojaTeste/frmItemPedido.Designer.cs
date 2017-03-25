@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmItemPedido));
-            this.BtEnviarPedido = new System.Windows.Forms.Button();
-            this.BtCancelarPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,25 +37,9 @@
             this.TbCodigoProduto = new System.Windows.Forms.TextBox();
             this.TbQuantidadePedido = new System.Windows.Forms.TextBox();
             this.TbValorPedido = new System.Windows.Forms.TextBox();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // BtEnviarPedido
-            // 
-            this.BtEnviarPedido.Location = new System.Drawing.Point(12, 336);
-            this.BtEnviarPedido.Name = "BtEnviarPedido";
-            this.BtEnviarPedido.Size = new System.Drawing.Size(75, 23);
-            this.BtEnviarPedido.TabIndex = 0;
-            this.BtEnviarPedido.Text = "Enviar";
-            this.BtEnviarPedido.UseVisualStyleBackColor = true;
-            // 
-            // BtCancelarPedido
-            // 
-            this.BtCancelarPedido.Location = new System.Drawing.Point(386, 336);
-            this.BtCancelarPedido.Name = "BtCancelarPedido";
-            this.BtCancelarPedido.Size = new System.Drawing.Size(75, 23);
-            this.BtCancelarPedido.TabIndex = 1;
-            this.BtCancelarPedido.Text = "Cancelar";
-            this.BtCancelarPedido.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -126,12 +108,39 @@
             this.TbValorPedido.Size = new System.Drawing.Size(449, 20);
             this.TbValorPedido.TabIndex = 3;
             // 
+            // btnSair
+            // 
+            this.btnSair.AutoEllipsis = true;
+            this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(161, 318);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.TabIndex = 4;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.AutoEllipsis = true;
+            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConfirmar.Location = new System.Drawing.Point(12, 318);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.TabIndex = 5;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            // 
             // frmItemPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(473, 371);
+            this.ClientSize = new System.Drawing.Size(634, 561);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.TbValorPedido);
             this.Controls.Add(this.TbQuantidadePedido);
             this.Controls.Add(this.TbCodigoProduto);
@@ -140,20 +149,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BtCancelarPedido);
-            this.Controls.Add(this.BtEnviarPedido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmItemPedido";
             this.Text = "ItemPedido";
+            this.Load += new System.EventHandler(this.frmItemPedido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button BtEnviarPedido;
-        private System.Windows.Forms.Button BtCancelarPedido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -162,5 +167,7 @@
         private System.Windows.Forms.TextBox TbCodigoProduto;
         private System.Windows.Forms.TextBox TbQuantidadePedido;
         private System.Windows.Forms.TextBox TbValorPedido;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

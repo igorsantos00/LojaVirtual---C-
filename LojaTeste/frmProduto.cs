@@ -26,5 +26,10 @@ namespace LojaTeste
         {
 
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
