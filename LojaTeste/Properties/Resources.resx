@@ -118,62 +118,110 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cadeado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadeado2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Setings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Setings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="estoque (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\estoque (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inicial8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LogoffMenu11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoffMenu11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fundo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inicial3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="layoutTelas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layoutTelas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ClienetWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ClienetWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cancelar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="confirmar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirmar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrocategoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrocategoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsuarioWhite2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UsuarioWhite2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calculadoraWhathi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calculadoraWhathi.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario35" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inicial6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PEDIDOWhit11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PEDIDOWhit1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadastrousuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrousuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ProdutosWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ProdutosWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario36" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PEDIDOWhit12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PEDIDOWhit11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PEDIDOWhit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PEDIDOWhit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="cadeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cadeado.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadastroproduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastroproduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Risco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Risco1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logorrpeinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logorrpeinfo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="PEDIDOWhit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PEDIDOWhit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pedido1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pedido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inicial31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Usuario32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bookman-Old-Style1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bookman-Old-Style1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UsuarioWhite2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UsuarioWhite2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="inicial5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deletar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deletar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layout1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AdicionarFoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AdicionarFoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TimeWrite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TimeWrite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastroproduto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastroproduto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CategoriasWhit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CategoriasWhit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LogoffMenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LogoffMenu1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Confirma" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Confirma.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lojavirtual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lojavirtual.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,112 +229,136 @@
   <data name="Bookman-Old-Style" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bookman-Old-Style.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="UsuarioWhite211" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\UsuarioWhite21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadeado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadeado1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="cadastrostatuspedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrostatuspedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Risco" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Risco.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario35" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario35.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Bookman-Old-Style2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bookman-Old-Style2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ClienetWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ClienetWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastrostatuspedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrostatuspedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario34" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PEDIDOWhit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PEDIDOWhit1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="confirmar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Usuario31" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario31.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pedido" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pedido.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PEDIDOWhit11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PEDIDOWhit1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="confirmar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirmar1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Risco1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Risco1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inicial4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario36" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario36.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Verdana 16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Verdana 16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sair1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inicial2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TimeWrite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TimeWrite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastrocliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrocliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario33" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CategoriasWhit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CategoriasWhit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ProdutosWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ProdutosWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inicial5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cadastrotipopagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrotipopagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="inicial3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Estoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Estoque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ImgConfirmar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgConfirmar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Usuario3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Usuario3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Adiciona1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adiciona1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UsuarioWhite21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UsuarioWhite2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="estoque (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estoque (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial8.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deletar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deletar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bookman-Old-Style2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bookman-Old-Style2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadeado1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadeado1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StatuPedidoMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StatuPedidoMenu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="confirmar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\confirmar2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="inicial7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\inicial7.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="UserFoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserFoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PEDIDOWhit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PEDIDOWhit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrocliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrocliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fundo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fundo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrousuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrousuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario33" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsuarioMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UsuarioMenu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Adiciona2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adiciona2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Verdana 16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Verdana 16.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsuarioWhite211" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UsuarioWhite21.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadeado2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadeado2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Adiciona4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adiciona4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UsuarioFoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UsuarioFoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="estoque (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\estoque (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadastrocategoria" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cadastrocategoria.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="layoutMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layoutMenu.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ImgSair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ImgSair.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Login2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Login2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logorrpeinfo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logorrpeinfo.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inicial31" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inicial31.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Usuario34" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Usuario34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calculadoraMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calculadoraMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadastrotipopagamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cadastrotipopagamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CategoriasMenu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CategoriasMenu1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Estoque" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Estoque.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="settings-icon-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-icon-1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pedido1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pedido1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sair1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Adiciona5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Adiciona5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Botão" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Botão.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layoutTelas1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layoutTelas1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

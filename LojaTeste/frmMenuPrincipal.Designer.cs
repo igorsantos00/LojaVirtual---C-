@@ -46,32 +46,38 @@
             this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.imgEstoque = new System.Windows.Forms.PictureBox();
             this.imgUsuario = new System.Windows.Forms.PictureBox();
-            this.imgCategoria = new System.Windows.Forms.PictureBox();
-            this.imgProduto = new System.Windows.Forms.PictureBox();
-            this.imgCliente = new System.Windows.Forms.PictureBox();
-            this.imgStatusPedido = new System.Windows.Forms.PictureBox();
-            this.imgTipoPagamento = new System.Windows.Forms.PictureBox();
             this.LbMenu = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btPedido = new System.Windows.Forms.Button();
+            this.btUsuario = new System.Windows.Forms.Button();
+            this.btClientes = new System.Windows.Forms.Button();
+            this.btStatuPedido = new System.Windows.Forms.Button();
+            this.btCategoria = new System.Windows.Forms.Button();
+            this.btEstoque = new System.Windows.Forms.Button();
+            this.btPagamento = new System.Windows.Forms.Button();
+            this.btProduto = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.mnuPrincipal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCategoria)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCliente)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPedido)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTipoPagamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.SuspendLayout();
             // 
             // mnuPrincipal
@@ -206,39 +212,7 @@
             this.lblLogin.Size = new System.Drawing.Size(71, 20);
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Usuário";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::LojaTeste.Properties.Resources.estoque__1_1;
-            this.pictureBox9.Location = new System.Drawing.Point(594, 356);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox9.TabIndex = 0;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::LojaTeste.Properties.Resources.Bookman_Old_Style2;
-            this.pictureBox8.Location = new System.Drawing.Point(421, 168);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(140, 140);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox8.TabIndex = 0;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // imgEstoque
-            // 
-            this.imgEstoque.Image = global::LojaTeste.Properties.Resources.Usuario36;
-            this.imgEstoque.Location = new System.Drawing.Point(594, 168);
-            this.imgEstoque.Name = "imgEstoque";
-            this.imgEstoque.Size = new System.Drawing.Size(140, 140);
-            this.imgEstoque.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgEstoque.TabIndex = 0;
-            this.imgEstoque.TabStop = false;
-            this.imgEstoque.Click += new System.EventHandler(this.imgEstoque_Click);
+            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // imgUsuario
             // 
@@ -251,67 +225,12 @@
             this.imgUsuario.TabStop = false;
             this.imgUsuario.Click += new System.EventHandler(this.imgUsuario_Click);
             // 
-            // imgCategoria
-            // 
-            this.imgCategoria.Image = global::LojaTeste.Properties.Resources.CategoriasWhit;
-            this.imgCategoria.Location = new System.Drawing.Point(421, 356);
-            this.imgCategoria.Name = "imgCategoria";
-            this.imgCategoria.Size = new System.Drawing.Size(140, 140);
-            this.imgCategoria.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgCategoria.TabIndex = 0;
-            this.imgCategoria.TabStop = false;
-            this.imgCategoria.Click += new System.EventHandler(this.imgCategoria_Click);
-            // 
-            // imgProduto
-            // 
-            this.imgProduto.Image = global::LojaTeste.Properties.Resources.ProdutosWhite;
-            this.imgProduto.Location = new System.Drawing.Point(943, 356);
-            this.imgProduto.Name = "imgProduto";
-            this.imgProduto.Size = new System.Drawing.Size(140, 140);
-            this.imgProduto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgProduto.TabIndex = 0;
-            this.imgProduto.TabStop = false;
-            this.imgProduto.Click += new System.EventHandler(this.imgProduto_Click);
-            // 
-            // imgCliente
-            // 
-            this.imgCliente.Image = global::LojaTeste.Properties.Resources.Verdana_16;
-            this.imgCliente.Location = new System.Drawing.Point(767, 168);
-            this.imgCliente.Name = "imgCliente";
-            this.imgCliente.Size = new System.Drawing.Size(140, 140);
-            this.imgCliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgCliente.TabIndex = 0;
-            this.imgCliente.TabStop = false;
-            this.imgCliente.Click += new System.EventHandler(this.imgCliente_Click);
-            // 
-            // imgStatusPedido
-            // 
-            this.imgStatusPedido.Image = global::LojaTeste.Properties.Resources.PEDIDOWhit12;
-            this.imgStatusPedido.Location = new System.Drawing.Point(943, 168);
-            this.imgStatusPedido.Name = "imgStatusPedido";
-            this.imgStatusPedido.Size = new System.Drawing.Size(140, 140);
-            this.imgStatusPedido.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgStatusPedido.TabIndex = 0;
-            this.imgStatusPedido.TabStop = false;
-            this.imgStatusPedido.Click += new System.EventHandler(this.imgStatusPedido_Click);
-            // 
-            // imgTipoPagamento
-            // 
-            this.imgTipoPagamento.Image = global::LojaTeste.Properties.Resources.calculadoraWhathi;
-            this.imgTipoPagamento.Location = new System.Drawing.Point(767, 356);
-            this.imgTipoPagamento.Name = "imgTipoPagamento";
-            this.imgTipoPagamento.Size = new System.Drawing.Size(140, 140);
-            this.imgTipoPagamento.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.imgTipoPagamento.TabIndex = 0;
-            this.imgTipoPagamento.TabStop = false;
-            this.imgTipoPagamento.Click += new System.EventHandler(this.imgTipoPagamento_Click);
-            // 
             // LbMenu
             // 
             this.LbMenu.AutoSize = true;
             this.LbMenu.BackColor = System.Drawing.Color.Transparent;
             this.LbMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbMenu.ForeColor = System.Drawing.Color.Black;
+            this.LbMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.LbMenu.Location = new System.Drawing.Point(401, 101);
             this.LbMenu.Name = "LbMenu";
             this.LbMenu.Size = new System.Drawing.Size(176, 25);
@@ -359,48 +278,266 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.imgUsuario_Click);
             // 
+            // btPedido
+            // 
+            this.btPedido.BackColor = System.Drawing.Color.Transparent;
+            this.btPedido.BackgroundImage = global::LojaTeste.Properties.Resources.Bookman_Old_Style2;
+            this.btPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPedido.Location = new System.Drawing.Point(421, 168);
+            this.btPedido.Name = "btPedido";
+            this.btPedido.Size = new System.Drawing.Size(140, 140);
+            this.btPedido.TabIndex = 9;
+            this.btPedido.UseVisualStyleBackColor = false;
+            this.btPedido.Click += new System.EventHandler(this.Pedido_Click);
+            // 
+            // btUsuario
+            // 
+            this.btUsuario.BackColor = System.Drawing.Color.Transparent;
+            this.btUsuario.BackgroundImage = global::LojaTeste.Properties.Resources.UsuarioMenu;
+            this.btUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUsuario.Location = new System.Drawing.Point(594, 168);
+            this.btUsuario.Name = "btUsuario";
+            this.btUsuario.Size = new System.Drawing.Size(140, 140);
+            this.btUsuario.TabIndex = 9;
+            this.btUsuario.UseVisualStyleBackColor = false;
+            this.btUsuario.Click += new System.EventHandler(this.Usuario_Click);
+            // 
+            // btClientes
+            // 
+            this.btClientes.BackColor = System.Drawing.Color.Transparent;
+            this.btClientes.BackgroundImage = global::LojaTeste.Properties.Resources.Verdana_16;
+            this.btClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClientes.Location = new System.Drawing.Point(767, 168);
+            this.btClientes.Name = "btClientes";
+            this.btClientes.Size = new System.Drawing.Size(140, 140);
+            this.btClientes.TabIndex = 9;
+            this.btClientes.UseVisualStyleBackColor = false;
+            this.btClientes.Click += new System.EventHandler(this.Cliente_Click);
+            // 
+            // btStatuPedido
+            // 
+            this.btStatuPedido.BackColor = System.Drawing.Color.Transparent;
+            this.btStatuPedido.BackgroundImage = global::LojaTeste.Properties.Resources.StatuPedidoMenu;
+            this.btStatuPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btStatuPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btStatuPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btStatuPedido.Location = new System.Drawing.Point(943, 168);
+            this.btStatuPedido.Name = "btStatuPedido";
+            this.btStatuPedido.Size = new System.Drawing.Size(140, 140);
+            this.btStatuPedido.TabIndex = 9;
+            this.btStatuPedido.UseVisualStyleBackColor = false;
+            this.btStatuPedido.Click += new System.EventHandler(this.StatusPedido_Click);
+            // 
+            // btCategoria
+            // 
+            this.btCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.btCategoria.BackgroundImage = global::LojaTeste.Properties.Resources.CategoriasMenu1;
+            this.btCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCategoria.Location = new System.Drawing.Point(421, 356);
+            this.btCategoria.Name = "btCategoria";
+            this.btCategoria.Size = new System.Drawing.Size(140, 140);
+            this.btCategoria.TabIndex = 9;
+            this.btCategoria.UseVisualStyleBackColor = false;
+            this.btCategoria.Click += new System.EventHandler(this.Categoria_Click);
+            // 
+            // btEstoque
+            // 
+            this.btEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.btEstoque.BackgroundImage = global::LojaTeste.Properties.Resources.estoque__1_1;
+            this.btEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEstoque.Location = new System.Drawing.Point(594, 356);
+            this.btEstoque.Name = "btEstoque";
+            this.btEstoque.Size = new System.Drawing.Size(140, 140);
+            this.btEstoque.TabIndex = 9;
+            this.btEstoque.UseVisualStyleBackColor = false;
+            this.btEstoque.Click += new System.EventHandler(this.Estoque_Click);
+            // 
+            // btPagamento
+            // 
+            this.btPagamento.BackColor = System.Drawing.Color.Transparent;
+            this.btPagamento.BackgroundImage = global::LojaTeste.Properties.Resources.calculadoraMenu;
+            this.btPagamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btPagamento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPagamento.Location = new System.Drawing.Point(767, 356);
+            this.btPagamento.Name = "btPagamento";
+            this.btPagamento.Size = new System.Drawing.Size(140, 140);
+            this.btPagamento.TabIndex = 9;
+            this.btPagamento.UseVisualStyleBackColor = false;
+            this.btPagamento.Click += new System.EventHandler(this.Pagamento_Click);
+            // 
+            // btProduto
+            // 
+            this.btProduto.BackColor = System.Drawing.Color.Transparent;
+            this.btProduto.BackgroundImage = global::LojaTeste.Properties.Resources.ProdutosWhite;
+            this.btProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btProduto.Location = new System.Drawing.Point(943, 356);
+            this.btProduto.Name = "btProduto";
+            this.btProduto.Size = new System.Drawing.Size(140, 140);
+            this.btProduto.TabIndex = 9;
+            this.btProduto.UseVisualStyleBackColor = false;
+            this.btProduto.Click += new System.EventHandler(this.Produto_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = global::LojaTeste.Properties.Resources.Setings;
+            this.pictureBox3.Location = new System.Drawing.Point(846, 32);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.imgCliente_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = global::LojaTeste.Properties.Resources.Risco1;
+            this.pictureBox4.Location = new System.Drawing.Point(996, 27);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(16, 38);
+            this.pictureBox4.TabIndex = 0;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.imgUsuario_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(879, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Configuração";
+            this.label2.Click += new System.EventHandler(this.lblHora_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::LojaTeste.Properties.Resources.LogoffMenu11;
+            this.pictureBox5.Location = new System.Drawing.Point(1100, 32);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 0;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.imgCliente_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(1040, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Logoff";
+            this.label3.Click += new System.EventHandler(this.lblHora_Click);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.Image = global::LojaTeste.Properties.Resources.AdicionarFoto;
+            this.pictureBox6.Location = new System.Drawing.Point(30, 134);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(233, 192);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 0;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.imgCliente_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox7.Image = global::LojaTeste.Properties.Resources.Adiciona5;
+            this.pictureBox7.Location = new System.Drawing.Point(30, 101);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.imgCliente_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox8.Image = global::LojaTeste.Properties.Resources.deletar1;
+            this.pictureBox8.Location = new System.Drawing.Point(63, 101);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(27, 28);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 0;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.imgCliente_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::LojaTeste.Properties.Resources.inicial8;
+            this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutMenu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1148, 645);
+            this.Controls.Add(this.btProduto);
+            this.Controls.Add(this.btPagamento);
+            this.Controls.Add(this.btEstoque);
+            this.Controls.Add(this.btCategoria);
+            this.Controls.Add(this.btStatuPedido);
+            this.Controls.Add(this.btClientes);
+            this.Controls.Add(this.btUsuario);
+            this.Controls.Add(this.btPedido);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.LbMenu);
-            this.Controls.Add(this.imgTipoPagamento);
-            this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.imgStatusPedido);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.imgCliente);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblLogin);
-            this.Controls.Add(this.imgEstoque);
-            this.Controls.Add(this.imgCategoria);
-            this.Controls.Add(this.imgProduto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mnuPrincipal);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.imgUsuario);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(1168, 688);
+            this.MinimumSize = new System.Drawing.Size(1168, 688);
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCategoria)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgCliente)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgStatusPedido)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTipoPagamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -423,20 +560,28 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox imgEstoque;
         private System.Windows.Forms.PictureBox imgUsuario;
-        private System.Windows.Forms.PictureBox imgCategoria;
-        private System.Windows.Forms.PictureBox imgProduto;
-        private System.Windows.Forms.PictureBox imgCliente;
-        private System.Windows.Forms.PictureBox imgStatusPedido;
-        private System.Windows.Forms.PictureBox imgTipoPagamento;
         private System.Windows.Forms.Label LbMenu;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btPedido;
+        private System.Windows.Forms.Button btUsuario;
+        private System.Windows.Forms.Button btClientes;
+        private System.Windows.Forms.Button btStatuPedido;
+        private System.Windows.Forms.Button btCategoria;
+        private System.Windows.Forms.Button btEstoque;
+        private System.Windows.Forms.Button btPagamento;
+        private System.Windows.Forms.Button btProduto;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
     }
 }
 

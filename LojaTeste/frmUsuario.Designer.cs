@@ -35,12 +35,27 @@
             this.txtNomeCompleto = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
+            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tipoPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblLogin
@@ -92,6 +107,26 @@
             this.txtSenha.TabIndex = 3;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Location = new System.Drawing.Point(79, 280);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnSair
+            // 
+            this.btnSair.Location = new System.Drawing.Point(172, 280);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(75, 23);
+            this.btnSair.TabIndex = 7;
+            this.btnSair.Text = "Sair";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -134,42 +169,121 @@
             this.comboBox1.TabIndex = 5;
             this.comboBox1.Text = "Selecione";
             // 
-            // btnSair
+            // mnuPrincipal
             // 
-            this.btnSair.AutoSize = true;
-            this.btnSair.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Image = global::LojaTeste.Properties.Resources.ImgSair;
-            this.btnSair.Location = new System.Drawing.Point(134, 364);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(101, 95);
-            this.btnSair.TabIndex = 13;
-            this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
+            this.mnuPrincipal.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.arquivoToolStripMenuItem,
+            this.cadastroToolStripMenuItem,
+            this.movimentaçõesToolStripMenuItem});
+            this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.mnuPrincipal.Name = "mnuPrincipal";
+            this.mnuPrincipal.Size = new System.Drawing.Size(484, 24);
+            this.mnuPrincipal.TabIndex = 8;
+            this.mnuPrincipal.Text = "menuStrip1";
             // 
-            // btnConfirmar
+            // arquivoToolStripMenuItem
             // 
-            this.btnConfirmar.AutoSize = true;
-            this.btnConfirmar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Image = global::LojaTeste.Properties.Resources.ImgConfirmar;
-            this.btnConfirmar.Location = new System.Drawing.Point(12, 364);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(101, 95);
-            this.btnConfirmar.TabIndex = 12;
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
+            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.logoutToolStripMenuItem});
+            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.arquivoToolStripMenuItem.Text = "Arquivo";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fileToolStripMenuItem.Text = "Sair";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
+            // 
+            // cadastroToolStripMenuItem
+            // 
+            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usuáriosToolStripMenuItem,
+            this.categoriaToolStripMenuItem,
+            this.produtoToolStripMenuItem,
+            this.clienteToolStripMenuItem,
+            this.statusPedidoToolStripMenuItem,
+            this.tipoPagamentoToolStripMenuItem});
+            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Text = "Cadastro";
+            // 
+            // usuáriosToolStripMenuItem
+            // 
+            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.usuáriosToolStripMenuItem.Text = "Usuários";
+            // 
+            // categoriaToolStripMenuItem
+            // 
+            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.categoriaToolStripMenuItem.Text = "Categoria";
+            // 
+            // produtoToolStripMenuItem
+            // 
+            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.produtoToolStripMenuItem.Text = "Produto";
+            // 
+            // clienteToolStripMenuItem
+            // 
+            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.clienteToolStripMenuItem.Text = "Cliente";
+            // 
+            // statusPedidoToolStripMenuItem
+            // 
+            this.statusPedidoToolStripMenuItem.Name = "statusPedidoToolStripMenuItem";
+            this.statusPedidoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.statusPedidoToolStripMenuItem.Text = "Status Pedido";
+            // 
+            // tipoPagamentoToolStripMenuItem
+            // 
+            this.tipoPagamentoToolStripMenuItem.Name = "tipoPagamentoToolStripMenuItem";
+            this.tipoPagamentoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.tipoPagamentoToolStripMenuItem.Text = "Tipo Pagamento";
+            // 
+            // movimentaçõesToolStripMenuItem
+            // 
+            this.movimentaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pedidoToolStripMenuItem,
+            this.pedidoToolStripMenuItem1});
+            this.movimentaçõesToolStripMenuItem.Name = "movimentaçõesToolStripMenuItem";
+            this.movimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.movimentaçõesToolStripMenuItem.Text = "Movimentações";
+            // 
+            // pedidoToolStripMenuItem
+            // 
+            this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem.Text = "Estoque";
+            // 
+            // pedidoToolStripMenuItem1
+            // 
+            this.pedidoToolStripMenuItem1.Name = "pedidoToolStripMenuItem1";
+            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 471);
-            this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnConfirmar);
+            this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
+            this.ClientSize = new System.Drawing.Size(484, 411);
+            this.Controls.Add(this.mnuPrincipal);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
@@ -182,6 +296,8 @@
             this.Name = "frmUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuário";
+            this.mnuPrincipal.ResumeLayout(false);
+            this.mnuPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,11 +311,25 @@
         private System.Windows.Forms.TextBox txtNomeCompleto;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.MenuStrip mnuPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem statusPedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tipoPagamentoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
     }
 }

@@ -16,18 +16,5 @@ namespace LojaTeste
         {
             InitializeComponent();
         }
-
-        private void frmEstoque_Load(object sender, EventArgs e)
-        {
-            //estoque
-            //Suele 1703
-        }
-
-
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

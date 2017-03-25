@@ -26,15 +26,5 @@ namespace LojaTeste
         {
 
         }
-
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

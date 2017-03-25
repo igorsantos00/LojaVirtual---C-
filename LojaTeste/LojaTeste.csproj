@@ -52,12 +52,6 @@
     <Compile Include="EnderecoCliente.designer.cs">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMenuPrincipal.designer.cs">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +70,11 @@
     <Compile Include="frmEstoque.Designer.cs">
       <DependentUpon>frmEstoque.cs</DependentUpon>
     </Compile>
-    <Compile Include="testefrmPrincipal.cs">
+    <Compile Include="frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testefrmPrincipal.Designer.cs">
-      <DependentUpon>testefrmPrincipal.cs</DependentUpon>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUsuario.cs">
       <SubType>Form</SubType>
@@ -112,12 +106,6 @@
     <Compile Include="frmItemPedido.Designer.cs">
       <DependentUpon>frmItemPedido.cs</DependentUpon>
     </Compile>
-    <Compile Include="MdiMenuPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MdiMenuPrincipal.Designer.cs">
-      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="frmStatusPedido.cs">
@@ -135,12 +123,6 @@
     <EmbeddedResource Include="EnderecoCliente.resx">
       <DependentUpon>EnderecoCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuPrincipal.resx">
-      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MdiMenuPrincipal.pt-BR.resx">
-      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmProduto.resx">
       <DependentUpon>frmProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,8 +135,8 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="testefrmPrincipal.resx">
-      <DependentUpon>testefrmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
@@ -167,9 +149,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmItemPedido.resx">
       <DependentUpon>frmItemPedido.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MdiMenuPrincipal.resx">
-      <DependentUpon>MdiMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -366,10 +345,82 @@
     <None Include="Resources\ProdutosWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImgConfirmar.PNG" />
+    <None Include="Resources\layout1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ImgSair.PNG" />
+    <None Include="Resources\layoutMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatuPedidoMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriasMenu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadoraMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoffMenu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoffMenu11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdicionarFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botão.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layoutTelas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layoutTelas1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

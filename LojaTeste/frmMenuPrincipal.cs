@@ -67,14 +67,12 @@ namespace LojaTeste
 
         private void imgUsuario_Click(object sender, EventArgs e)
         {
-            Form tela = new frmUsuario();
-            tela.ShowDialog();
+           
         }
 
         private void imgCategoria_Click(object sender, EventArgs e)
         {
-            Form tela = new frmCategoria();
-            tela.ShowDialog();
+            
         }
 
         private void imgProduto_Click(object sender, EventArgs e)
@@ -85,8 +83,10 @@ namespace LojaTeste
 
         private void imgCliente_Click(object sender, EventArgs e)
         {
-            Form tela = new frmCliente();
-            tela.ShowDialog();
+            MessageBox.Show("Deseja fazer logoff?");
+            this.Close();
+            Form Tela1 = new frmLogin();
+            Tela1.ShowDialog();
         }
 
         private void imgStatusPedido_Click(object sender, EventArgs e)
@@ -101,18 +101,11 @@ namespace LojaTeste
             tela.ShowDialog();
         }
 
-        private void imgEstoque_Click(object sender, EventArgs e)
-        {
-           
-
-            Form tela = new frmStatusPedido();
-            tela.ShowDialog();
-        }
+       
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            Form tela = new frmPedido();
-            tela.ShowDialog();
+            
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -151,6 +144,66 @@ namespace LojaTeste
         private void pictureBox10_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+           
+
+        }
+
+        private void lblLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Pedido_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmPedido();
+            tela.ShowDialog();
+        }
+
+        private void Usuario_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmUsuario();
+            tela.ShowDialog();
+        }
+
+        private void Cliente_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmCliente();
+            tela.ShowDialog();
+        }
+
+        private void StatusPedido_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmStatusPedido();
+            tela.ShowDialog();
+        }
+
+        private void Categoria_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmCategoria();
+            tela.ShowDialog();
+        }
+
+        private void Estoque_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmEstoque();
+            tela.ShowDialog();
+        }
+
+        private void Pagamento_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmTipoPagamento();
+            tela.ShowDialog();
+        }
+
+        private void Produto_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmProduto();
+            tela.ShowDialog();
         }
     }
 }
