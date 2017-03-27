@@ -99,6 +99,7 @@
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nome";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBox2
             // 
@@ -117,6 +118,7 @@
             this.label3.Size = new System.Drawing.Size(88, 16);
             this.label3.TabIndex = 4;
             this.label3.Text = "Sobrenome";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -128,6 +130,7 @@
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 5;
             this.label4.Text = "Email";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // textBox3
             // 
@@ -146,6 +149,7 @@
             this.label6.Size = new System.Drawing.Size(37, 16);
             this.label6.TabIndex = 9;
             this.label6.Text = "CPF";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // textBox5
             // 
@@ -176,6 +180,7 @@
             this.label9.Size = new System.Drawing.Size(122, 16);
             this.label9.TabIndex = 15;
             this.label9.Text = "Tel. Residencial";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -187,6 +192,7 @@
             this.label10.Size = new System.Drawing.Size(90, 16);
             this.label10.TabIndex = 17;
             this.label10.Text = "Nascimento";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox9
             // 
@@ -205,6 +211,7 @@
             this.label11.Size = new System.Drawing.Size(38, 16);
             this.label11.TabIndex = 19;
             this.label11.Text = "CEP";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textBox10
             // 
@@ -223,6 +230,7 @@
             this.label12.Size = new System.Drawing.Size(75, 16);
             this.label12.TabIndex = 21;
             this.label12.Text = "Endereço";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // textBox11
             // 
@@ -241,6 +249,7 @@
             this.label13.Size = new System.Drawing.Size(62, 16);
             this.label13.TabIndex = 23;
             this.label13.Text = "Número";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // textBox12
             // 
@@ -259,6 +268,7 @@
             this.label14.Size = new System.Drawing.Size(50, 16);
             this.label14.TabIndex = 25;
             this.label14.Text = "Bairro";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // textBox13
             // 
@@ -277,6 +287,7 @@
             this.label15.Size = new System.Drawing.Size(58, 16);
             this.label15.TabIndex = 27;
             this.label15.Text = "Cidade";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // textBox14
             // 
@@ -302,6 +313,7 @@
             this.label16.Size = new System.Drawing.Size(28, 16);
             this.label16.TabIndex = 32;
             this.label16.Text = "UF";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // textBox15
             // 
@@ -320,6 +332,7 @@
             this.label17.Size = new System.Drawing.Size(39, 16);
             this.label17.TabIndex = 34;
             this.label17.Text = "País";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // textBox16
             // 
@@ -338,6 +351,7 @@
             this.label18.Size = new System.Drawing.Size(103, 16);
             this.label18.TabIndex = 36;
             this.label18.Text = "Complemento";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // textBox17
             // 
@@ -481,6 +495,7 @@
             this.label8.Size = new System.Drawing.Size(109, 16);
             this.label8.TabIndex = 13;
             this.label8.Text = "Tel. Comercial";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // textBox7
             // 

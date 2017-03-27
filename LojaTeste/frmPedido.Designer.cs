@@ -63,18 +63,22 @@
             // lblIdPedido
             // 
             this.lblIdPedido.AutoSize = true;
+            this.lblIdPedido.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdPedido.Location = new System.Drawing.Point(80, 39);
             this.lblIdPedido.Name = "lblIdPedido";
-            this.lblIdPedido.Size = new System.Drawing.Size(40, 13);
+            this.lblIdPedido.Size = new System.Drawing.Size(58, 16);
             this.lblIdPedido.TabIndex = 0;
             this.lblIdPedido.Text = "Pedido";
             // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
+            this.lblIdCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdCliente.Location = new System.Drawing.Point(80, 88);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(39, 13);
+            this.lblIdCliente.Size = new System.Drawing.Size(56, 16);
             this.lblIdCliente.TabIndex = 1;
             this.lblIdCliente.Text = "Cliente";
             // 
@@ -95,9 +99,11 @@
             // lblIdStatus
             // 
             this.lblIdStatus.AutoSize = true;
+            this.lblIdStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdStatus.Location = new System.Drawing.Point(80, 138);
             this.lblIdStatus.Name = "lblIdStatus";
-            this.lblIdStatus.Size = new System.Drawing.Size(37, 13);
+            this.lblIdStatus.Size = new System.Drawing.Size(51, 16);
             this.lblIdStatus.TabIndex = 1;
             this.lblIdStatus.Text = "Status";
             // 
@@ -111,9 +117,11 @@
             // lblDataPedido
             // 
             this.lblDataPedido.AutoSize = true;
+            this.lblDataPedido.BackColor = System.Drawing.Color.Transparent;
+            this.lblDataPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataPedido.Location = new System.Drawing.Point(80, 189);
             this.lblDataPedido.Name = "lblDataPedido";
-            this.lblDataPedido.Size = new System.Drawing.Size(63, 13);
+            this.lblDataPedido.Size = new System.Drawing.Size(91, 16);
             this.lblDataPedido.TabIndex = 1;
             this.lblDataPedido.Text = "DataPedido";
             // 
@@ -127,9 +135,11 @@
             // lblIdTipoPagto
             // 
             this.lblIdTipoPagto.AutoSize = true;
+            this.lblIdTipoPagto.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdTipoPagto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdTipoPagto.Location = new System.Drawing.Point(80, 244);
             this.lblIdTipoPagto.Name = "lblIdTipoPagto";
-            this.lblIdTipoPagto.Size = new System.Drawing.Size(85, 13);
+            this.lblIdTipoPagto.Size = new System.Drawing.Size(123, 16);
             this.lblIdTipoPagto.TabIndex = 1;
             this.lblIdTipoPagto.Text = "Tipo Pagamento";
             // 
@@ -143,9 +153,11 @@
             // lblIdEndereco
             // 
             this.lblIdEndereco.AutoSize = true;
+            this.lblIdEndereco.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdEndereco.Location = new System.Drawing.Point(80, 298);
             this.lblIdEndereco.Name = "lblIdEndereco";
-            this.lblIdEndereco.Size = new System.Drawing.Size(53, 13);
+            this.lblIdEndereco.Size = new System.Drawing.Size(75, 16);
             this.lblIdEndereco.TabIndex = 1;
             this.lblIdEndereco.Text = "Endereço";
             // 

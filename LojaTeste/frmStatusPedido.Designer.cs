@@ -55,16 +55,18 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(9, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.Size = new System.Drawing.Size(116, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Numero Pedido";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TbNumeroPedido
             // 
-            this.TbNumeroPedido.Location = new System.Drawing.Point(12, 82);
+            this.TbNumeroPedido.Location = new System.Drawing.Point(12, 64);
             this.TbNumeroPedido.Name = "TbNumeroPedido";
             this.TbNumeroPedido.Size = new System.Drawing.Size(158, 20);
             this.TbNumeroPedido.TabIndex = 3;

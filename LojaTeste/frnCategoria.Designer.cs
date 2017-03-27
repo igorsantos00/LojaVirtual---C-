@@ -64,9 +64,11 @@
             // lblIdCategoria
             // 
             this.lblIdCategoria.AutoSize = true;
+            this.lblIdCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblIdCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIdCategoria.Location = new System.Drawing.Point(96, 86);
             this.lblIdCategoria.Name = "lblIdCategoria";
-            this.lblIdCategoria.Size = new System.Drawing.Size(52, 13);
+            this.lblIdCategoria.Size = new System.Drawing.Size(76, 16);
             this.lblIdCategoria.TabIndex = 1;
             this.lblIdCategoria.Text = "Categoria";
             // 
@@ -80,9 +82,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(96, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nome";
             // 
@@ -96,9 +100,11 @@
             // lbldesCategoria
             // 
             this.lbldesCategoria.AutoSize = true;
+            this.lbldesCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lbldesCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbldesCategoria.Location = new System.Drawing.Point(96, 190);
             this.lbldesCategoria.Name = "lbldesCategoria";
-            this.lbldesCategoria.Size = new System.Drawing.Size(55, 13);
+            this.lbldesCategoria.Size = new System.Drawing.Size(79, 16);
             this.lbldesCategoria.TabIndex = 1;
             this.lbldesCategoria.Text = "Descrição";
             // 

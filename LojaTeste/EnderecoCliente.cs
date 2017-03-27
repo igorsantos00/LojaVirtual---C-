@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LojaTeste
 {
-    public partial class EnderecoCliente : Form
+    public partial class frmEnderecoCliente : Form
     {
-        public EnderecoCliente()
+        public frmEnderecoCliente()
         {
             InitializeComponent();
         }
