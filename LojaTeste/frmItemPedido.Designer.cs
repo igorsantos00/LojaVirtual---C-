@@ -39,6 +39,7 @@
             this.TbValorPedido = new System.Windows.Forms.TextBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
+            this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.SuspendLayout();
             // 
             // label1
@@ -141,12 +142,22 @@
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
             // 
+            // mnuPrincipal
+            // 
+            this.mnuPrincipal.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
+            this.mnuPrincipal.Name = "mnuPrincipal";
+            this.mnuPrincipal.Size = new System.Drawing.Size(634, 24);
+            this.mnuPrincipal.TabIndex = 6;
+            this.mnuPrincipal.Text = "menuStrip1";
+            // 
             // frmItemPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(634, 561);
+            this.Controls.Add(this.mnuPrincipal);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.TbValorPedido);
@@ -177,5 +188,6 @@
         private System.Windows.Forms.TextBox TbValorPedido;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.MenuStrip mnuPrincipal;
     }
 }

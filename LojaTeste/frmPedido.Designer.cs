@@ -44,20 +44,6 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblIdPedido
@@ -196,106 +182,11 @@
             // mnuPrincipal
             // 
             this.mnuPrincipal.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem,
-            this.cadastroToolStripMenuItem,
-            this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
             this.mnuPrincipal.Size = new System.Drawing.Size(630, 24);
             this.mnuPrincipal.TabIndex = 5;
             this.mnuPrincipal.Text = "menuStrip1";
-            // 
-            // arquivoToolStripMenuItem
-            // 
-            this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.logoutToolStripMenuItem});
-            this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
-            this.arquivoToolStripMenuItem.Text = "Arquivo";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.fileToolStripMenuItem.Text = "Sair";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            // 
-            // cadastroToolStripMenuItem
-            // 
-            this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usuáriosToolStripMenuItem,
-            this.categoriaToolStripMenuItem,
-            this.produtoToolStripMenuItem,
-            this.clienteToolStripMenuItem,
-            this.statusPedidoToolStripMenuItem,
-            this.tipoPagamentoToolStripMenuItem});
-            this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
-            this.cadastroToolStripMenuItem.Text = "Cadastro";
-            // 
-            // usuáriosToolStripMenuItem
-            // 
-            this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.usuáriosToolStripMenuItem.Text = "Usuários";
-            // 
-            // categoriaToolStripMenuItem
-            // 
-            this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.categoriaToolStripMenuItem.Text = "Categoria";
-            // 
-            // produtoToolStripMenuItem
-            // 
-            this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.produtoToolStripMenuItem.Text = "Produto";
-            // 
-            // clienteToolStripMenuItem
-            // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.clienteToolStripMenuItem.Text = "Cliente";
-            // 
-            // statusPedidoToolStripMenuItem
-            // 
-            this.statusPedidoToolStripMenuItem.Name = "statusPedidoToolStripMenuItem";
-            this.statusPedidoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.statusPedidoToolStripMenuItem.Text = "Status Pedido";
-            // 
-            // tipoPagamentoToolStripMenuItem
-            // 
-            this.tipoPagamentoToolStripMenuItem.Name = "tipoPagamentoToolStripMenuItem";
-            this.tipoPagamentoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.tipoPagamentoToolStripMenuItem.Text = "Tipo Pagamento";
-            // 
-            // movimentaçõesToolStripMenuItem
-            // 
-            this.movimentaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pedidoToolStripMenuItem,
-            this.pedidoToolStripMenuItem1});
-            this.movimentaçõesToolStripMenuItem.Name = "movimentaçõesToolStripMenuItem";
-            this.movimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
-            this.movimentaçõesToolStripMenuItem.Text = "Movimentações";
-            // 
-            // pedidoToolStripMenuItem
-            // 
-            this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.pedidoToolStripMenuItem.Text = "Estoque";
-            // 
-            // pedidoToolStripMenuItem1
-            // 
-            this.pedidoToolStripMenuItem1.Name = "pedidoToolStripMenuItem1";
-            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
-            this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
             // frmPedido
             // 
@@ -323,8 +214,6 @@
             this.Name = "frmPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pedido";
-            this.mnuPrincipal.ResumeLayout(false);
-            this.mnuPrincipal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,18 +236,5 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastroToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuáriosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statusPedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoPagamentoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
     }
 }
