@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B5A2744-FEB9-47C6-9713-49987A432CDC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LojaTeste</RootNamespace>
+    <AssemblyName>LojaTeste</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnderecoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EnderecoCliente.designer.cs">
+      <DependentUpon>EnderecoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProduto.designer.cs">
+      <DependentUpon>frmProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEstoque.Designer.cs">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenuPrincipal.Designer.cs">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPedido.Designer.cs">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frnCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frnCategoria.Designer.cs">
+      <DependentUpon>frnCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmItemPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItemPedido.Designer.cs">
+      <DependentUpon>frmItemPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmStatusPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatusPedido.designer.cs">
+      <DependentUpon>frmStatusPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTipoPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTipoPagamento.designer.cs">
+      <DependentUpon>frmTipoPagamento.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EnderecoCliente.resx">
+      <DependentUpon>EnderecoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProduto.resx">
+      <DependentUpon>frmProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEstoque.resx">
+      <DependentUpon>frmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenuPrincipal.resx">
+      <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPedido.resx">
+      <DependentUpon>frmPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frnCategoria.resx">
+      <DependentUpon>frnCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItemPedido.resx">
+      <DependentUpon>frmItemPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="frmStatusPedido.resx">
+      <DependentUpon>frmStatusPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTipoPagamento.resx">
+      <DependentUpon>frmTipoPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logorrpeinfo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lojavirtual.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadeado.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmar1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\confirmar2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sair.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sair1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadeado1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadeado2.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrousuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrocategoria.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastroproduto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrocliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrostatuspedido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadastrotipopagamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Estoque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial31.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TimeWrite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inicial8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Risco.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Risco1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioWhite21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClienetWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verdana 16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookman-Old-Style2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuario36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriasWhit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PEDIDOWhit11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\estoque %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadoraWhathi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProdutosWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layout1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layoutMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StatuPedidoMenu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CategoriasMenu1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculadoraMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-icon-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Setings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoffMenu1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoffMenu11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UsuarioFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdicionarFoto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Adiciona5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deletar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Botão.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Confirma.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layoutTelas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\layoutTelas1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
