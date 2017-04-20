@@ -84,9 +84,9 @@ namespace LojaTeste
         private void imgCliente_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Deseja fazer logoff?");
-            this.Close();
             Form Tela1 = new frmLogin();
-            Tela1.ShowDialog();
+            Tela1.Show();
+            this.Hide();
         }
 
         private void imgStatusPedido_Click(object sender, EventArgs e)
