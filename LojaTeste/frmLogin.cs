@@ -41,7 +41,9 @@ namespace LojaTeste
                     {
                         MessageBox.Show("Seja bem vindo!");
                         Form tela = new frmMenuPrincipal(txtLogin.Text);
-                        tela.ShowDialog();
+                        this.Hide();
+                        tela.Show();
+
                     }
                     else
                     {
