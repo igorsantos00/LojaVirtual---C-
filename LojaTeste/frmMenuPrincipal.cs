@@ -85,7 +85,7 @@ namespace LojaTeste
         {
             MessageBox.Show("Deseja fazer logoff?");
             Form Tela1 = new frmLogin();
-            Tela1.Show();
+            Tela1.Show(); 
             this.Hide();
         }
 
