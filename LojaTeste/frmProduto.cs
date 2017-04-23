@@ -22,7 +22,7 @@ namespace LojaTeste
             public int txtqtdMinEstoque { get; set; }
             public int txtimagem { get; set; }
 
-            //Faz desse objeto um Singleton
+            //Faz desse objeto um Singleton.
             private static clsProduto referencia;
 
             public static clsProduto getInstance()
