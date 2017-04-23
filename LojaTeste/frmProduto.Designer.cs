@@ -28,26 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduto));
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtnomeProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.txtdescProduto = new System.Windows.Forms.TextBox();
+            this.lblPreco = new System.Windows.Forms.Label();
+            this.txtprecProduto = new System.Windows.Forms.TextBox();
+            this.txtidCategoria = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblImagem = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.chkativoProduto = new System.Windows.Forms.CheckBox();
+            this.lblqtdMinEstoque = new System.Windows.Forms.Label();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.imgImagem = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.txtdescontoPromocao = new System.Windows.Forms.TextBox();
+            this.lbldescontoPromocao = new System.Windows.Forms.Label();
+            this.txtqtdMinEstoque = new System.Windows.Forms.TextBox();
+            this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -55,125 +59,118 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 89);
+            this.label2.Location = new System.Drawing.Point(12, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Nome";
             // 
-            // textBox1
+            // txtnomeProduto
             // 
-            this.textBox1.Location = new System.Drawing.Point(13, 108);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtnomeProduto.Location = new System.Drawing.Point(12, 185);
+            this.txtnomeProduto.Name = "txtnomeProduto";
+            this.txtnomeProduto.Size = new System.Drawing.Size(147, 20);
+            this.txtnomeProduto.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(181, 89);
+            this.label3.Location = new System.Drawing.Point(12, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Descrição";
             // 
-            // textBox2
+            // txtdescProduto
             // 
-            this.textBox2.Location = new System.Drawing.Point(184, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtdescProduto.Location = new System.Drawing.Point(12, 227);
+            this.txtdescProduto.Name = "txtdescProduto";
+            this.txtdescProduto.Size = new System.Drawing.Size(606, 20);
+            this.txtdescProduto.TabIndex = 6;
             // 
-            // label4
+            // lblPreco
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Preço";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblPreco.AutoSize = true;
+            this.lblPreco.BackColor = System.Drawing.Color.Transparent;
+            this.lblPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreco.Location = new System.Drawing.Point(12, 310);
+            this.lblPreco.Name = "lblPreco";
+            this.lblPreco.Size = new System.Drawing.Size(49, 16);
+            this.lblPreco.TabIndex = 7;
+            this.lblPreco.Text = "Preço";
+            this.lblPreco.Click += new System.EventHandler(this.label4_Click);
             // 
-            // textBox3
+            // txtprecProduto
             // 
-            this.textBox3.Location = new System.Drawing.Point(13, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(73, 20);
-            this.textBox3.TabIndex = 8;
+            this.txtprecProduto.Location = new System.Drawing.Point(12, 331);
+            this.txtprecProduto.Name = "txtprecProduto";
+            this.txtprecProduto.Size = new System.Drawing.Size(119, 20);
+            this.txtprecProduto.TabIndex = 8;
             // 
-            // comboBox1
+            // txtidCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(138, 170);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.txtidCategoria.FormattingEnabled = true;
+            this.txtidCategoria.Location = new System.Drawing.Point(137, 331);
+            this.txtidCategoria.Name = "txtidCategoria";
+            this.txtidCategoria.Size = new System.Drawing.Size(121, 21);
+            this.txtidCategoria.TabIndex = 9;
             // 
-            // label5
+            // lblCategoria
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(135, 151);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 16);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Categoria";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(134, 310);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(76, 16);
+            this.lblCategoria.TabIndex = 10;
+            this.lblCategoria.Text = "Categoria";
             // 
-            // label6
+            // lblImagem
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(13, 214);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 16);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Imagem";
+            this.lblImagem.AutoSize = true;
+            this.lblImagem.BackColor = System.Drawing.Color.Transparent;
+            this.lblImagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagem.Location = new System.Drawing.Point(195, 253);
+            this.lblImagem.Name = "lblImagem";
+            this.lblImagem.Size = new System.Drawing.Size(63, 16);
+            this.lblImagem.TabIndex = 12;
+            this.lblImagem.Text = "Imagem";
             // 
-            // label7
+            // lblStatus
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(310, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 16);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Status";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.Location = new System.Drawing.Point(205, 388);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(51, 16);
+            this.lblStatus.TabIndex = 13;
+            this.lblStatus.Text = "Status";
             // 
-            // checkBox1
+            // chkativoProduto
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Location = new System.Drawing.Point(313, 173);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "Ativo";
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.chkativoProduto.AutoSize = true;
+            this.chkativoProduto.BackColor = System.Drawing.Color.Transparent;
+            this.chkativoProduto.Location = new System.Drawing.Point(208, 410);
+            this.chkativoProduto.Name = "chkativoProduto";
+            this.chkativoProduto.Size = new System.Drawing.Size(50, 17);
+            this.chkativoProduto.TabIndex = 14;
+            this.chkativoProduto.Text = "Ativo";
+            this.chkativoProduto.UseVisualStyleBackColor = false;
             // 
-            // label8
+            // lblqtdMinEstoque
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 304);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 16);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "Quantide Estoque";
-            // 
-            // trackBar1
-            // 
-            this.trackBar1.Location = new System.Drawing.Point(13, 334);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(104, 45);
-            this.trackBar1.TabIndex = 17;
+            this.lblqtdMinEstoque.AutoSize = true;
+            this.lblqtdMinEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.lblqtdMinEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblqtdMinEstoque.Location = new System.Drawing.Point(12, 463);
+            this.lblqtdMinEstoque.Name = "lblqtdMinEstoque";
+            this.lblqtdMinEstoque.Size = new System.Drawing.Size(131, 16);
+            this.lblqtdMinEstoque.TabIndex = 16;
+            this.lblqtdMinEstoque.Text = "Quantide Estoque";
             // 
             // mnuPrincipal
             // 
@@ -184,22 +181,22 @@
             this.mnuPrincipal.TabIndex = 18;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
-            // pictureBox1
+            // imgImagem
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 233);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.imgImagem.Location = new System.Drawing.Point(264, 253);
+            this.imgImagem.Name = "imgImagem";
+            this.imgImagem.Size = new System.Drawing.Size(353, 249);
+            this.imgImagem.TabIndex = 11;
+            this.imgImagem.TabStop = false;
             // 
             // btnSair
             // 
             this.btnSair.AutoEllipsis = true;
             this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(165, 411);
+            this.btnSair.Location = new System.Drawing.Point(164, 511);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(118, 50);
+            this.btnSair.Size = new System.Drawing.Size(118, 45);
             this.btnSair.TabIndex = 19;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -210,12 +207,43 @@
             this.btnConfirmar.AutoEllipsis = true;
             this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(16, 411);
+            this.btnConfirmar.Location = new System.Drawing.Point(15, 511);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
+            this.btnConfirmar.Size = new System.Drawing.Size(118, 45);
             this.btnConfirmar.TabIndex = 20;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // txtdescontoPromocao
+            // 
+            this.txtdescontoPromocao.Location = new System.Drawing.Point(15, 408);
+            this.txtdescontoPromocao.Name = "txtdescontoPromocao";
+            this.txtdescontoPromocao.Size = new System.Drawing.Size(147, 20);
+            this.txtdescontoPromocao.TabIndex = 8;
+            // 
+            // lbldescontoPromocao
+            // 
+            this.lbldescontoPromocao.AutoSize = true;
+            this.lbldescontoPromocao.BackColor = System.Drawing.Color.Transparent;
+            this.lbldescontoPromocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldescontoPromocao.Location = new System.Drawing.Point(12, 389);
+            this.lbldescontoPromocao.Name = "lbldescontoPromocao";
+            this.lbldescontoPromocao.Size = new System.Drawing.Size(150, 16);
+            this.lbldescontoPromocao.TabIndex = 10;
+            this.lbldescontoPromocao.Text = "Desconto/Promoção";
+            // 
+            // txtqtdMinEstoque
+            // 
+            this.txtqtdMinEstoque.Location = new System.Drawing.Point(15, 482);
+            this.txtqtdMinEstoque.Name = "txtqtdMinEstoque";
+            this.txtqtdMinEstoque.Size = new System.Drawing.Size(128, 20);
+            this.txtqtdMinEstoque.TabIndex = 8;
+            // 
+            // produtoBindingSource
+            // 
+            this.produtoBindingSource.DataMember = "Produto";
+            // 
             // 
             // frmProduto
             // 
@@ -226,19 +254,21 @@
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.mnuPrincipal);
-            this.Controls.Add(this.trackBar1);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.lblqtdMinEstoque);
+            this.Controls.Add(this.chkativoProduto);
+            this.Controls.Add(this.lblStatus);
+            this.Controls.Add(this.lblImagem);
+            this.Controls.Add(this.imgImagem);
+            this.Controls.Add(this.lbldescontoPromocao);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.txtidCategoria);
+            this.Controls.Add(this.txtdescontoPromocao);
+            this.Controls.Add(this.txtqtdMinEstoque);
+            this.Controls.Add(this.txtprecProduto);
+            this.Controls.Add(this.lblPreco);
+            this.Controls.Add(this.txtdescProduto);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtnomeProduto);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -246,8 +276,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,21 +285,24 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtnomeProduto;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TextBox txtdescProduto;
+        private System.Windows.Forms.Label lblPreco;
+        private System.Windows.Forms.TextBox txtprecProduto;
+        private System.Windows.Forms.ComboBox txtidCategoria;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.PictureBox imgImagem;
+        private System.Windows.Forms.Label lblImagem;
+        private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.CheckBox chkativoProduto;
+        private System.Windows.Forms.Label lblqtdMinEstoque;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.TextBox txtdescontoPromocao;
+        private System.Windows.Forms.Label lbldescontoPromocao;
+        private System.Windows.Forms.TextBox txtqtdMinEstoque;
+        private System.Windows.Forms.BindingSource produtoBindingSource;
     }
 }
