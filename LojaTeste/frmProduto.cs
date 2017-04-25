@@ -37,7 +37,8 @@ namespace LojaTeste
             {
                 bool inserir = (this.txtidProduto == 0);
 
-                SqlConnection cn = clsConexao.Conectar();
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
 
                 if (inserir)
@@ -87,7 +88,8 @@ namespace LojaTeste
             public static List<clsProduto> SelecionarProduto()
             {
                 string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto";
-                SqlConnection cn = clsConexao.Conectar();
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
 
@@ -118,8 +120,9 @@ namespace LojaTeste
             public static List<clsProduto> SelecionarProduto(int IdProduto)
             {
                 string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto" +
-                    "WHERE idProduto = @txtidProduto"; 
-                SqlConnection cn = clsConexao.Conectar();
+                    "WHERE idProduto = @txtidProduto";
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
                 cmd.CommandText = sql;
 

@@ -10,7 +10,7 @@ namespace dataModel
     public class clsConexao
     {
        
-            public static SqlConnection Conectar()
+            public SqlConnection Conectar()
             {
                 SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
                 sb.UserID = "TSI";
