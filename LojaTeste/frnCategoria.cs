@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dataModel;
 
 namespace LojaTeste
 {
@@ -55,6 +56,14 @@ namespace LojaTeste
         private void btnSair_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnBusca_Click(object sender, EventArgs e)
+        {
+           /* List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
+            dgCategoria.DataSource = Categoria;
+            dgCategoria.Columns[0].Visible = false;
+            dgCategoria.Columns["senhaCliente"].Visible = false;*/
         }
     }
 }
