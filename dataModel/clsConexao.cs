@@ -9,14 +9,14 @@ namespace dataModel
 {
     public class clsConexao
     {
-       
+        
             public SqlConnection Conectar()
             {
                 SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
                 sb.UserID = "TSI";
-                sb.Password = "SIstemas123";
-                sb.DataSource = "assirati.database.windows.net";
-                sb.InitialCatalog = "Kanino";
+                sb.Password = "SistemasInternet123";
+                sb.DataSource = "foxtrot-pi.database.windows.net";
+                sb.InitialCatalog = "foxtrot";
 
                 SqlConnection cn = new SqlConnection(sb.ConnectionString);
                 cn.Open();

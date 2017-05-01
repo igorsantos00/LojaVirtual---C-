@@ -37,7 +37,7 @@ namespace dataModel
                 cmd.CommandText = "INSERT INTO Categoria " +
                                 "(idCategoria, nomeCategoria, descCategoria)" +
                                 "VALUES " +
-                                "(@idCategori, @nomeCategoria, @descCategoria)";
+                                "(@idCategoria, @nomeCategoria, @descCategoria)";
             else
             {
                 cmd.CommandText = "UPDATE Categoria " +
