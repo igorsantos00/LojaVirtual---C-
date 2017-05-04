@@ -63,7 +63,14 @@ namespace LojaTeste
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
             dgCategoria.Columns[0].Visible = false;
-            dgCategoria.Columns["senhaCliente"].Visible = true;
+           // dgCategoria.Columns["senhaCliente"].Visible = true;
+        }
+
+        private void frmCategoria_Load(object sender, EventArgs e)
+        {
+            List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
+            dgCategoria.DataSource = Categoria;
+            dgCategoria.Columns[0].Visible = false;
         }
     }
 }

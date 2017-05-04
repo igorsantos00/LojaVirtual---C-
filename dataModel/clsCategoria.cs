@@ -74,10 +74,22 @@ namespace dataModel
             List<clsCategoria> Categoria = new List<clsCategoria>();
             while (dr.Read())
             {
+
                 clsCategoria C = new clsCategoria();
-                C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
-                C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
-                C.descCategoria = dr.GetString(dr.GetOrdinal("descCategoria"));
+                if (!dr.IsDBNull(dr.GetOrdinal("idCategoria")))
+                {
+                    C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("descCategoria")))
+                {
+                    C.descCategoria = dr.GetString(dr.GetOrdinal("descCategoria"));
+                }
+
                 Categoria.Add(C);
             }
 
@@ -101,9 +113,21 @@ namespace dataModel
             while (dr.Read())
             {
                 clsCategoria C = new clsCategoria();
-                C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
-                C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
-                C.descCategoria = dr.GetString(dr.GetOrdinal("descCategoria"));
+                
+                if (!dr.IsDBNull(dr.GetOrdinal("idCategoria")))
+                {
+                    C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                }
+                
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("descCategoria")))
+                {
+                    C.descCategoria = dr.GetString(dr.GetOrdinal("descCategoria"));
+                }
+                
                 Categoria.Add(C);
             }
 

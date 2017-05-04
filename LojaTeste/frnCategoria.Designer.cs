@@ -174,6 +174,7 @@
             this.Name = "frmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria";
+            this.Load += new System.EventHandler(this.frmCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
