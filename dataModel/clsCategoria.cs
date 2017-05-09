@@ -25,31 +25,31 @@ namespace dataModel
             return referencia;
         }
 
-        public void Salvar()
+        public int Salvar(string nomeCategoria, string descCategoria)
         {
             bool inserir = (this.idCategoria == 0);
-
+            int linhas = 0;
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
 
             if (inserir)
                 cmd.CommandText = "INSERT INTO Categoria " +
-                                "(idCategoria, nomeCategoria, descCategoria)" +
+                                "(nomeCategoria, descCategoria)" +
                                 "VALUES " +
-                                "(@idCategoria, @nomeCategoria, @descCategoria)";
+                                "(@nomeCategoria, @descCategoria);";
             else
             {
                 cmd.CommandText = "UPDATE Categoria " +
                                     "SET nomeCategoria = @nomeCategoria, " +
-                                    "descCategoria = @descCategoria, ";
+                                    "descCategoria = @descCategoria ";
 
-                cmd.Parameters.Add("idCategoria", SqlDbType.Int).Value = idCategoria;
+                cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
             }
 
-            cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = this.nomeCategoria;
-            cmd.Parameters.Add("@descCategoria", SqlDbType.VarChar, 100).Value = this.descCategoria;
-            cmd.ExecuteNonQuery();
+            cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = nomeCategoria;
+            cmd.Parameters.Add("@descCategoria", SqlDbType.VarChar, 100).Value = descCategoria;
+            linhas =  cmd.ExecuteNonQuery();
 
             if (inserir)
             {
@@ -57,7 +57,7 @@ namespace dataModel
                 cmd.CommandText = "SELECT @@Identity";
                 this.idCategoria = Convert.ToInt32(cmd.ExecuteScalar());
             }
-
+            return linhas;
             cn.Close();
             cn.Dispose();
         }

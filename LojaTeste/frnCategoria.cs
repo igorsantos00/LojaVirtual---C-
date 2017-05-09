@@ -63,7 +63,7 @@ namespace LojaTeste
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
             dgCategoria.Columns[0].Visible = false;
-           // dgCategoria.Columns["senhaCliente"].Visible = true;
+          
         }
 
         private void frmCategoria_Load(object sender, EventArgs e)
@@ -71,6 +71,31 @@ namespace LojaTeste
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
             dgCategoria.Columns[0].Visible = false;
+        }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            clsCategoria C = new clsCategoria();
+            int valida = C.Salvar(txtNomeCategoria.Text, txtDescCategoria.Text);
+            if (valida >= 1)
+            {
+                MessageBox.Show("Inserido com sucesso");
+            }
+            else {
+
+                MessageBox.Show("Erro verifique os campos");
+            }
+            
+        }
+
+        private void btnSelecionar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
