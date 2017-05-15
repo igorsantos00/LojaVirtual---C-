@@ -33,11 +33,15 @@ namespace dataModel
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
 
+            //Inserindo Categorias
             if (inserir)
                 cmd.CommandText = "INSERT INTO Categoria " +
                                 "(nomeCategoria, descCategoria)" +
                                 "VALUES " +
-                                "(@nomeCategoria, @descCategoria);";
+                                "(@nomeCategoria, @descCategoria);"+
+                                "select SCOPE_IDENTITY();";
+
+            //Alterando Categorias
             else
             {
                 cmd.CommandText = "UPDATE Categoria " +
@@ -49,7 +53,8 @@ namespace dataModel
 
             cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = nomeCategoria;
             cmd.Parameters.Add("@descCategoria", SqlDbType.VarChar, 100).Value = descCategoria;
-            linhas =  cmd.ExecuteNonQuery();
+            linhas = Convert.ToInt32(cmd.ExecuteScalar());
+
 
             if (inserir)
             {
@@ -96,7 +101,7 @@ namespace dataModel
             return Categoria;
         }
 
-        public static List<clsCategoria> SelecionarCategoria(int idCategoria)
+        public static List<clsCategoria> SelecionarCategoriaID(int idCategoria)
         {
             string sql = "SELECT idCategoria, nomeCategoria FROM dbo.Categoria " +
                 "WHERE idCategoria = @idCategoria";
@@ -133,6 +138,8 @@ namespace dataModel
 
             return Categoria;
         }
+
+
 
     }
 }

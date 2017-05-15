@@ -152,7 +152,7 @@
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategoria.Location = new System.Drawing.Point(12, 90);
             this.dgCategoria.Name = "dgCategoria";
-            this.dgCategoria.Size = new System.Drawing.Size(606, 207);
+            this.dgCategoria.Size = new System.Drawing.Size(606, 225);
             this.dgCategoria.TabIndex = 9;
             // 
             // btnAlterar

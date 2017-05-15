@@ -11,12 +11,39 @@ using dataModel;
 
 namespace LojaTeste
 {
+  
+
+
     public partial class frmCategoria : Form
     {
         public frmCategoria()
         {
             InitializeComponent();
         }
+
+        public void configuraDgCategoria()
+        {
+
+            dgCategoria.Columns[0].HeaderText = "Código";
+            dgCategoria.Columns[1].HeaderText = "Nome";
+            dgCategoria.Columns[2].HeaderText = "Descrição";
+
+            //Redimenciona o Tamanho da Coluna
+
+            dgCategoria.Columns[0].Width = 50;
+            dgCategoria.Columns[1].Width = 100;
+            dgCategoria.Columns[2].Width = 100;
+
+        }
+
+        public void atualizarDgCategoria() {
+
+            List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
+            dgCategoria.DataSource = Categoria;
+            configuraDgCategoria();
+
+        }
+
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -60,17 +87,21 @@ namespace LojaTeste
 
         private void btnBusca_Click(object sender, EventArgs e)
         {
-            List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
-            dgCategoria.DataSource = Categoria;
-            dgCategoria.Columns[0].Visible = false;
-          
+            if (txtIdCategoria.Text.Equals(""))
+            {
+                atualizarDgCategoria();
+            }
+            else
+            {
+                List<clsCategoria> Categoria = clsCategoria.SelecionarCategoriaID(Convert.ToInt32(txtIdCategoria.Text));
+                dgCategoria.DataSource = Categoria;
+                configuraDgCategoria();
+            }
         }
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
-            dgCategoria.DataSource = Categoria;
-            dgCategoria.Columns[0].Visible = false;
+            atualizarDgCategoria();
         }
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
@@ -90,7 +121,8 @@ namespace LojaTeste
 
                 MessageBox.Show("Erro verifique os campos");
             }
-            
+
+            atualizarDgCategoria();
         }
 
         private void btnSelecionar_Click_1(object sender, EventArgs e)
