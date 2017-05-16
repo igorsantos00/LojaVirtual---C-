@@ -11,16 +11,16 @@ namespace dataModel
 {
     class clsProduto
     {
-        public int txtidProduto { get; set; }
-        public string txtnomeProduto { get; set; }
-        public string txtdescProduto { get; set; }
-        public decimal txtprecProduto { get; set; }
-        public decimal txtdescontoPromocao { get; set; }
-        public int txtidCategoria { get; set; }
-        public string txtativoProduto { get; set; }
-        public int txtidUsuario { get; set; }
-        public int txtqtdMinEstoque { get; set; }
-        public int txtimagem { get; set; }
+        public int idProduto { get; set; }
+        public string nomeProduto { get; set; }
+        public string descProduto { get; set; }
+        public decimal precProduto { get; set; }
+        public decimal descontoPromocao { get; set; }
+        public int idCategoria { get; set; }
+        public string ativoProduto { get; set; }
+        public int idUsuario { get; set; }
+        public int qtdMinEstoque { get; set; }
+        public int imagem { get; set; }
 
         //Faz desse objeto um Singleton.
         private static clsProduto referencia;
@@ -35,7 +35,7 @@ namespace dataModel
 
         public void Salvar()
         {
-            bool inserir = (this.txtidProduto == 0);
+            bool inserir = (this.idProduto == 0);
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -45,40 +45,40 @@ namespace dataModel
                 cmd.CommandText = "INSERT INTO Produto " +
                                 "(nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem)" +
                                 "VALUES " +
-                                "(@txtnomeProduto, @txtdescProduto, @txtprecProduto, @txtdescontoPromocao, @txtidCategoria, @txtativoProduto, @txtidUsuario, @txtqtdMinEstoque, @txtimagem)";
+                                "(@nomeProduto, @descProduto, @precProduto, @descontoPromocao, @idCategoria, @ativoProduto, @idUsuario, @qtdMinEstoque, @imagem)";
             else
             {
                 cmd.CommandText = "UPDATE Produto " +
-                                    "SET nomeProduto      = @txtnomeProduto, " +
-                                        "descProduto      = @txtdescProduto, " +
-                                        "prescProduto     = @txtprescProduto, " +
-                                        "descontoPromocao = @txtdescontoPromocao, " +
-                                        "idCategoria      = @txtidCategoria, " +
-                                        "ativoProduto     = @txtativoProduto, " +
-                                        "idUsuario        = @txtidUsuario, " +
-                                        "qtdMinEstoque    = @txtqtdMinEstoque, " +
-                                        "imagem           = @txtimagem " +
-                                        "WHERE idProduto  = @txtidProduto";
+                                    "SET nomeProduto      = @nomeProduto, " +
+                                        "descProduto      = @descProduto, " +
+                                        "prescProduto     = @prescProduto, " +
+                                        "descontoPromocao = @descontoPromocao, " +
+                                        "idCategoria      = @idCategoria, " +
+                                        "ativoProduto     = @ativoProduto, " +
+                                        "idUsuario        = @idUsuario, " +
+                                        "qtdMinEstoque    = @qtdMinEstoque, " +
+                                        "imagem           = @imagem " +
+                                        "WHERE idProduto  = @idProduto";
 
-                cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = txtidProduto;
+                cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
             }
 
-            cmd.Parameters.Add("@txtnomeProduto", SqlDbType.VarChar, 70).Value = this.txtnomeProduto;
-            cmd.Parameters.Add("@txtdescProduto", SqlDbType.VarChar, 500).Value = this.txtdescProduto;
-            cmd.Parameters.Add("@txtprecProduto", SqlDbType.Int).Value = this.txtprecProduto;
-            cmd.Parameters.Add("@txtdescontoPromocao", SqlDbType.Money).Value = this.txtdescontoPromocao;
-            cmd.Parameters.Add("@txtidCategoria", SqlDbType.Int).Value = this.txtidCategoria;
-            cmd.Parameters.Add("@txtativoProduto", SqlDbType.VarChar, 1).Value = this.txtativoProduto;
-            cmd.Parameters.Add("@txtidUsuario", SqlDbType.Int).Value = this.txtidUsuario;
-            cmd.Parameters.Add("@txtqtdMinEstoque", SqlDbType.Int).Value = this.txtqtdMinEstoque;
-            cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = this.txtimagem;
+            cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar, 70).Value = this.nomeProduto;
+            cmd.Parameters.Add("@descProduto", SqlDbType.VarChar, 500).Value = this.descProduto;
+            cmd.Parameters.Add("@precProduto", SqlDbType.Int).Value = this.precProduto;
+            cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = this.descontoPromocao;
+            cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = this.idCategoria;
+            cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = this.ativoProduto;
+            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = this.idUsuario;
+            cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = this.qtdMinEstoque;
+            cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = this.imagem;
             cmd.ExecuteNonQuery();
 
             if (inserir)
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "SELECT @@Identity";
-                this.txtidProduto = Convert.ToInt32(cmd.ExecuteScalar());
+                this.idProduto = Convert.ToInt32(cmd.ExecuteScalar());
             }
 
             cn.Close();
@@ -98,16 +98,16 @@ namespace dataModel
             while (dr.Read())
             {
                 clsProduto C = new clsProduto();
-                C.txtidProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
-                C.txtnomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                C.txtdescProduto = dr.GetString(dr.GetOrdinal("descProduto"));
-                C.txtprecProduto = dr.GetInt32(dr.GetOrdinal("precProduto"));
-                C.txtdescontoPromocao = dr.GetInt32(dr.GetOrdinal("descontoPromocao"));
-                C.txtidCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
-                C.txtativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
-                C.txtidUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                C.txtqtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
-                C.txtimagem = dr.GetInt32(dr.GetOrdinal("imagem"));
+                C.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                C.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                C.descProduto = dr.GetString(dr.GetOrdinal("descProduto"));
+                C.precProduto = dr.GetInt32(dr.GetOrdinal("precProduto"));
+                C.descontoPromocao = dr.GetInt32(dr.GetOrdinal("descontoPromocao"));
+                C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                C.ativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                C.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                C.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                C.imagem = dr.GetInt32(dr.GetOrdinal("imagem"));
                 Produto.Add(C);
             }
 
@@ -120,7 +120,7 @@ namespace dataModel
         public static List<clsProduto> SelecionarProduto(int IdProduto)
         {
             string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto" +
-                "WHERE idProduto = @txtidProduto";
+                "WHERE idProduto = @idProduto";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -131,16 +131,16 @@ namespace dataModel
             while (dr.Read())
             {
                 clsProduto C = new clsProduto();
-                C.txtidProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
-                C.txtnomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
-                C.txtdescProduto = dr.GetString(dr.GetOrdinal("descProduto"));
-                C.txtprecProduto = dr.GetInt32(dr.GetOrdinal("precProduto"));
-                C.txtdescontoPromocao = dr.GetInt32(dr.GetOrdinal("descontoPromocao"));
-                C.txtidCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
-                C.txtativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
-                C.txtidUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                C.txtqtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
-                C.txtimagem = dr.GetInt32(dr.GetOrdinal("imagem"));
+                C.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                C.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                C.descProduto = dr.GetString(dr.GetOrdinal("descProduto"));
+                C.precProduto = dr.GetInt32(dr.GetOrdinal("precProduto"));
+                C.descontoPromocao = dr.GetInt32(dr.GetOrdinal("descontoPromocao"));
+                C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                C.ativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                C.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                C.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                C.imagem = dr.GetInt32(dr.GetOrdinal("imagem"));
                 Produto.Add(C);
             }
 

@@ -11,12 +11,12 @@ namespace dataModel
 {
     class clsUsuario
     {
-        public int txtidUsuario { get; set; }
-        public string txtloginUsuario { get; set; }
-        public string txtsenhaUsuario { get; set; }
-        public decimal txtnomeUsuario { get; set; }
-        public decimal txttipoPerfil { get; set; }
-        public int txtusuarioAtivo { get; set; }
+        public int idUsuario { get; set; }
+        public string loginUsuario { get; set; }
+        public string senhaUsuario { get; set; }
+        public decimal nomeUsuario { get; set; }
+        public decimal tipoPerfil { get; set; }
+        public int usuarioAtivo { get; set; }
         
 
         //Faz desse objeto um Singleton.
@@ -32,7 +32,7 @@ namespace dataModel
 
         public void Salvar()
         {
-            bool inserir = (this.txtidUsuario == 0);
+            bool inserir = (this.idUsuario == 0);
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -42,31 +42,31 @@ namespace dataModel
                 cmd.CommandText = "INSERT INTO Usuario " +
                                 "(loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo)" +
                                 "VALUES " +
-                                "(@txtloginUsuario, @txtsenhaUsuario, @txtnomeUsuario, @txttipoPerfil, @txtusuarioAtivo)";
+                                "(@loginUsuario, @senhaUsuario, @nomeUsuario, @tipoPerfil, @usuarioAtivo)";
             else
             {
                 cmd.CommandText = "UPDATE Produto " +
-                                    "SET loginUsuario      = @txtloginUsuario, " +
-                                        "senhaUsuario      = @txtsenhaUsuario, " +
-                                        "nomeUsuario     = @txtnomeUsuario, " +
-                                        "tipoPerfil = @txttipoPerfil, " +
-                                        "usuarioAtivo      = @txtusuarioAtivo, ";
+                                    "SET loginUsuario      = @loginUsuario, " +
+                                        "senhaUsuario      = @senhaUsuario, " +
+                                        "nomeUsuario     = @nomeUsuario, " +
+                                        "tipoPerfil = @tipoPerfil, " +
+                                        "usuarioAtivo      = @usuarioAtivo, ";
 
-                cmd.Parameters.Add("idUsuario", SqlDbType.Int).Value = txtidUsuario;
+                cmd.Parameters.Add("idUsuario", SqlDbType.Int).Value = idUsuario;
             }
 
-            cmd.Parameters.Add("@txtloginUsuario", SqlDbType.VarChar, 70).Value = this.txtloginUsuario;
-            cmd.Parameters.Add("@txtsenhaUsuario", SqlDbType.VarChar, 500).Value = this.txtsenhaUsuario;
-            cmd.Parameters.Add("@txtnomeUsuario", SqlDbType.Int).Value = this.txtnomeUsuario;
-            cmd.Parameters.Add("@txttipoPerfil", SqlDbType.Money).Value = this.txttipoPerfil;
-            cmd.Parameters.Add("@txtusuarioAtivo", SqlDbType.Int).Value = this.txtusuarioAtivo;
+            cmd.Parameters.Add("@loginUsuario", SqlDbType.VarChar, 70).Value = this.loginUsuario;
+            cmd.Parameters.Add("@senhaUsuario", SqlDbType.VarChar, 500).Value = this.senhaUsuario;
+            cmd.Parameters.Add("@nomeUsuario", SqlDbType.Int).Value = this.nomeUsuario;
+            cmd.Parameters.Add("@tipoPerfil", SqlDbType.Money).Value = this.tipoPerfil;
+            cmd.Parameters.Add("@usuarioAtivo", SqlDbType.Int).Value = this.usuarioAtivo;
             cmd.ExecuteNonQuery();
 
             if (inserir)
             {
                 cmd.Parameters.Clear();
                 cmd.CommandText = "SELECT @@Identity";
-                this.txtidUsuario = Convert.ToInt32(cmd.ExecuteScalar());
+                this.idUsuario = Convert.ToInt32(cmd.ExecuteScalar());
             }
 
             cn.Close();
@@ -86,12 +86,12 @@ namespace dataModel
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
-                U.txtidUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                U.txtloginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-                U.txtsenhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
-                U.txtnomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
-                U.txttipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
-                U.txtusuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
+                U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                U.nomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
+                U.tipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
+                U.usuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
                 Usuario.Add(U);
             }
 
@@ -104,7 +104,7 @@ namespace dataModel
         public static List<clsUsuario> SelecionarUsuario(int IdUsuario)
         {
             string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto" +
-                "WHERE idProduto = @txtidProduto";
+                "WHERE idProduto = @idProduto";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -115,12 +115,12 @@ namespace dataModel
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
-                U.txtidUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                U.txtloginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-                U.txtsenhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
-                U.txtnomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
-                U.txttipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
-                U.txtusuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
+                U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                U.nomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
+                U.tipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
+                U.usuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
                 Usuario.Add(U);
             }
             
