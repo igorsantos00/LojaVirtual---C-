@@ -15,7 +15,9 @@ namespace LojaTeste
     {
         public frmMenuPrincipal()
         {
-            
+            InitializeComponent();
+            Form login = new frmLogin();
+            login.ShowDialog();
         }
 
         public frmMenuPrincipal(string text)
@@ -71,11 +73,6 @@ namespace LojaTeste
            
         }
 
-        private void imgCategoria_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void imgProduto_Click(object sender, EventArgs e)
         {
             Form tela = new frmProduto();
@@ -86,8 +83,11 @@ namespace LojaTeste
         {
             MessageBox.Show("Deseja fazer logoff?");
             Form Tela1 = new frmLogin();
-            Tela1.Show(); 
+            Tela1.Show();
             this.Hide();
+            Form frmMenuPrincipal = new frmMenuPrincipal();
+            frmMenuPrincipal.Show();
+            
         }
 
         private void imgStatusPedido_Click(object sender, EventArgs e)
@@ -103,16 +103,6 @@ namespace LojaTeste
         }
 
        
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {

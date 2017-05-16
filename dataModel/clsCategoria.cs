@@ -103,7 +103,7 @@ namespace dataModel
 
         public static List<clsCategoria> SelecionarCategoriaID(int idCategoria)
         {
-            string sql = "SELECT idCategoria, nomeCategoria FROM dbo.Categoria " +
+            string sql = "SELECT idCategoria, nomeCategoria, descCategoria FROM dbo.Categoria " +
                 "WHERE idCategoria = @idCategoria";
 
             clsConexao conexao = new clsConexao();

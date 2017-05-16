@@ -31,8 +31,8 @@ namespace LojaTeste
             //Redimenciona o Tamanho da Coluna
 
             dgCategoria.Columns[0].Width = 50;
-            dgCategoria.Columns[1].Width = 100;
-            dgCategoria.Columns[2].Width = 100;
+            dgCategoria.Columns[1].Width = 150;
+            dgCategoria.Columns[2].Width = 347;
 
         }
 
