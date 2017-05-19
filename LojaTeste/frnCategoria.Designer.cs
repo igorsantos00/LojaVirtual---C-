@@ -41,7 +41,7 @@
             this.btnBusca = new System.Windows.Forms.Button();
             this.dgCategoria = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.Selecionar = new System.Windows.Forms.Button();
+            this.btnExcluirCategoria = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,6 +151,7 @@
             this.dgCategoria.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategoria.Location = new System.Drawing.Point(12, 90);
+            this.dgCategoria.MultiSelect = false;
             this.dgCategoria.Name = "dgCategoria";
             this.dgCategoria.Size = new System.Drawing.Size(606, 225);
             this.dgCategoria.TabIndex = 9;
@@ -168,19 +169,19 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
-            // Selecionar
+            // btnExcluirCategoria
             // 
-            this.Selecionar.AutoEllipsis = true;
-            this.Selecionar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.Selecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Selecionar.Location = new System.Drawing.Point(12, 321);
-            this.Selecionar.Name = "Selecionar";
-            this.Selecionar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Selecionar.Size = new System.Drawing.Size(118, 36);
-            this.Selecionar.TabIndex = 6;
-            this.Selecionar.Text = "Selecionar";
-            this.Selecionar.UseVisualStyleBackColor = false;
-            this.Selecionar.Click += new System.EventHandler(this.btnSelecionar_Click_1);
+            this.btnExcluirCategoria.AutoEllipsis = true;
+            this.btnExcluirCategoria.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnExcluirCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluirCategoria.Location = new System.Drawing.Point(151, 321);
+            this.btnExcluirCategoria.Name = "btnExcluirCategoria";
+            this.btnExcluirCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnExcluirCategoria.Size = new System.Drawing.Size(118, 36);
+            this.btnExcluirCategoria.TabIndex = 6;
+            this.btnExcluirCategoria.Text = "Excluir";
+            this.btnExcluirCategoria.UseVisualStyleBackColor = false;
+            this.btnExcluirCategoria.Click += new System.EventHandler(this.btnExcluirCategoria_Click);
             // 
             // frmCategoria
             // 
@@ -190,7 +191,7 @@
             this.ClientSize = new System.Drawing.Size(630, 557);
             this.Controls.Add(this.dgCategoria);
             this.Controls.Add(this.btnBusca);
-            this.Controls.Add(this.Selecionar);
+            this.Controls.Add(this.btnExcluirCategoria);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnInserir);
@@ -227,6 +228,6 @@
         private System.Windows.Forms.Button btnBusca;
         private System.Windows.Forms.DataGridView dgCategoria;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.Button Selecionar;
+        private System.Windows.Forms.Button btnExcluirCategoria;
     }
 }

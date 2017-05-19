@@ -11,7 +11,7 @@ using dataModel;
 
 namespace LojaTeste
 {
-  
+
 
 
     public partial class frmCategoria : Form
@@ -21,7 +21,7 @@ namespace LojaTeste
             InitializeComponent();
         }
 
-        public void configuraDgCategoria()
+        private void configuraDgCategoria()
         {
 
             dgCategoria.Columns[0].HeaderText = "Código";
@@ -36,7 +36,8 @@ namespace LojaTeste
 
         }
 
-        public void atualizarDgCategoria() {
+        private void atualizarDgCategoria()
+        {
 
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
@@ -52,32 +53,8 @@ namespace LojaTeste
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtIdCategoria.Text.Equals(""))
-            {
-                MessageBox.Show("Informar a Categoria!");
-            }
-            else
-            {
-                if (txtNomeCategoria.Text.Equals(""))
-                {
-                    MessageBox.Show("Informar Nome!");
-                }
-                else
-                {
-                    if (txtDescCategoria.Text.Equals(""))
-                    {
-                        MessageBox.Show("Informar Descrição!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Dados Conformados!");
-                        txtIdCategoria.Text = "";
-                        txtNomeCategoria.Text = "";
-                        txtDescCategoria.Text = "";
-                    }
-                }
 
-            }
+
         }
 
         private void btnSair_Click_1(object sender, EventArgs e)
@@ -106,27 +83,64 @@ namespace LojaTeste
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsCategoria C = new clsCategoria();
-            int valida = C.Salvar(txtNomeCategoria.Text, txtDescCategoria.Text);
-            if (valida >= 1)
+            string retorno = C.Salvar(txtNomeCategoria.Text, txtDescCategoria.Text);
+            try
             {
-                MessageBox.Show("Inserido com sucesso");
+                int idCategoria = Convert.ToInt32(retorno);
+                MessageBox.Show("Inserido com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else {
-
-                MessageBox.Show("Erro verifique os campos");
+            catch (Exception)
+            {
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
-
+              
             atualizarDgCategoria();
         }
 
-        private void btnSelecionar_Click_1(object sender, EventArgs e)
+        private void btnExcluirCategoria_Click(object sender, EventArgs e)
         {
+            //Verifica se tem algum registro selecionado
+            if (dgCategoria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma categoria selecionada");
+                return;
+            }
+            //Pergunta se quer mesmo excluir
+            DialogResult resultado = MessageBox.Show("Deseja excluir", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            clsCategoria CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
+
+            //Instância a class, e chama o método de excluir
+            clsCategoria C = new clsCategoria();
+            string retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
+
+            //Verificando se deu certo
+            try
+            {
+                int idCategoria = Convert.ToInt32(retorno);
+                MessageBox.Show("Inserido com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                atualizarDgCategoria();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+
+
+
 
         }
     }
