@@ -50,14 +50,14 @@
             this.lbldescontoPromocao = new System.Windows.Forms.Label();
             this.txtqtdMinEstoque = new System.Windows.Forms.TextBox();
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.dgProduto = new System.Windows.Forms.DataGridView();
             this.btnBuscarProduto = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIdProduto = new System.Windows.Forms.TextBox();
             this.lbCodigoProduto = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProduto)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -251,14 +251,14 @@
             // 
             this.produtoBindingSource.DataMember = "Produto";
             // 
-            // dgProdutos
+            // dgProduto
             // 
-            this.dgProdutos.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdutos.Location = new System.Drawing.Point(15, 78);
-            this.dgProdutos.Name = "dgProdutos";
-            this.dgProdutos.Size = new System.Drawing.Size(718, 199);
-            this.dgProdutos.TabIndex = 21;
+            this.dgProduto.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProduto.Location = new System.Drawing.Point(15, 78);
+            this.dgProduto.Name = "dgProduto";
+            this.dgProduto.Size = new System.Drawing.Size(718, 199);
+            this.dgProduto.TabIndex = 21;
             // 
             // btnBuscarProduto
             // 
@@ -270,13 +270,14 @@
             this.btnBuscarProduto.TabIndex = 22;
             this.btnBuscarProduto.Text = "Buscar";
             this.btnBuscarProduto.UseVisualStyleBackColor = false;
+            this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
             // 
-            // textBox1
+            // txtIdProduto
             // 
-            this.textBox1.Location = new System.Drawing.Point(135, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(144, 20);
-            this.textBox1.TabIndex = 23;
+            this.txtIdProduto.Location = new System.Drawing.Point(135, 52);
+            this.txtIdProduto.Name = "txtIdProduto";
+            this.txtIdProduto.Size = new System.Drawing.Size(144, 20);
+            this.txtIdProduto.TabIndex = 23;
             // 
             // lbCodigoProduto
             // 
@@ -302,9 +303,9 @@
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(745, 557);
             this.Controls.Add(this.lbCodigoProduto);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtIdProduto);
             this.Controls.Add(this.btnBuscarProduto);
-            this.Controls.Add(this.dgProdutos);
+            this.Controls.Add(this.dgProduto);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.mnuPrincipal);
@@ -332,7 +333,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProduto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,9 +360,9 @@
         private System.Windows.Forms.Label lbldescontoPromocao;
         private System.Windows.Forms.TextBox txtqtdMinEstoque;
         private System.Windows.Forms.BindingSource produtoBindingSource;
-        private System.Windows.Forms.DataGridView dgProdutos;
+        private System.Windows.Forms.DataGridView dgProduto;
         private System.Windows.Forms.Button btnBuscarProduto;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIdProduto;
         private System.Windows.Forms.Label lbCodigoProduto;
         private System.Windows.Forms.ImageList imageList1;
     }

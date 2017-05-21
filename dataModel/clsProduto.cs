@@ -9,7 +9,7 @@ using System.Data;
 
 namespace dataModel
 {
-    class clsProduto
+    public class clsProduto
     {
         public int idProduto { get; set; }
         public string nomeProduto { get; set; }
@@ -23,6 +23,7 @@ namespace dataModel
         public int imagem { get; set; }
 
         //Faz desse objeto um Singleton.
+
         private static clsProduto referencia;
 
         public static clsProduto getInstance()
@@ -148,6 +149,63 @@ namespace dataModel
             cn.Dispose();
             return Produto;
 
+        }
+        public static List<clsProduto> SelecionarProdutoID(int idProduto)
+        {
+            string sql = "SELECT idProduto, nomeProduto, qtdMinEstoque, precProduto, idCategoria, descontoPromocao, ativoProduto imagem FROM dbo.Produto" +
+                "WHERE idProduto = @idProduto";
+
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+
+            cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsProduto> Produto = new List<clsProduto>();
+            while (dr.Read())
+            {
+                clsProduto C = new clsProduto();
+
+                if (!dr.IsDBNull(dr.GetOrdinal("idProduto")))
+                {
+                    C.idProduto = dr.GetInt32(dr.GetOrdinal("idProduto"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeProduto")))
+                {
+                    C.nomeProduto = dr.GetString(dr.GetOrdinal("nomeProduto"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
+                {
+                    C.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("precProduto")))
+                {
+                    C.precProduto = dr.GetInt32(dr.GetOrdinal("precProduto"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("idCategoria")))
+                {
+                    C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("descontoPromocao")))
+                {
+                    C.descontoPromocao = dr.GetInt32(dr.GetOrdinal("descontoPromocao"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("ativoProduto")))
+                {
+                    C.ativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                }
+
+                Produto.Add(C);
+            }
+          
+            return Produto;
         }
 
 
