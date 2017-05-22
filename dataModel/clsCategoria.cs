@@ -25,19 +25,19 @@ namespace dataModel
             return referencia;
         }
 
-        public string Salvar(string nomeCategoria, string descCategoria)
+        public string Salvar(int idCategoria, string nomeCategoria, string descCategoria)
         {
             try
             {
 
-                bool inserir = (this.idCategoria == 0);
+                int inserir = idCategoria;
                 string linhas = "0";
                 clsConexao conexao = new clsConexao();
                 SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
 
                 //Inserindo Categorias
-                if (inserir)
+                if (inserir == 0)
                     cmd.CommandText = "INSERT INTO Categoria " +
                                     "(nomeCategoria, descCategoria)" +
                                     "VALUES " +
@@ -49,7 +49,8 @@ namespace dataModel
                 {
                     cmd.CommandText = "UPDATE Categoria " +
                                         "SET nomeCategoria = @nomeCategoria, " +
-                                        "descCategoria = @descCategoria "
+                                        "descCategoria = @descCategoria "+
+                                        "Where idCategoria = @idCategoria"
                                         ;
 
                     cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
@@ -60,7 +61,7 @@ namespace dataModel
                 linhas = Convert.ToString(cmd.ExecuteScalar());
 
 
-                if (inserir)
+                if (inserir == 0)
                 {
                     cmd.Parameters.Clear();
                     cmd.CommandText = "SELECT @@Identity";
@@ -154,13 +155,15 @@ namespace dataModel
         {
 
             string sql = "Delete FROM dbo.Categoria " +
-           "WHERE idCategoria = @idCategoria";
+           "WHERE idCategoria = @idCategoria" +
+           "select SCOPE_IDENTITY();";
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
             cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
+
             string linhas = Convert.ToString(cmd.ExecuteScalar());
 
 

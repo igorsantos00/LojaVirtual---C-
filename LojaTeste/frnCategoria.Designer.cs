@@ -42,6 +42,7 @@
             this.dgCategoria = new System.Windows.Forms.DataGridView();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnExcluirCategoria = new System.Windows.Forms.Button();
+            this.btnSelecionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,9 +66,9 @@
             // 
             // txtNomeCategoria
             // 
-            this.txtNomeCategoria.Location = new System.Drawing.Point(12, 398);
+            this.txtNomeCategoria.Location = new System.Drawing.Point(14, 391);
             this.txtNomeCategoria.Name = "txtNomeCategoria";
-            this.txtNomeCategoria.Size = new System.Drawing.Size(257, 20);
+            this.txtNomeCategoria.Size = new System.Drawing.Size(238, 20);
             this.txtNomeCategoria.TabIndex = 2;
             // 
             // label1
@@ -75,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 382);
+            this.label1.Location = new System.Drawing.Point(11, 375);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 16);
             this.label1.TabIndex = 1;
@@ -83,9 +84,9 @@
             // 
             // txtDescCategoria
             // 
-            this.txtDescCategoria.Location = new System.Drawing.Point(12, 453);
+            this.txtDescCategoria.Location = new System.Drawing.Point(269, 391);
             this.txtDescCategoria.Name = "txtDescCategoria";
-            this.txtDescCategoria.Size = new System.Drawing.Size(257, 20);
+            this.txtDescCategoria.Size = new System.Drawing.Size(349, 20);
             this.txtDescCategoria.TabIndex = 3;
             // 
             // lbldesCategoria
@@ -93,7 +94,7 @@
             this.lbldesCategoria.AutoSize = true;
             this.lbldesCategoria.BackColor = System.Drawing.Color.Transparent;
             this.lbldesCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldesCategoria.Location = new System.Drawing.Point(9, 437);
+            this.lbldesCategoria.Location = new System.Drawing.Point(266, 375);
             this.lbldesCategoria.Name = "lbldesCategoria";
             this.lbldesCategoria.Size = new System.Drawing.Size(79, 16);
             this.lbldesCategoria.TabIndex = 1;
@@ -113,7 +114,7 @@
             this.btnSair.AutoEllipsis = true;
             this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(322, 509);
+            this.btnSair.Location = new System.Drawing.Point(269, 428);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(118, 36);
             this.btnSair.TabIndex = 6;
@@ -126,7 +127,7 @@
             this.btnInserir.AutoEllipsis = true;
             this.btnInserir.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInserir.Location = new System.Drawing.Point(162, 509);
+            this.btnInserir.Location = new System.Drawing.Point(14, 428);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(118, 36);
             this.btnInserir.TabIndex = 7;
@@ -153,7 +154,8 @@
             this.dgCategoria.Location = new System.Drawing.Point(12, 90);
             this.dgCategoria.MultiSelect = false;
             this.dgCategoria.Name = "dgCategoria";
-            this.dgCategoria.Size = new System.Drawing.Size(606, 225);
+            this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgCategoria.Size = new System.Drawing.Size(606, 228);
             this.dgCategoria.TabIndex = 9;
             // 
             // btnAlterar
@@ -161,7 +163,7 @@
             this.btnAlterar.AutoEllipsis = true;
             this.btnAlterar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(12, 509);
+            this.btnAlterar.Location = new System.Drawing.Point(145, 428);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(118, 36);
             this.btnAlterar.TabIndex = 6;
@@ -174,7 +176,7 @@
             this.btnExcluirCategoria.AutoEllipsis = true;
             this.btnExcluirCategoria.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnExcluirCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluirCategoria.Location = new System.Drawing.Point(151, 321);
+            this.btnExcluirCategoria.Location = new System.Drawing.Point(153, 324);
             this.btnExcluirCategoria.Name = "btnExcluirCategoria";
             this.btnExcluirCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluirCategoria.Size = new System.Drawing.Size(118, 36);
@@ -183,12 +185,25 @@
             this.btnExcluirCategoria.UseVisualStyleBackColor = false;
             this.btnExcluirCategoria.Click += new System.EventHandler(this.btnExcluirCategoria_Click);
             // 
+            // btnSelecionar
+            // 
+            this.btnSelecionar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnSelecionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecionar.Location = new System.Drawing.Point(12, 324);
+            this.btnSelecionar.Name = "btnSelecionar";
+            this.btnSelecionar.Size = new System.Drawing.Size(118, 36);
+            this.btnSelecionar.TabIndex = 10;
+            this.btnSelecionar.Text = "Selecionar";
+            this.btnSelecionar.UseVisualStyleBackColor = false;
+            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
-            this.ClientSize = new System.Drawing.Size(630, 557);
+            this.ClientSize = new System.Drawing.Size(630, 487);
+            this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dgCategoria);
             this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.btnExcluirCategoria);
@@ -229,5 +244,6 @@
         private System.Windows.Forms.DataGridView dgCategoria;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnExcluirCategoria;
+        private System.Windows.Forms.Button btnSelecionar;
     }
 }

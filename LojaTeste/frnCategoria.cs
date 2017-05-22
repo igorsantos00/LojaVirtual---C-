@@ -16,6 +16,8 @@ namespace LojaTeste
 
     public partial class frmCategoria : Form
     {
+        private clsCategoria CategoriaSelecionada;
+
         public frmCategoria()
         {
             InitializeComponent();
@@ -83,13 +85,43 @@ namespace LojaTeste
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
+            if (dgCategoria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma categoria selecionada");
+                return;
+            }
+           
+            //Pergunta se quer mesmo Alterar
+            DialogResult resultado = MessageBox.Show("Deseja Alterar", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }else
+            {
+                clsCategoria C = new clsCategoria();
+                string retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
+                try
+                {
+                    int idCategoria = Convert.ToInt32(retorno);
+                    MessageBox.Show("Alterado com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw;
+                }
+
+                atualizarDgCategoria();
+            }
+            
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsCategoria C = new clsCategoria();
-            string retorno = C.Salvar(txtNomeCategoria.Text, txtDescCategoria.Text);
+            string retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
+
             try
             {
                 int idCategoria = Convert.ToInt32(retorno);
@@ -100,10 +132,10 @@ namespace LojaTeste
                 MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw;
             }
-              
-            atualizarDgCategoria();
-        }
 
+            atualizarDgCategoria();
+
+        }
         private void btnExcluirCategoria_Click(object sender, EventArgs e)
         {
             //Verifica se tem algum registro selecionado
@@ -131,7 +163,7 @@ namespace LojaTeste
             {
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                atualizarDgCategoria();
+
             }
             catch (Exception)
             {
@@ -139,9 +171,26 @@ namespace LojaTeste
                 throw;
             }
 
+            atualizarDgCategoria();
 
+        }
 
+        private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            //Verifica se tem algum registro selecionado
+            if (dgCategoria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma categoria selecionada");
+                return;
+            }
+           
 
+            CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
+
+            //Inserindo os valores nos campos
+
+            txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
+            txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
         }
     }
 }
