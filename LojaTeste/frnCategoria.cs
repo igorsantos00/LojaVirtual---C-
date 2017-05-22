@@ -17,6 +17,7 @@ namespace LojaTeste
     public partial class frmCategoria : Form
     {
         private clsCategoria CategoriaSelecionada;
+        private int retorno;
 
         public frmCategoria()
         {
@@ -100,7 +101,7 @@ namespace LojaTeste
             }else
             {
                 clsCategoria C = new clsCategoria();
-                string retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
+                retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
                 try
                 {
                     int idCategoria = Convert.ToInt32(retorno);
@@ -120,7 +121,7 @@ namespace LojaTeste
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsCategoria C = new clsCategoria();
-            string retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
+            retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
 
             try
             {

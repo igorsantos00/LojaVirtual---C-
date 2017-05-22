@@ -25,7 +25,7 @@ namespace dataModel
             return referencia;
         }
 
-        public string Salvar(int idCategoria, string nomeCategoria, string descCategoria)
+        public int Salvar(int idCategoria, string nomeCategoria, string descCategoria)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace dataModel
                     cmd.CommandText = "SELECT @@Identity";
                     this.idCategoria = Convert.ToInt32(cmd.ExecuteScalar());
                 }
-                return linhas;
+                
                 cn.Close();
                 cn.Dispose();
             }
@@ -77,6 +77,8 @@ namespace dataModel
                 Console.WriteLine("Erro \n" + ex.Message);
                 throw;
             }
+
+            return this.idCategoria;
         }
 
         public static List<clsCategoria> SelecionarCategoria()
