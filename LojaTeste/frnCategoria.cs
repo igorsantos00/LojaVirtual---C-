@@ -106,6 +106,8 @@ namespace LojaTeste
                 {
                     int idCategoria = Convert.ToInt32(retorno);
                     MessageBox.Show("Alterado com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtNomeCategoria.Text = null;
+                    txtDescCategoria.Text = null;
                 }
                 catch (Exception)
                 {
@@ -126,7 +128,9 @@ namespace LojaTeste
             try
             {
                 int idCategoria = Convert.ToInt32(retorno);
-                MessageBox.Show("Inserido com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNomeCategoria.Text = null;
+                txtDescCategoria.Text = null;
             }
             catch (Exception)
             {
@@ -157,19 +161,18 @@ namespace LojaTeste
 
             //Instância a class, e chama o método de excluir
             clsCategoria C = new clsCategoria();
-            string retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
+            retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
 
             //Verificando se deu certo
-            try
-            {
+            if (retorno != 0) { 
                 int idCategoria = Convert.ToInt32(retorno);
-                MessageBox.Show("Inserido com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }
-            catch (Exception)
+            }else
+            
             {
                 MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                
             }
 
             atualizarDgCategoria();

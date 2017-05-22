@@ -153,12 +153,11 @@ namespace dataModel
             return Categoria;
         }
 
-        public string ExcluirCategorias(int idCategoria)
+        public int ExcluirCategorias(int idCategoria)
         {
 
             string sql = "Delete FROM dbo.Categoria " +
-           "WHERE idCategoria = @idCategoria" +
-           "select SCOPE_IDENTITY();";
+           "WHERE idCategoria = @idCategoria";
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -166,7 +165,7 @@ namespace dataModel
             cmd.CommandText = sql;
             cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
 
-            string linhas = Convert.ToString(cmd.ExecuteScalar());
+            int linhas = cmd.ExecuteNonQuery();
 
 
             return linhas;

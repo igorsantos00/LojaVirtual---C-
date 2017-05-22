@@ -49,6 +49,7 @@ namespace LojaTeste
                     else
                     {
                         MessageBox.Show("Login ou Senha não válido!");
+                        
                     }
                 }
             }
@@ -58,6 +59,7 @@ namespace LojaTeste
         {
             MessageBox.Show("Obrigado por usar nosso sistema!");
             this.Close();
+            this.Hide();
         }
     }
 }
