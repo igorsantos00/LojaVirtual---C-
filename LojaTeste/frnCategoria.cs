@@ -43,7 +43,7 @@ namespace LojaTeste
 
         private void atualizarDgCategoria()
         {
-
+            
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
             configuraDgCategoria();
@@ -93,22 +93,25 @@ namespace LojaTeste
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
             }
-                                 
+
             //Pergunta se quer mesmo Alterar
             DialogResult resultado = MessageBox.Show("Deseja Alterar", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.No)
             {
                 return;
-            }else 
+            }
+            else
             {
                 clsCategoria C = new clsCategoria();
-                try { 
-                retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
+                try
+                {
+                    retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
                 }
                 catch (Exception erro)
                 {
                     MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
                 try
@@ -127,13 +130,23 @@ namespace LojaTeste
 
                 atualizarDgCategoria();
             }
-            
+
         }
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsCategoria C = new clsCategoria();
-            retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
+            try
+            {
+                retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
             if (txtNomeCategoria.Text == "")
             {
                 MessageBox.Show("Campo 'Nome' invalido");
@@ -163,10 +176,10 @@ namespace LojaTeste
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
             }
-            
+
             //Pergunta se quer mesmo excluir
-            DialogResult resultado = MessageBox.Show("Deseja excluir " + dgCategoria.SelectedRows[0].Cells["nomeCategoria"].Value,  "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+            DialogResult resultado = MessageBox.Show("Deseja excluir " + dgCategoria.SelectedRows[0].Cells["nomeCategoria"].Value, "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (resultado == DialogResult.No)
             {
                 return;
@@ -176,18 +189,29 @@ namespace LojaTeste
 
             //Instância a class, e chama o método de excluir
             clsCategoria C = new clsCategoria();
-            retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
+         
+            try
+            {
+                retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             //Verificando se deu certo
-            if (retorno != 0) { 
+            if (retorno != 0)
+            {
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            }else
-            
+            }
+            else
+
             {
                 MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+
             }
 
             atualizarDgCategoria();
@@ -202,7 +226,7 @@ namespace LojaTeste
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
             }
-           
+
 
             CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
 
