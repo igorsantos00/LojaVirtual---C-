@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dataModel;
+using System.Data.SqlClient;
 
 namespace LojaTeste
 {
@@ -18,6 +19,7 @@ namespace LojaTeste
     {
         private clsCategoria CategoriaSelecionada;
         private int retorno;
+        private bool validar = true;
 
         public frmCategoria()
         {
@@ -86,28 +88,36 @@ namespace LojaTeste
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
-            if (dgCategoria.SelectedRows.Count == 0)
+            if (validar)
             {
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
             }
-           
+                                 
             //Pergunta se quer mesmo Alterar
             DialogResult resultado = MessageBox.Show("Deseja Alterar", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (resultado == DialogResult.No)
             {
                 return;
-            }else
+            }else 
             {
                 clsCategoria C = new clsCategoria();
+                try { 
                 retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 try
                 {
                     int idCategoria = Convert.ToInt32(retorno);
-                    MessageBox.Show("Alterado com sucesso" + retorno, "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNomeCategoria.Text = null;
                     txtDescCategoria.Text = null;
+                    validar = true;
                 }
                 catch (Exception)
                 {
@@ -124,7 +134,11 @@ namespace LojaTeste
         {
             clsCategoria C = new clsCategoria();
             retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
-
+            if (txtNomeCategoria.Text == "")
+            {
+                MessageBox.Show("Campo 'Nome' invalido");
+                return;
+            }
             try
             {
                 int idCategoria = Convert.ToInt32(retorno);
@@ -149,9 +163,10 @@ namespace LojaTeste
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
             }
+            
             //Pergunta se quer mesmo excluir
-            DialogResult resultado = MessageBox.Show("Deseja excluir", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+            DialogResult resultado = MessageBox.Show("Deseja excluir " + dgCategoria.SelectedRows[0].Cells["nomeCategoria"].Value,  "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
             if (resultado == DialogResult.No)
             {
                 return;
@@ -195,6 +210,7 @@ namespace LojaTeste
 
             txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
             txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
+            validar = false;
         }
     }
 }

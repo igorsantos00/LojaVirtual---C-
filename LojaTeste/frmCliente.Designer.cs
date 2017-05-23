@@ -426,6 +426,7 @@
             this.btnConfirmar.TabIndex = 43;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // frmCliente
             // 

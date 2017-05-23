@@ -149,14 +149,20 @@
             // 
             // dgCategoria
             // 
+            this.dgCategoria.AllowUserToAddRows = false;
+            this.dgCategoria.AllowUserToDeleteRows = false;
+            this.dgCategoria.AllowUserToResizeRows = false;
             this.dgCategoria.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCategoria.Location = new System.Drawing.Point(12, 90);
             this.dgCategoria.MultiSelect = false;
             this.dgCategoria.Name = "dgCategoria";
+            this.dgCategoria.ReadOnly = true;
+            this.dgCategoria.RowHeadersVisible = false;
             this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCategoria.Size = new System.Drawing.Size(606, 228);
             this.dgCategoria.TabIndex = 9;
+            this.dgCategoria.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnAlterar
             // 

@@ -12,6 +12,8 @@ namespace dataModel
         
             public SqlConnection Conectar()
             {
+            try
+            {
                 SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
                 sb.UserID = "TSI";
                 sb.Password = "SistemasInternet123";
@@ -21,6 +23,13 @@ namespace dataModel
                 SqlConnection cn = new SqlConnection(sb.ConnectionString);
                 cn.Open();
                 return cn;
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Tempo expirou, Tente Novamente");
+                throw;
+            }
+               
             }
         }
 

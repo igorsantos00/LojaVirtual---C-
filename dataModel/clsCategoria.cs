@@ -14,6 +14,8 @@ namespace dataModel
         public string nomeCategoria { get; set; }
         public string descCategoria { get; set; }
 
+        
+
         //Faz desse objeto um Singleton
         private static clsCategoria referencia;
 
@@ -27,11 +29,12 @@ namespace dataModel
 
         public int Salvar(int idCategoria, string nomeCategoria, string descCategoria)
         {
+            int linhas = 0;
             try
             {
 
                 int inserir = idCategoria;
-                string linhas = "0";
+                
                 clsConexao conexao = new clsConexao();
                 SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -58,14 +61,14 @@ namespace dataModel
 
                 cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = nomeCategoria;
                 cmd.Parameters.Add("@descCategoria", SqlDbType.VarChar, 100).Value = descCategoria;
-                linhas = Convert.ToString(cmd.ExecuteScalar());
+                linhas = cmd.ExecuteNonQuery();
 
 
                 if (inserir == 0)
                 {
                     cmd.Parameters.Clear();
                     cmd.CommandText = "SELECT @@Identity";
-                    this.idCategoria = Convert.ToInt32(cmd.ExecuteScalar());
+                    linhas = cmd.ExecuteNonQuery();
                 }
                 
                 cn.Close();
@@ -77,8 +80,9 @@ namespace dataModel
                 Console.WriteLine("Erro \n" + ex.Message);
                 throw;
             }
+            
 
-            return this.idCategoria;
+            return linhas;
         }
 
         public static List<clsCategoria> SelecionarCategoria()
@@ -165,7 +169,7 @@ namespace dataModel
             cmd.CommandText = sql;
             cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
 
-            int linhas = cmd.ExecuteNonQuery();
+           int linhas = cmd.ExecuteNonQuery();
 
 
             return linhas;
