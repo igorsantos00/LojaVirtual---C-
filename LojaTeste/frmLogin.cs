@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using dataModel;
+using System.Data.SqlClient;
 
 namespace LojaTeste
 {
@@ -24,34 +26,21 @@ namespace LojaTeste
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text.Equals(""))
+            clsUsuario log = new clsUsuario();
+          
+            log = log.Logar(txtLogin.Text,txtSenha.Text);
+
+            if (log != null)
             {
-                MessageBox.Show("Informe o login!");
+                MessageBox.Show("Seja bem vindo!");
+                Form tela = new frmMenuPrincipal(txtLogin.Text);
+                this.Hide();
+                tela.Show();
             }
             else
             {
-                if (txtSenha.Text.Equals(""))
-                {
-                    MessageBox.Show("Informe a senha!");
-                }
-                else
-                {
-                    //Verifica usuário e senha implantar verificação no BD
-                    if (txtLogin.Text.Equals("suporte") && txtSenha.Text.Equals("suporte"))
-                    {
-                        MessageBox.Show("Seja bem vindo!");
-                        Form tela = new frmMenuPrincipal(txtLogin.Text);
-                        this.Hide();
-                        tela.Show();
 
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login ou Senha não válido!");
-                        
-                    }
-                }
+                MessageBox.Show("Login ou Senha invalido!");
             }
         }
 

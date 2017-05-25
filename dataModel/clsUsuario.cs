@@ -9,7 +9,7 @@ using System.Data;
 
 namespace dataModel
 {
-    class clsUsuario
+    public class clsUsuario
     {
         public int idUsuario { get; set; }
         public string loginUsuario { get; set; }
@@ -17,7 +17,7 @@ namespace dataModel
         public decimal nomeUsuario { get; set; }
         public decimal tipoPerfil { get; set; }
         public int usuarioAtivo { get; set; }
-        
+
 
         //Faz desse objeto um Singleton.
         private static clsUsuario referencia;
@@ -123,11 +123,58 @@ namespace dataModel
                 U.usuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
                 Usuario.Add(U);
             }
-            
+
             return Usuario;
 
         }
 
+        //------------------------Login
+
+        public clsUsuario Logar(string login, string senha)
+        {
+            clsUsuario log = null;
+
+            try
+            {
+
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
+                SqlCommand cmd = cn.CreateCommand();
+                cmd.CommandText = (@"Select idUsuario, loginusuario, senhausuario,tipoperfil from usuario 
+                                    where loginusuario = @login and senhausuario = @senha");
+
+                cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
+                cmd.Parameters.Add("@senha", SqlDbType.VarChar).Value = senha;
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                log = new clsUsuario();
+                dr.Read();
+
+                if (!dr.IsDBNull(dr.GetOrdinal("loginUsuario")))
+                {
+                    log.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                {
+                    log.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                {
+                    log.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                }
+
+                              
+                
+            }
+            catch (InvalidOperationException e)
+            {
+                log = null;
+            }
+
+            return log;
+
+        }
 
     }
 

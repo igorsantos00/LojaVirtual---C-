@@ -9,9 +9,9 @@ namespace dataModel
 {
     public class clsConexao
     {
-        
-            public SqlConnection Conectar()
-            {
+
+        public SqlConnection Conectar()
+        {
             try
             {
                 SqlConnectionStringBuilder sb = new SqlConnectionStringBuilder();
@@ -29,8 +29,8 @@ namespace dataModel
                 Console.WriteLine("Tempo expirou, Tente Novamente");
                 throw;
             }
-               
-            }
+
         }
+    }
 
 }

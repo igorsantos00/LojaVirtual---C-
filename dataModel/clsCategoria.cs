@@ -14,7 +14,7 @@ namespace dataModel
         public string nomeCategoria { get; set; }
         public string descCategoria { get; set; }
 
-        
+
 
         //Faz desse objeto um Singleton
         private static clsCategoria referencia;
@@ -34,7 +34,7 @@ namespace dataModel
             {
 
                 int inserir = idCategoria;
-                
+
                 clsConexao conexao = new clsConexao();
                 SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
@@ -52,7 +52,7 @@ namespace dataModel
                 {
                     cmd.CommandText = "UPDATE Categoria " +
                                         "SET nomeCategoria = @nomeCategoria, " +
-                                        "descCategoria = @descCategoria "+
+                                        "descCategoria = @descCategoria " +
                                         "Where idCategoria = @idCategoria"
                                         ;
 
@@ -70,7 +70,7 @@ namespace dataModel
                     cmd.CommandText = "SELECT @@Identity";
                     linhas = cmd.ExecuteNonQuery();
                 }
-                
+
                 cn.Close();
                 cn.Dispose();
             }
@@ -80,7 +80,7 @@ namespace dataModel
                 Console.WriteLine("Erro \n" + ex.Message);
                 throw;
             }
-            
+
 
             return linhas;
         }
@@ -169,7 +169,7 @@ namespace dataModel
             cmd.CommandText = sql;
             cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
 
-           int linhas = cmd.ExecuteNonQuery();
+            int linhas = cmd.ExecuteNonQuery();
 
 
             return linhas;

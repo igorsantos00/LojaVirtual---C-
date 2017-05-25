@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace dataModel
 {
-    class clsEstoque
+    public class clsEstoque
     {
         public int idProduto { get; set; }
         public int qtdProdutoDisponivel { get; set; }
-        
-        
+
+
         private static clsEstoque referencia;
 
         public static clsEstoque getInstance()
@@ -44,7 +44,7 @@ namespace dataModel
 
                 cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
             }
-                        
+
             cmd.Parameters.Add("@qtdProdutoDisponivel", SqlDbType.Int).Value = this.qtdProdutoDisponivel;
             cmd.ExecuteNonQuery();
 

@@ -8,7 +8,7 @@ using System.Data;
 
 namespace dataModel
 {
-     class clsCliente
+    public class clsCliente
     {
         public int idCliente { get; set; }
         public string nomeCompletoCliente { get; set; }
