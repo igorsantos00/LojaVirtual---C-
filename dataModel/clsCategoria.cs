@@ -128,7 +128,6 @@ namespace dataModel
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
-
             cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
 
             SqlDataReader dr = cmd.ExecuteReader();

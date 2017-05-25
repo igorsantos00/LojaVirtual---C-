@@ -24,9 +24,9 @@ namespace dataModel
                 cn.Open();
                 return cn;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("Tempo expirou, Tente Novamente");
+                
                 throw;
             }
 

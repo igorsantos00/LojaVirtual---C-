@@ -14,9 +14,9 @@ namespace dataModel
         public int idUsuario { get; set; }
         public string loginUsuario { get; set; }
         public string senhaUsuario { get; set; }
-        public decimal nomeUsuario { get; set; }
-        public decimal tipoPerfil { get; set; }
-        public int usuarioAtivo { get; set; }
+        public string nomeUsuario { get; set; }
+        public string tipoPerfil { get; set; }
+        public bool usuarioAtivo { get; set; }
 
 
         //Faz desse objeto um Singleton.
@@ -73,9 +73,9 @@ namespace dataModel
             cn.Dispose();
         }
 
-        public static List<clsUsuario> SelecionarProduto()
+        public static List<clsUsuario> SelecionarUsuario()
         {
-            string sql = "SELECT idProduto, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario";
+            string sql = "SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -86,45 +86,87 @@ namespace dataModel
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
-                U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-                U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
-                U.nomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
-                U.tipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
-                U.usuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
+                if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                {
+
+                    U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("loginUsuario")))
+                {
+                    U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                {
+                    U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                {
+                    U.nomeUsuario = dr.GetString(dr.GetOrdinal("nomeUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("tipoPerfil")))
+                {
+                    U.tipoPerfil = dr.GetString(dr.GetOrdinal("tipoPerfil"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("usuarioAtivo")))
+                {
+                    U.usuarioAtivo = dr.GetBoolean(dr.GetOrdinal("usuarioAtivo"));
+                }
+
                 Usuario.Add(U);
             }
 
             cn.Close();
-            cn.Dispose();
             return Usuario;
-
         }
 
-        public static List<clsUsuario> SelecionarUsuario(int IdUsuario)
+
+        public static List<clsUsuario> SelecionarUsuarioPorNome(string nomeUsuario)
         {
-            string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto" +
-                "WHERE idProduto = @idProduto";
+            string sql = @"SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario
+                           Where nomeUsuario like '%@nomeUsuario%' ";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
+            cmd.Parameters.Add("@nomeUsuario", SqlDbType.VarChar).Value = nomeUsuario;
 
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsUsuario> Usuario = new List<clsUsuario>();
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
-                U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
-                U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
-                U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
-                U.nomeUsuario = dr.GetInt32(dr.GetOrdinal("nomeUsuario"));
-                U.tipoPerfil = dr.GetInt32(dr.GetOrdinal("tipoPerfil"));
-                U.usuarioAtivo = dr.GetInt32(dr.GetOrdinal("usuarioAtivo"));
+                if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
+                {
+
+                    U.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
+                }
+
+                if (!dr.IsDBNull(dr.GetOrdinal("loginUsuario")))
+                {
+                    U.loginUsuario = dr.GetString(dr.GetOrdinal("loginUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                {
+                    U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                {
+                    U.nomeUsuario = dr.GetString(dr.GetOrdinal("nomeUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("tipoPerfil")))
+                {
+                    U.tipoPerfil = dr.GetString(dr.GetOrdinal("tipoPerfil"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("usuarioAtivo")))
+                {
+                    U.usuarioAtivo = dr.GetBoolean(dr.GetOrdinal("usuarioAtivo"));
+                }
+
                 Usuario.Add(U);
             }
 
-            return Usuario;
+           return Usuario;
 
         }
 
@@ -164,8 +206,8 @@ namespace dataModel
                     log.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
                 }
 
-                              
-                
+
+
             }
             catch (InvalidOperationException e)
             {
