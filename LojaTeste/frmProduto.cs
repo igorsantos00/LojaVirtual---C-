@@ -8,12 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dataModel;
+using System.IO;
 
 namespace LojaTeste
 {
     public partial class frmProduto : Form
     {
-      
+        byte[] imagem;
+        private int retorno;
+        private bool validar = true;
+        private clsProduto ProdutoSelecionado;
         public frmProduto()
         {
             InitializeComponent();
@@ -24,17 +28,25 @@ namespace LojaTeste
 
             dgProduto.Columns[0].HeaderText = "Código";
             dgProduto.Columns[1].HeaderText = "Nome";
-            dgProduto.Columns[2].HeaderText = "Quantidade";
+            dgProduto.Columns[2].HeaderText = "Descricão";
             dgProduto.Columns[3].HeaderText = "Preço";
-            dgProduto.Columns[4].HeaderText = "IDCategoria";
-            dgProduto.Columns[5].HeaderText = "Desconto";
+            dgProduto.Columns[4].HeaderText = "Desconto";
+            dgProduto.Columns[5].HeaderText = "IDCategoria";
             dgProduto.Columns[6].HeaderText = "Status";
+            dgProduto.Columns[7].HeaderText = "IDUsuario";
+            dgProduto.Columns[8].HeaderText = "QtdMin.Estoque";
 
             //Redimenciona o Tamanho da Coluna
 
             dgProduto.Columns[0].Width = 50;
             dgProduto.Columns[1].Width = 150;
             dgProduto.Columns[2].Width = 347;
+            dgProduto.Columns[3].Width = 150;
+            dgProduto.Columns[4].Width = 150;
+            dgProduto.Columns[5].Width = 150;
+            dgProduto.Columns[6].Width = 150;
+            dgProduto.Columns[7].Width = 150;
+            dgProduto.Columns[8].Width = 150;
 
         }
 
@@ -43,13 +55,17 @@ namespace LojaTeste
 
             List<clsProduto> Produto = clsProduto.SelecionarProduto();
             dgProduto.DataSource = Produto;
+            dgProduto.Columns["idProduto"].Visible = true;
+            dgProduto.Columns["Imagem"].Visible = false;
+            dgProduto.Columns["nomeProduto"].Width = 200;
             configuraDgProduto();
 
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+            atualizarDgProduto();
+       
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -85,5 +101,128 @@ namespace LojaTeste
                 configuraDgProduto();
             }
         }
+
+        private void btnCarregarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Arquivos de imagem (*.jpg)|*.jpg";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                if (ofd.CheckFileExists)
+                {
+                    imagem = File.ReadAllBytes(ofd.FileName);
+                    mostraFoto(imagem);
+                }
+                else
+                {
+                    imagem = new byte[0];
+                    MessageBox.Show("Arquivo Inválido! Tente novamente...");
+                }
+            }
+        }
+
+        private void mostraFoto(Byte[] dados)
+        {
+            if (dados.Length > 0)
+            {
+                MemoryStream mem = new MemoryStream(dados);
+                imgImagem.Image = Image.FromStream(mem);
+            }
+            else
+            {
+                imgImagem.Image = null;
+            }
+        }
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            if (dgProduto.SelectedRows.Count > 0)
+            {
+                clsProduto P = (clsProduto)dgProduto.SelectedRows[0].DataBoundItem;
+                P.imagem = imagem;
+                P.Salvar();
+            }
+        }
+        private void dgProduto_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgProduto.SelectedRows.Count > 0)
+            {
+                if (dgProduto.SelectedRows[0].Cells[1].Value != null)
+                {
+                    imagem = new byte[0];
+                    imagem = (byte[])(dgProduto.SelectedRows[0].Cells["Imagem"].Value);
+                    mostraFoto(imagem);
+                }
+            }
+        }
+
+        private void btnExcluirProduto_Click(object sender, EventArgs e)
+        {
+            //Verifica se tem algum registro selecionado
+            if (dgProduto.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Produto selecionado");
+                return;
+            }
+
+            //Pergunta se quer mesmo excluir
+            DialogResult resultado = MessageBox.Show("Deseja excluir " + dgProduto.SelectedRows[0].Cells["nomeProduto"].Value, "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            clsProduto ProdutoSelecionado = (dgProduto.SelectedRows[0].DataBoundItem as clsProduto);
+
+            //Instância a class, e chama o método de excluir
+            clsProduto C = new clsProduto();
+
+            try
+            {
+                retorno = C.ExcluirProdutos(ProdutoSelecionado.idProduto);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Verificando se deu certo
+            if (retorno != 0)
+            {
+                int idProduto = Convert.ToInt32(retorno);
+                MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            else
+
+            {
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            atualizarDgProduto();
+
+        }
+
+        private void btnSelecionarProduto_Click(object sender, EventArgs e)
+        {
+            //Verifica se tem algum registro selecionado
+            if (dgProduto.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Produto selecionada");
+                return;
+            }
+
+
+            ProdutoSelecionado = (dgProduto.SelectedRows[0].DataBoundItem as clsProduto);
+
+            //Inserindo os valores nos campos
+
+            txtnomeProduto.Text = ProdutoSelecionado.nomeProduto;
+            txtdescProduto.Text = ProdutoSelecionado.descProduto;
+            validar = false;
+        }
+
     }
 }
