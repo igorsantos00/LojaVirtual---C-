@@ -257,8 +257,12 @@
             // 
             // dgProduto
             // 
-            this.dgProduto.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgProduto.AllowUserToAddRows = false;
+            this.dgProduto.AllowUserToDeleteRows = false;
+            this.dgProduto.AllowUserToResizeRows = false;
+            this.dgProduto.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgProduto.Location = new System.Drawing.Point(15, 78);
             this.dgProduto.Name = "dgProduto";
             this.dgProduto.Size = new System.Drawing.Size(718, 199);
