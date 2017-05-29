@@ -169,6 +169,7 @@
             this.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgUsuario.Size = new System.Drawing.Size(610, 197);
             this.dgUsuario.TabIndex = 11;
+            this.dgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellContentClick);
             this.dgUsuario.DoubleClick += new System.EventHandler(this.btnSelecionarUsuario_Click);
             // 
             // btnBusca

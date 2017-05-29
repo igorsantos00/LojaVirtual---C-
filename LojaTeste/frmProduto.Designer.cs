@@ -264,7 +264,11 @@
             this.dgProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgProduto.Location = new System.Drawing.Point(15, 78);
+            this.dgProduto.MultiSelect = false;
             this.dgProduto.Name = "dgProduto";
+            this.dgProduto.ReadOnly = true;
+            this.dgProduto.RowHeadersVisible = false;
+            this.dgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProduto.Size = new System.Drawing.Size(718, 199);
             this.dgProduto.TabIndex = 21;
             // 

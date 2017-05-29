@@ -148,6 +148,7 @@
             this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCategoria.Size = new System.Drawing.Size(606, 228);
             this.dgCategoria.TabIndex = 9;
+            this.dgCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategoria_CellContentClick);
             this.dgCategoria.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // btnAlterar

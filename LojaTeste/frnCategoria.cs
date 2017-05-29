@@ -43,7 +43,7 @@ namespace LojaTeste
 
         private void atualizarDgCategoria()
         {
-            
+
             List<clsCategoria> Categoria = clsCategoria.SelecionarCategoria();
             dgCategoria.DataSource = Categoria;
             configuraDgCategoria();
@@ -54,12 +54,6 @@ namespace LojaTeste
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-
         }
 
         private void btnSair_Click_1(object sender, EventArgs e)
@@ -189,7 +183,7 @@ namespace LojaTeste
 
             //Instância a class, e chama o método de excluir
             clsCategoria C = new clsCategoria();
-         
+
             try
             {
                 retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
@@ -219,6 +213,25 @@ namespace LojaTeste
         }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
+        {
+            //Verifica se tem algum registro selecionado
+            if (dgCategoria.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhuma categoria selecionada");
+                return;
+            }
+
+
+            CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
+
+            //Inserindo os valores nos campos
+
+            txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
+            txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
+            validar = false;
+        }
+
+        private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Verifica se tem algum registro selecionado
             if (dgCategoria.SelectedRows.Count == 0)

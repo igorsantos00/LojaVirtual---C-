@@ -103,9 +103,9 @@ namespace LojaTeste
 
             txtNomeCompleto.Text = UsuarioSelecionado.nomeUsuario;
             txtLogin.Text = UsuarioSelecionado.loginUsuario;
-            //txtSenha1.Text = UsuarioSelecionado.senhaUsuario
             cmbTipo.Text = UsuarioSelecionado.tipoPerfil;
             ckAtivo.Text = Convert.ToString(UsuarioSelecionado.usuarioAtivo);
+            ckAtivo.Checked = Convert.ToBoolean(dgUsuario.CurrentRow.Cells["usuarioAtivo"].Value);
             validar = false;
         }
 
@@ -164,7 +164,7 @@ namespace LojaTeste
             clsUsuario U = new clsUsuario();
             try
             {
-                retorno = U.Salvar(0, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text);
+                retorno = U.Salvar(0, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
 
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -205,7 +205,10 @@ namespace LojaTeste
                 clsUsuario C = new clsUsuario();
                 try
                 {
-                    retorno = C.Salvar(UsuarioSelecionado.idUsuario, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text);
+                    retorno = C.Salvar(UsuarioSelecionado.idUsuario, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
+                    txtLogin.Text = null;
+                    txtNomeCompleto = null;
+                    txtNomeUsuario = null;
                 }
                 catch (Exception erro)
                 {
@@ -228,6 +231,11 @@ namespace LojaTeste
 
                 atualizarDgUsuario();
             }
+        }
+
+        private void dgUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

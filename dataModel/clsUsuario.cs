@@ -30,7 +30,7 @@ namespace dataModel
             return referencia;
         }
 
-        public int Salvar(int idUsuario, string loginUsuario , string senhaUsuario, string nomeUsuario)
+        public int Salvar(int idUsuario, string loginUsuario , string senhaUsuario, string nomeUsuario,string tipoPerfil, bool usuarioAtivo )
         {
             int linhas = 0;
             try
@@ -142,13 +142,13 @@ namespace dataModel
 
         public static List<clsUsuario> SelecionarUsuarioPorNome(string nomeUsuario)
         {
-            string sql = @"SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario
-                           Where nomeUsuario like @nomeUsuario ";
+            string sql = @"SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM Usuario
+                           Where nomeUsuario like '%' + @nomeUsuario + '%' ";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = sql;
-            cmd.Parameters.Add("@nomeUsuario", SqlDbType.VarChar).Value = nomeUsuario;
+            cmd.Parameters.Add("@nomeUsuario", SqlDbType.VarChar,50).Value = nomeUsuario;
 
             SqlDataReader dr = cmd.ExecuteReader();
             List<clsUsuario> Usuario = new List<clsUsuario>();
