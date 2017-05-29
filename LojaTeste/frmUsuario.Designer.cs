@@ -38,7 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.cbmAtivo = new System.Windows.Forms.ComboBox();
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.dgUsuario = new System.Windows.Forms.DataGridView();
             this.btnBusca = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.btnSairUsuario = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha2 = new System.Windows.Forms.TextBox();
+            this.ckAtivo = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,26 +136,13 @@
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuário"});
+            "A",
+            "C"});
             this.cmbTipo.Location = new System.Drawing.Point(501, 361);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 4;
             this.cmbTipo.Text = "Selecione";
-            // 
-            // cbmAtivo
-            // 
-            this.cbmAtivo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbmAtivo.FormattingEnabled = true;
-            this.cbmAtivo.Items.AddRange(new object[] {
-            "Sim",
-            "Não"});
-            this.cbmAtivo.Location = new System.Drawing.Point(501, 402);
-            this.cbmAtivo.Name = "cbmAtivo";
-            this.cbmAtivo.Size = new System.Drawing.Size(121, 21);
-            this.cbmAtivo.TabIndex = 5;
-            this.cbmAtivo.Text = "Selecione";
             // 
             // mnuPrincipal
             // 
@@ -214,7 +201,6 @@
             this.txtNomeUsuario.Name = "txtNomeUsuario";
             this.txtNomeUsuario.Size = new System.Drawing.Size(193, 20);
             this.txtNomeUsuario.TabIndex = 14;
-            this.txtNomeUsuario.Enter += new System.EventHandler(this.btnBusca_Click);
             // 
             // btnSelecionarUsuario
             // 
@@ -242,6 +228,7 @@
             this.btnExcluirUsuario.TabIndex = 16;
             this.btnExcluirUsuario.Text = "Excluir";
             this.btnExcluirUsuario.UseVisualStyleBackColor = false;
+            this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
             // 
             // btnInserirUsuario
             // 
@@ -255,6 +242,7 @@
             this.btnInserirUsuario.TabIndex = 17;
             this.btnInserirUsuario.Text = "Inserir";
             this.btnInserirUsuario.UseVisualStyleBackColor = false;
+            this.btnInserirUsuario.Click += new System.EventHandler(this.btnInserirUsuario_Click);
             // 
             // btnAlterarUsuario
             // 
@@ -268,6 +256,7 @@
             this.btnAlterarUsuario.TabIndex = 18;
             this.btnAlterarUsuario.Text = "Alterar";
             this.btnAlterarUsuario.UseVisualStyleBackColor = false;
+            this.btnAlterarUsuario.Click += new System.EventHandler(this.btnAlterarUsuario_Click);
             // 
             // btnSairUsuario
             // 
@@ -302,12 +291,22 @@
             this.txtSenha2.TabIndex = 3;
             this.txtSenha2.UseSystemPasswordChar = true;
             // 
+            // ckAtivo
+            // 
+            this.ckAtivo.AutoSize = true;
+            this.ckAtivo.Location = new System.Drawing.Point(501, 404);
+            this.ckAtivo.Name = "ckAtivo";
+            this.ckAtivo.Size = new System.Drawing.Size(15, 14);
+            this.ckAtivo.TabIndex = 20;
+            this.ckAtivo.UseVisualStyleBackColor = true;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(634, 491);
+            this.Controls.Add(this.ckAtivo);
             this.Controls.Add(this.btnSairUsuario);
             this.Controls.Add(this.btnAlterarUsuario);
             this.Controls.Add(this.btnInserirUsuario);
@@ -318,7 +317,6 @@
             this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.dgUsuario);
             this.Controls.Add(this.mnuPrincipal);
-            this.Controls.Add(this.cbmAtivo);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.txtNomeCompleto);
             this.Controls.Add(this.txtSenha2);
@@ -352,7 +350,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipo;
-        private System.Windows.Forms.ComboBox cbmAtivo;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.DataGridView dgUsuario;
         private System.Windows.Forms.Button btnBusca;
@@ -365,5 +362,6 @@
         private System.Windows.Forms.Button btnSairUsuario;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSenha2;
+        private System.Windows.Forms.CheckBox ckAtivo;
     }
 }

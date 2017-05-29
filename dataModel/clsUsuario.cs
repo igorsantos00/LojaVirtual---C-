@@ -30,47 +30,66 @@ namespace dataModel
             return referencia;
         }
 
-        public void Salvar()
+        public int Salvar(int idUsuario, string loginUsuario , string senhaUsuario, string nomeUsuario)
         {
-            bool inserir = (this.idUsuario == 0);
-
-            clsConexao conexao = new clsConexao();
-            SqlConnection cn = conexao.Conectar();
-            SqlCommand cmd = cn.CreateCommand();
-
-            if (inserir)
-                cmd.CommandText = "INSERT INTO Usuario " +
-                                "(loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo)" +
-                                "VALUES " +
-                                "(@loginUsuario, @senhaUsuario, @nomeUsuario, @tipoPerfil, @usuarioAtivo)";
-            else
+            int linhas = 0;
+            try
             {
-                cmd.CommandText = "UPDATE Produto " +
-                                    "SET loginUsuario      = @loginUsuario, " +
-                                        "senhaUsuario      = @senhaUsuario, " +
-                                        "nomeUsuario     = @nomeUsuario, " +
-                                        "tipoPerfil = @tipoPerfil, " +
-                                        "usuarioAtivo      = @usuarioAtivo, ";
 
-                cmd.Parameters.Add("idUsuario", SqlDbType.Int).Value = idUsuario;
+                int inserir = idUsuario;
+
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
+                SqlCommand cmd = cn.CreateCommand();
+
+                //Inserindo Usuarios
+                if (inserir == 0)
+                    cmd.CommandText = @"INSERT INTO Usuario (loginUsuario, senhaUsuario,nomeUsuario,tipoPerfil,usuarioAtivo)
+                                    VALUES 
+                                    (@loginUsuario, @senhaUsuario, @nomeUsuario, @tipoPerfil, @usuarioAtivo);
+                                   select SCOPE_IDENTITY();";
+
+                //Alterando Usuario
+                else
+                {
+                    cmd.CommandText = "UPDATE Usuario " +
+                                     "SET loginUsuario = @loginUsuario, " +
+                                        " senhaUsuario = @senhaUsuario, " +
+                                        " nomeUsuario = @nomeUsuario, " +
+                                        " tipoPerfil = @tipoPerfil, " +
+                                        " usuarioAtivo = @usuarioAtivo " +
+                                     "Where idUsuario = @idUsuario";
+
+                    cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+                }
+
+                cmd.Parameters.Add("@loginUsuario", SqlDbType.VarChar, 100).Value = loginUsuario;
+                cmd.Parameters.Add("@senhaUsuario", SqlDbType.VarChar, 64).Value = senhaUsuario;
+                cmd.Parameters.Add("@nomeUsuario", SqlDbType.VarChar, 50).Value = nomeUsuario;
+                cmd.Parameters.Add("@tipoPerfil", SqlDbType.Char, 1).Value = tipoPerfil;
+                cmd.Parameters.Add("@usuarioAtivo", SqlDbType.Bit, 1).Value = usuarioAtivo;
+                linhas = cmd.ExecuteNonQuery();
+
+
+                if (inserir == 0)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = "SELECT @@Identity";
+                    linhas = cmd.ExecuteNonQuery();
+                }
+
+                cn.Close();
+                cn.Dispose();
+            }
+            catch (SqlException ex)
+            {
+
+                Console.WriteLine("Erro \n" + ex.Message);
+                throw;
             }
 
-            cmd.Parameters.Add("@loginUsuario", SqlDbType.VarChar, 70).Value = this.loginUsuario;
-            cmd.Parameters.Add("@senhaUsuario", SqlDbType.VarChar, 500).Value = this.senhaUsuario;
-            cmd.Parameters.Add("@nomeUsuario", SqlDbType.Int).Value = this.nomeUsuario;
-            cmd.Parameters.Add("@tipoPerfil", SqlDbType.Money).Value = this.tipoPerfil;
-            cmd.Parameters.Add("@usuarioAtivo", SqlDbType.Int).Value = this.usuarioAtivo;
-            cmd.ExecuteNonQuery();
 
-            if (inserir)
-            {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "SELECT @@Identity";
-                this.idUsuario = Convert.ToInt32(cmd.ExecuteScalar());
-            }
-
-            cn.Close();
-            cn.Dispose();
+            return linhas;
         }
 
         public static List<clsUsuario> SelecionarUsuario()
@@ -124,7 +143,7 @@ namespace dataModel
         public static List<clsUsuario> SelecionarUsuarioPorNome(string nomeUsuario)
         {
             string sql = @"SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario
-                           Where nomeUsuario like '%@nomeUsuario%' ";
+                           Where nomeUsuario like @nomeUsuario ";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -167,6 +186,28 @@ namespace dataModel
             }
 
            return Usuario;
+
+        }
+
+        public int ExcluirUsuario(int idUsuario)
+        {
+
+            string sql = "Delete FROM dbo.Usuario " +
+           "WHERE idUsuario = @idUsuario";
+
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+
+            int linhas = cmd.ExecuteNonQuery();
+
+
+            return linhas;
+
+
+
 
         }
 
