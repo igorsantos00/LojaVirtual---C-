@@ -76,8 +76,8 @@ namespace LojaTeste
             {
                 List<clsUsuario> Usuario = clsUsuario.SelecionarUsuarioPorNome(txtNomeUsuario.Text);
                 dgUsuario.DataSource = Usuario;
-                configuraDgUsuario();
-                atualizarDgUsuario();
+                dgUsuario.Refresh();
+               
             }
 
         }
@@ -169,9 +169,12 @@ namespace LojaTeste
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtLogin.Text = null;
+                txtNomeCompleto = null;
+                txtNomeUsuario = null;
                 txtSenha1.Text = null;
                 txtSenha2.Text = null;
-                txtNomeCompleto.Text = null;
+                cmbTipo.Text = null;
+                ckAtivo.Checked = false;
 
 
 
@@ -209,6 +212,10 @@ namespace LojaTeste
                     txtLogin.Text = null;
                     txtNomeCompleto = null;
                     txtNomeUsuario = null;
+                    txtSenha1.Text = null;
+                    txtSenha2.Text = null;
+                    cmbTipo.Text = null;
+                    ckAtivo.Checked = false;
                 }
                 catch (Exception erro)
                 {
