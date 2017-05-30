@@ -52,13 +52,9 @@
             this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btPedido = new System.Windows.Forms.Button();
             this.btUsuario = new System.Windows.Forms.Button();
-            this.btClientes = new System.Windows.Forms.Button();
-            this.btStatuPedido = new System.Windows.Forms.Button();
             this.btCategoria = new System.Windows.Forms.Button();
             this.btEstoque = new System.Windows.Forms.Button();
-            this.btPagamento = new System.Windows.Forms.Button();
             this.btProduto = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -89,7 +85,7 @@
             this.movimentaçõesToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
-            this.mnuPrincipal.Size = new System.Drawing.Size(1148, 24);
+            this.mnuPrincipal.Size = new System.Drawing.Size(1158, 24);
             this.mnuPrincipal.TabIndex = 4;
             this.mnuPrincipal.Text = "menuStrip1";
             // 
@@ -99,20 +95,20 @@
             this.fileToolStripMenuItem,
             this.logoutToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.fileToolStripMenuItem.Text = "Sair";
             this.fileToolStripMenuItem.Click += new System.EventHandler(this.fileToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
@@ -126,45 +122,44 @@
             this.statusPedidoToolStripMenuItem,
             this.tipoPagamentoToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
-            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
             // 
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
-            this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             // 
             // statusPedidoToolStripMenuItem
             // 
             this.statusPedidoToolStripMenuItem.Name = "statusPedidoToolStripMenuItem";
-            this.statusPedidoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.statusPedidoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.statusPedidoToolStripMenuItem.Text = "Status Pedido";
             // 
             // tipoPagamentoToolStripMenuItem
             // 
             this.tipoPagamentoToolStripMenuItem.Name = "tipoPagamentoToolStripMenuItem";
-            this.tipoPagamentoToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.tipoPagamentoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.tipoPagamentoToolStripMenuItem.Text = "Tipo Pagamento";
             // 
             // movimentaçõesToolStripMenuItem
@@ -173,21 +168,20 @@
             this.pedidoToolStripMenuItem,
             this.pedidoToolStripMenuItem1});
             this.movimentaçõesToolStripMenuItem.Name = "movimentaçõesToolStripMenuItem";
-            this.movimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(104, 20);
+            this.movimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.movimentaçõesToolStripMenuItem.Text = "Movimentações";
             // 
             // pedidoToolStripMenuItem
             // 
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.pedidoToolStripMenuItem.Text = "Estoque";
             // 
             // pedidoToolStripMenuItem1
             // 
             this.pedidoToolStripMenuItem1.Name = "pedidoToolStripMenuItem1";
-            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(116, 22);
+            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
             this.pedidoToolStripMenuItem1.Text = "Pedido";
-            this.pedidoToolStripMenuItem1.Click += new System.EventHandler(this.pedidoToolStripMenuItem1_Click);
             // 
             // label1
             // 
@@ -212,7 +206,7 @@
             this.lblLogin.Size = new System.Drawing.Size(71, 20);
             this.lblLogin.TabIndex = 5;
             this.lblLogin.Text = "Usuário";
-            this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
+            //this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
             // 
             // imgUsuario
             // 
@@ -223,7 +217,6 @@
             this.imgUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.imgUsuario.TabIndex = 0;
             this.imgUsuario.TabStop = false;
-            this.imgUsuario.Click += new System.EventHandler(this.imgUsuario_Click);
             // 
             // LbMenu
             // 
@@ -236,7 +229,6 @@
             this.LbMenu.Size = new System.Drawing.Size(176, 25);
             this.LbMenu.TabIndex = 6;
             this.LbMenu.Text = "Movimentações";
-            this.LbMenu.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // timer1
             // 
@@ -253,7 +245,6 @@
             this.lblHora.Size = new System.Drawing.Size(73, 13);
             this.lblHora.TabIndex = 8;
             this.lblHora.Text = "HH/MM/SS";
-            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // pictureBox1
             // 
@@ -276,21 +267,6 @@
             this.pictureBox2.Size = new System.Drawing.Size(16, 38);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.imgUsuario_Click);
-            // 
-            // btPedido
-            // 
-            this.btPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btPedido.BackgroundImage = global::LojaTeste.Properties.Resources.Bookman_Old_Style2;
-            this.btPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPedido.Location = new System.Drawing.Point(421, 168);
-            this.btPedido.Name = "btPedido";
-            this.btPedido.Size = new System.Drawing.Size(140, 140);
-            this.btPedido.TabIndex = 9;
-            this.btPedido.UseVisualStyleBackColor = false;
-            this.btPedido.Click += new System.EventHandler(this.Pedido_Click);
             // 
             // btUsuario
             // 
@@ -299,40 +275,12 @@
             this.btUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btUsuario.Location = new System.Drawing.Point(594, 168);
+            this.btUsuario.Location = new System.Drawing.Point(479, 163);
             this.btUsuario.Name = "btUsuario";
             this.btUsuario.Size = new System.Drawing.Size(140, 140);
             this.btUsuario.TabIndex = 9;
             this.btUsuario.UseVisualStyleBackColor = false;
             this.btUsuario.Click += new System.EventHandler(this.Usuario_Click);
-            // 
-            // btClientes
-            // 
-            this.btClientes.BackColor = System.Drawing.Color.Transparent;
-            this.btClientes.BackgroundImage = global::LojaTeste.Properties.Resources.Verdana_16;
-            this.btClientes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btClientes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btClientes.Location = new System.Drawing.Point(767, 168);
-            this.btClientes.Name = "btClientes";
-            this.btClientes.Size = new System.Drawing.Size(140, 140);
-            this.btClientes.TabIndex = 9;
-            this.btClientes.UseVisualStyleBackColor = false;
-            this.btClientes.Click += new System.EventHandler(this.Cliente_Click);
-            // 
-            // btStatuPedido
-            // 
-            this.btStatuPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btStatuPedido.BackgroundImage = global::LojaTeste.Properties.Resources.StatuPedidoMenu;
-            this.btStatuPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btStatuPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btStatuPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btStatuPedido.Location = new System.Drawing.Point(943, 168);
-            this.btStatuPedido.Name = "btStatuPedido";
-            this.btStatuPedido.Size = new System.Drawing.Size(140, 140);
-            this.btStatuPedido.TabIndex = 9;
-            this.btStatuPedido.UseVisualStyleBackColor = false;
-            this.btStatuPedido.Click += new System.EventHandler(this.StatusPedido_Click);
             // 
             // btCategoria
             // 
@@ -341,7 +289,7 @@
             this.btCategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCategoria.Location = new System.Drawing.Point(421, 356);
+            this.btCategoria.Location = new System.Drawing.Point(479, 368);
             this.btCategoria.Name = "btCategoria";
             this.btCategoria.Size = new System.Drawing.Size(140, 140);
             this.btCategoria.TabIndex = 9;
@@ -355,26 +303,12 @@
             this.btEstoque.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEstoque.Location = new System.Drawing.Point(594, 356);
+            this.btEstoque.Location = new System.Drawing.Point(872, 368);
             this.btEstoque.Name = "btEstoque";
             this.btEstoque.Size = new System.Drawing.Size(140, 140);
             this.btEstoque.TabIndex = 9;
             this.btEstoque.UseVisualStyleBackColor = false;
             this.btEstoque.Click += new System.EventHandler(this.Estoque_Click);
-            // 
-            // btPagamento
-            // 
-            this.btPagamento.BackColor = System.Drawing.Color.Transparent;
-            this.btPagamento.BackgroundImage = global::LojaTeste.Properties.Resources.calculadoraMenu;
-            this.btPagamento.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btPagamento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPagamento.Location = new System.Drawing.Point(767, 356);
-            this.btPagamento.Name = "btPagamento";
-            this.btPagamento.Size = new System.Drawing.Size(140, 140);
-            this.btPagamento.TabIndex = 9;
-            this.btPagamento.UseVisualStyleBackColor = false;
-            this.btPagamento.Click += new System.EventHandler(this.Pagamento_Click);
             // 
             // btProduto
             // 
@@ -383,7 +317,7 @@
             this.btProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btProduto.Location = new System.Drawing.Point(943, 356);
+            this.btProduto.Location = new System.Drawing.Point(872, 163);
             this.btProduto.Name = "btProduto";
             this.btProduto.Size = new System.Drawing.Size(140, 140);
             this.btProduto.TabIndex = 9;
@@ -411,7 +345,6 @@
             this.pictureBox4.Size = new System.Drawing.Size(16, 38);
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.imgUsuario_Click);
             // 
             // label2
             // 
@@ -424,7 +357,6 @@
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 8;
             this.label2.Text = "Configuração";
-            this.label2.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // pictureBox5
             // 
@@ -449,7 +381,6 @@
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 8;
             this.label3.Text = "Logoff";
-            this.label3.Click += new System.EventHandler(this.lblHora_Click);
             // 
             // pictureBox6
             // 
@@ -493,15 +424,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutMenu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1148, 645);
+            this.ClientSize = new System.Drawing.Size(1158, 659);
             this.Controls.Add(this.btProduto);
-            this.Controls.Add(this.btPagamento);
             this.Controls.Add(this.btEstoque);
             this.Controls.Add(this.btCategoria);
-            this.Controls.Add(this.btStatuPedido);
-            this.Controls.Add(this.btClientes);
             this.Controls.Add(this.btUsuario);
-            this.Controls.Add(this.btPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblHora);
@@ -566,13 +493,9 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btPedido;
         private System.Windows.Forms.Button btUsuario;
-        private System.Windows.Forms.Button btClientes;
-        private System.Windows.Forms.Button btStatuPedido;
         private System.Windows.Forms.Button btCategoria;
         private System.Windows.Forms.Button btEstoque;
-        private System.Windows.Forms.Button btPagamento;
         private System.Windows.Forms.Button btProduto;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
