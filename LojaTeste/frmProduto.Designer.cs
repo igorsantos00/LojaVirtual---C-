@@ -191,12 +191,14 @@
             this.mnuPrincipal.Size = new System.Drawing.Size(745, 24);
             this.mnuPrincipal.TabIndex = 18;
             this.mnuPrincipal.Text = "menuStrip1";
+            this.mnuPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuPrincipal_ItemClicked);
             // 
             // imgImagem
             // 
             this.imgImagem.Location = new System.Drawing.Point(380, 299);
             this.imgImagem.Name = "imgImagem";
             this.imgImagem.Size = new System.Drawing.Size(353, 206);
+            this.imgImagem.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgImagem.TabIndex = 11;
             this.imgImagem.TabStop = false;
             // 
@@ -263,14 +265,13 @@
             this.dgProduto.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dgProduto.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgProduto.Location = new System.Drawing.Point(15, 78);
-            this.dgProduto.MultiSelect = false;
             this.dgProduto.Name = "dgProduto";
-            this.dgProduto.ReadOnly = true;
-            this.dgProduto.RowHeadersVisible = false;
             this.dgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProduto.Size = new System.Drawing.Size(718, 199);
             this.dgProduto.TabIndex = 21;
+            this.dgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProduto_CellContentClick_1);
             // 
             // btnBuscarProduto
             // 
@@ -342,6 +343,7 @@
             this.btnExcluirProduto.TabIndex = 27;
             this.btnExcluirProduto.Text = "Excluir";
             this.btnExcluirProduto.UseVisualStyleBackColor = false;
+            this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluirProduto_Click_1);
             // 
             // btnSelecionarProduto
             // 
@@ -354,6 +356,7 @@
             this.btnSelecionarProduto.TabIndex = 28;
             this.btnSelecionarProduto.Text = "Selecionar";
             this.btnSelecionarProduto.UseVisualStyleBackColor = false;
+            this.btnSelecionarProduto.Click += new System.EventHandler(this.btnSelecionarProduto_Click_1);
             // 
             // frmProduto
             // 

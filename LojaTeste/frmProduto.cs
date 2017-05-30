@@ -35,7 +35,7 @@ namespace LojaTeste
             dgProduto.Columns[6].HeaderText = "Status";
             dgProduto.Columns[7].HeaderText = "IDUsuario";
             dgProduto.Columns[8].HeaderText = "QtdMin.Estoque";
-
+            dgProduto.Columns[9].HeaderText = "Nome Categoria";
             //Redimenciona o Tamanho da Coluna
 
             dgProduto.Columns[0].Width = 50;
@@ -47,13 +47,15 @@ namespace LojaTeste
             dgProduto.Columns[6].Width = 150;
             dgProduto.Columns[7].Width = 150;
             dgProduto.Columns[8].Width = 150;
+            dgProduto.Columns[9].Width = 150;
+
 
         }
 
         private void atualizarDgProduto()
         {
 
-            List<clsProduto> Produto = clsProduto.SelecionarProduto();
+            List<clsProduto> Produto = clsProduto.SelecionarProduto();            
             dgProduto.DataSource = Produto;
             dgProduto.Columns["idProduto"].Visible = true;
             dgProduto.Columns["Imagem"].Visible = false;
@@ -76,11 +78,6 @@ namespace LojaTeste
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -155,7 +152,31 @@ namespace LojaTeste
             }
         }
 
-        private void btnExcluirProduto_Click(object sender, EventArgs e)
+        private void btnSelecionarProduto_Click_1(object sender, EventArgs e)
+        {
+            //Verifica se tem algum registro selecionado
+            if (dgProduto.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum Produto selecionada");
+                return;
+            }
+
+
+            ProdutoSelecionado = (dgProduto.SelectedRows[0].DataBoundItem as clsProduto);
+
+            //Inserindo os valores nos campos
+
+            txtnomeProduto.Text = ProdutoSelecionado.nomeProduto;
+            txtdescProduto.Text = ProdutoSelecionado.descProduto;
+            txtprecProduto.Text = Convert.ToString(ProdutoSelecionado.precProduto);
+            txtdescontoPromocao.Text = Convert.ToString(ProdutoSelecionado.descontoPromocao);
+            txtqtdMinEstoque.Text = Convert.ToString(ProdutoSelecionado.qtdMinEstoque);
+            
+
+            validar = false;
+        }
+
+        private void btnExcluirProduto_Click_1(object sender, EventArgs e)
         {
             //Verifica se tem algum registro selecionado
             if (dgProduto.SelectedRows.Count == 0)
@@ -202,27 +223,33 @@ namespace LojaTeste
             }
 
             atualizarDgProduto();
-
         }
 
-        private void btnSelecionarProduto_Click(object sender, EventArgs e)
+        private void dgProduto_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            //Verifica se tem algum registro selecionado
-            if (dgProduto.SelectedRows.Count == 0)
+            txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
+            txtdescProduto.Text = dgProduto.CurrentRow.Cells["descProduto"].Value.ToString();
+            txtprecProduto.Text = dgProduto.CurrentRow.Cells["precProduto"].Value.ToString();
+            txtdescontoPromocao.Text = dgProduto.CurrentRow.Cells["descontoPromocao"].Value.ToString();
+            txtqtdMinEstoque.Text = dgProduto.CurrentRow.Cells["qtdMinEstoque"].Value.ToString();
+            chkativoProduto.Checked = Convert.ToBoolean(dgProduto.CurrentRow.Cells["ativoProduto"].Value);
+            txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
+            txtidCategoria.Text = dgProduto.CurrentRow.Cells["nomeCategoria"].Value.ToString();
+
+            if (((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0)
             {
-                MessageBox.Show("Nenhum Produto selecionada");
-                return;
+                MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
+                imgImagem.Image = Image.FromStream(imagem);
             }
-
-
-            ProdutoSelecionado = (dgProduto.SelectedRows[0].DataBoundItem as clsProduto);
-
-            //Inserindo os valores nos campos
-
-            txtnomeProduto.Text = ProdutoSelecionado.nomeProduto;
-            txtdescProduto.Text = ProdutoSelecionado.descProduto;
-            validar = false;
+            else
+            {
+                imgImagem.Image = null;
+            }
         }
 
+        private void mnuPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

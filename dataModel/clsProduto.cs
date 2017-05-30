@@ -17,10 +17,12 @@ namespace dataModel
         public decimal precProduto { get; set; }
         public decimal descontoPromocao { get; set; }
         public int idCategoria { get; set; }
-        public string ativoProduto { get; set; }
+        public bool ativoProduto { get; set; }
         public int idUsuario { get; set; }
         public int qtdMinEstoque { get; set; }
         public byte[] imagem { get; set; }
+
+        public string nomeCategoria { get; set; }
 
         //Faz desse objeto um Singleton.
 
@@ -88,7 +90,9 @@ namespace dataModel
 
         public static List<clsProduto> SelecionarProduto()
         {
-            string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem FROM dbo.Produto";
+            string sql = @"SELECT idProduto,nomeProduto,descProduto,precProduto,descontoPromocao,P.IDCategoria, nomeCategoria, ativoProduto = CONVERT(BIT,CASE WHEN ATIVOPRODUTO NOT IN (0,1) THEN 0 ELSE ATIVOPRODUTO END),idUsuario,qtdMinEstoque,imagem 
+                         FROM dbo.Produto P INNER JOIN dbo.Categoria C
+                         ON P.idCategoria = C.idCategoria";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -125,7 +129,7 @@ namespace dataModel
                 }
                 if (!dr.IsDBNull(dr.GetOrdinal("ativoProduto")))
                 {
-                    C.ativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                    C.ativoProduto = dr.GetBoolean(dr.GetOrdinal("ativoProduto"));
                 }
                 if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                 {
@@ -134,6 +138,10 @@ namespace dataModel
                 if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
                 {
                     C.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
                 }
                 if (dr["Imagem"] != DBNull.Value)
                     C.imagem = (byte[])dr["Imagem"];
@@ -150,7 +158,8 @@ namespace dataModel
 
         public static List<clsProduto> SelecionarProdutoID(int idProduto)
         {
-            string sql = "SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque FROM dbo.Produto WHERE idProduto = @idProduto";
+            string sql = @"SELECT idProduto, nomeProduto, descProduto, precProduto, descontoPromocao, P.idCategoria, nomeCategoria,  ativoProduto = CONVERT(BIT,CASE WHEN ATIVOPRODUTO NOT IN (0,1) THEN 0 ELSE ATIVOPRODUTO END), idUsuario, qtdMinEstoque FROM dbo.Produto P INNER JOIN dbo.Categoria C
+                         ON P.idCategoria = C.idCategoria WHERE idProduto = @idProduto";
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -191,7 +200,7 @@ namespace dataModel
                 }
                 if (!dr.IsDBNull(dr.GetOrdinal("ativoProduto")))
                 {
-                    C.ativoProduto = dr.GetString(dr.GetOrdinal("ativoProduto"));
+                    C.ativoProduto = dr.GetBoolean(dr.GetOrdinal("ativoProduto"));
                 }
                 if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                 {
@@ -200,6 +209,10 @@ namespace dataModel
                 if (!dr.IsDBNull(dr.GetOrdinal("qtdMinEstoque")))
                 {
                     C.qtdMinEstoque = dr.GetInt32(dr.GetOrdinal("qtdMinEstoque"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
                 }
 
                 Produto.Add(C);
