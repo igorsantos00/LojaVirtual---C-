@@ -36,57 +36,126 @@ namespace dataModel
             return referencia;
         }
 
-        public void Salvar()
+        public int Salvar(int idProduto, string nomeProduto, string descProduto, decimal precProduto, decimal descontoPromocao, int idCategoria, bool ativoProduto, int idUsuario, int qtdMinEstoque, byte[] imagem)
+
+
         {
-            bool inserir = (this.idProduto == 0);
+            if (Convert.ToString(idCategoria) == "kids")
+            {
+                idCategoria = 99;
+            }
+            else if (Convert.ToString(idCategoria) == "Carrinhos")
+            {
+                idCategoria = 1;
 
-            clsConexao conexao = new clsConexao();
-            SqlConnection cn = conexao.Conectar();
-            SqlCommand cmd = cn.CreateCommand();
+            }
+            else if (Convert.ToString(idCategoria) == "Blocos de Montar")
+            {
+                idCategoria = 2;
 
-            if (inserir)
-                cmd.CommandText = "INSERT INTO Produto " +
-                                "(nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem)" +
-                                "VALUES " +
-                                "(@nomeProduto, @descProduto, @precProduto, @descontoPromocao, @idCategoria, @ativoProduto, @idUsuario, @qtdMinEstoque, @imagem)";
+            }
+            else if (Convert.ToString(idCategoria) == "Tabuleiro")
+            {
+                idCategoria = 3;
+
+            }
+            else if (Convert.ToString(idCategoria) == "Puzzle")
+            {
+                idCategoria = 4;
+
+            }
+            else if (Convert.ToString(idCategoria) == "Classicos")
+            {
+                idCategoria = 5;
+
+            }
+            else if (Convert.ToString(idCategoria) == "Bonecas")
+            {
+                idCategoria = 6;
+
+            }
+            else if (Convert.ToString(idCategoria) == "Ação")
+            {
+                idCategoria = 84;
+
+            }
+            else if (Convert.ToString(idCategoria) == "Adultos")
+            {
+                idCategoria = 86;
+
+            }
             else
             {
-                cmd.CommandText = "UPDATE Produto " +
-                                    "SET nomeProduto      = @nomeProduto, " +
-                                        "descProduto      = @descProduto, " +
-                                        "prescProduto     = @prescProduto, " +
-                                        "descontoPromocao = @descontoPromocao, " +
-                                        "idCategoria      = @idCategoria, " +
-                                        "ativoProduto     = @ativoProduto, " +
-                                        "idUsuario        = @idUsuario, " +
-                                        "qtdMinEstoque    = @qtdMinEstoque, " +
-                                        "imagem           = @imagem " +
-                                        "WHERE idProduto  = @idProduto";
+                idCategoria = 96;
 
-                cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
             }
 
-            cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar, 70).Value = this.nomeProduto;
-            cmd.Parameters.Add("@descProduto", SqlDbType.VarChar, 500).Value = this.descProduto;
-            cmd.Parameters.Add("@precProduto", SqlDbType.Int).Value = this.precProduto;
-            cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = this.descontoPromocao;
-            cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = this.idCategoria;
-            cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = this.ativoProduto;
-            cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = this.idUsuario;
-            cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = this.qtdMinEstoque;
-            cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = this.imagem;
-            cmd.ExecuteNonQuery();
-
-            if (inserir)
+            int linhas = 0;
+            try
             {
-                cmd.Parameters.Clear();
-                cmd.CommandText = "SELECT @@Identity";
-                this.idProduto = Convert.ToInt32(cmd.ExecuteScalar());
+
+                int inserir = idProduto;
+
+
+
+                clsConexao conexao = new clsConexao();
+                SqlConnection cn = conexao.Conectar();
+                SqlCommand cmd = cn.CreateCommand();
+
+                if (inserir == 0)
+                    cmd.CommandText = "INSERT INTO Produto " +
+                                    "(nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem)" +
+                                    "VALUES " +
+                                    "(@nomeProduto, @descProduto, @precProduto, @descontoPromocao, @idCategoria, @ativoProduto, @idUsuario, @qtdMinEstoque, @imagem)";
+                else
+                {
+                    cmd.CommandText = "UPDATE Produto " +
+                                        "SET nomeProduto      = @nomeProduto, " +
+                                            "descProduto      = @descProduto, " +
+                                            "prescProduto     = @prescProduto, " +
+                                            "descontoPromocao = @descontoPromocao, " +
+                                            "idCategoria      = @idCategoria, " +
+                                            "ativoProduto     = @ativoProduto, " +
+                                            "idUsuario        = @idUsuario, " +
+                                            "qtdMinEstoque    = @qtdMinEstoque, " +
+                                            "imagem           = @imagem " +
+                                            "WHERE idProduto  = @idProduto";
+
+                    cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
+                }
+
+                cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar, 70).Value = this.nomeProduto;
+                cmd.Parameters.Add("@descProduto", SqlDbType.VarChar, 500).Value = this.descProduto;
+                cmd.Parameters.Add("@precProduto", SqlDbType.Money).Value = this.precProduto;
+                cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = this.descontoPromocao;
+                cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = this.idCategoria;
+                cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = this.ativoProduto;
+                cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = this.idUsuario;
+                cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = this.qtdMinEstoque;
+                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = this.imagem;
+                cmd.ExecuteNonQuery();
+
+                if (inserir == 0)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.CommandText = "SELECT @@Identity";
+                    this.idProduto = Convert.ToInt32(cmd.ExecuteScalar());
+                    linhas = cmd.ExecuteNonQuery();
+                }
+
+                cn.Close();
+                cn.Dispose();
+            }
+            catch (SqlException ex)
+            {
+
+                Console.WriteLine("Erro \n" + ex.Message);
+                throw;
             }
 
-            cn.Close();
-            cn.Dispose();
-        }
+
+            return linhas;
+          }
 
         public static List<clsProduto> SelecionarProduto()
         {
@@ -239,6 +308,8 @@ namespace dataModel
             return linhas;
 
         }
+
+   
     }
 }
 

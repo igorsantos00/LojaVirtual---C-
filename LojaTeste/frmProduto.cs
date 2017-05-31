@@ -80,10 +80,6 @@ namespace LojaTeste
             this.Close();
         }
 
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnBuscarProduto_Click(object sender, EventArgs e)
         {
@@ -136,7 +132,7 @@ namespace LojaTeste
             {
                 clsProduto P = (clsProduto)dgProduto.SelectedRows[0].DataBoundItem;
                 P.imagem = imagem;
-                P.Salvar();
+               
             }
         }
         private void dgProduto_SelectionChanged(object sender, EventArgs e)
@@ -251,5 +247,47 @@ namespace LojaTeste
         {
 
         }
+
+    
+
+        private void btnInserir_Click(object sender, EventArgs e)
+        {
+            clsProduto P = new clsProduto();
+          
+                retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.Text), chkativoProduto.Checked, 0, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+
+                int idCategoria = Convert.ToInt32(retorno);
+                MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtnomeProduto.Text = null;
+                txtdescProduto.Text = null;
+                txtprecProduto.Text = null;
+                txtdescontoPromocao.Text = null;
+                txtqtdMinEstoque.Text = null;
+                chkativoProduto.Checked = false;
+                txtidCategoria.Text = null;
+                imgImagem.Image = null;
+         
+
+            atualizarDgProduto();
+        }
+
+
+        public void atualizarcomboCategoria()
+        {
+            clsCategoria C = new clsCategoria();
+
+            txtidCategoria.DataSource = C.GetCategoria();
+            txtidCategoria.ValueMember = "idCategoria";
+            txtidCategoria.DisplayMember = "nomeCategoria";
+        }
+
+
+
+        private void txtidCategoria_Click(object sender, EventArgs e)
+        {
+            atualizarcomboCategoria();
+        }
+
+   
     }
 }

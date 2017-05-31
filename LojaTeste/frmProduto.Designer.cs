@@ -45,7 +45,7 @@
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.imgImagem = new System.Windows.Forms.PictureBox();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnInserir = new System.Windows.Forms.Button();
             this.txtdescontoPromocao = new System.Windows.Forms.TextBox();
             this.lbldescontoPromocao = new System.Windows.Forms.Label();
             this.txtqtdMinEstoque = new System.Windows.Forms.TextBox();
@@ -127,6 +127,7 @@
             this.txtidCategoria.Name = "txtidCategoria";
             this.txtidCategoria.Size = new System.Drawing.Size(115, 21);
             this.txtidCategoria.TabIndex = 9;
+            this.txtidCategoria.Click += new System.EventHandler(this.txtidCategoria_Click);
             // 
             // lblCategoria
             // 
@@ -215,18 +216,18 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnConfirmar
+            // btnInserir
             // 
-            this.btnConfirmar.AutoEllipsis = true;
-            this.btnConfirmar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConfirmar.Location = new System.Drawing.Point(15, 511);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(118, 45);
-            this.btnConfirmar.TabIndex = 20;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnInserir.AutoEllipsis = true;
+            this.btnInserir.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnInserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInserir.Location = new System.Drawing.Point(15, 511);
+            this.btnInserir.Name = "btnInserir";
+            this.btnInserir.Size = new System.Drawing.Size(118, 45);
+            this.btnInserir.TabIndex = 20;
+            this.btnInserir.Text = "Confirmar";
+            this.btnInserir.UseVisualStyleBackColor = false;
+            this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
             // txtdescontoPromocao
             // 
@@ -373,7 +374,7 @@
             this.Controls.Add(this.btnBuscarProduto);
             this.Controls.Add(this.dgProduto);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnInserir);
             this.Controls.Add(this.mnuPrincipal);
             this.Controls.Add(this.lblqtdMinEstoque);
             this.Controls.Add(this.chkativoProduto);
@@ -421,7 +422,7 @@
         private System.Windows.Forms.Label lblqtdMinEstoque;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnInserir;
         private System.Windows.Forms.TextBox txtdescontoPromocao;
         private System.Windows.Forms.Label lbldescontoPromocao;
         private System.Windows.Forms.TextBox txtqtdMinEstoque;

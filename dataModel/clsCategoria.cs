@@ -172,9 +172,31 @@ namespace dataModel
 
 
             return linhas;
+        }
 
+        public List<clsCategoria> GetCategoria()
+        {
+            string sql = "SELECT nomeCategoria FROM dbo.Categoria";
 
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
 
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsCategoria> Categoria = new List<clsCategoria>();
+            while (dr.Read())
+            {
+                clsCategoria C = new clsCategoria();
+
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                }
+                Categoria.Add(C);
+
+            }
+            return Categoria;
 
         }
 
