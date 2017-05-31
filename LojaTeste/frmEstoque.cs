@@ -14,10 +14,10 @@ namespace LojaTeste
 {
     public partial class frmEstoque : Form
     {
-        private clsEstoque CategoriaSelecionada;
+        private clsEstoque EstoqueSelecionada;
         private int retorno;
-        private bool validar = true;
-               
+        private bool validar;
+
         public frmEstoque()
         {
             InitializeComponent();
@@ -50,11 +50,11 @@ namespace LojaTeste
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
 
         private void frmEstoque_Load(object sender, EventArgs e)
         {
-
+            atualizarDgEstoque();
         }
 
         private void btnBusca_Click(object sender, EventArgs e)
@@ -65,9 +65,10 @@ namespace LojaTeste
             }
             else
             {
-                List<clsEstoque> Estoque = clsEstoque.SelecionarEstoqueID(Convert.ToInt32(txtIdProduto.Text));
+                List<clsEstoque> Estoque = clsEstoque.SelecionarEstoquePorNome(txtIdProduto.Text);
                 dgEstoque.DataSource = Estoque;
-                configuraDgEstoque();
+                dgEstoque.Refresh();
+                txtIdProduto.Text = null;
             }
         }
 
@@ -91,7 +92,7 @@ namespace LojaTeste
                 clsEstoque E = new clsEstoque();
                 try
                 {
-                   // retorno = E.Salvar(txtNomeProduto.Text, txtqtdProdutoDisponivel.Text);
+                    retorno = E.Salvar(EstoqueSelecionada.idProduto,  EstoqueSelecionada.qtdProdutoDisponivel);
                 }
                 catch (Exception erro)
                 {
@@ -101,10 +102,10 @@ namespace LojaTeste
 
                 try
                 {
-                    int idCategoria = Convert.ToInt32(retorno);
+                    int idProduto = Convert.ToInt32(retorno);
                     MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     txtNomeProduto.Text = null;
-                    txtqtdProdutoDisponivel.Text = null;
+                    txtQtdProduto.Text = null;
                     validar = true;
                 }
                 catch (Exception)
@@ -115,8 +116,8 @@ namespace LojaTeste
 
                 atualizarDgEstoque();
             }
-                   
-    }
+
+        }
 
         private void btnSelecionar_Click(object sender, EventArgs e)
         {
@@ -128,13 +129,43 @@ namespace LojaTeste
             }
 
 
-            CategoriaSelecionada = (dgEstoque.SelectedRows[0].DataBoundItem as clsEstoque);
+            EstoqueSelecionada = (dgEstoque.SelectedRows[0].DataBoundItem as clsEstoque);
 
             //Inserindo os valores nos campos
-
-            txtNomeProduto.Text = CategoriaSelecionada.nomeProduto;
-            //txtqtdProdutoDisponivel.Text = EstoqueSelecionadar.qtdProdutoDisponivel;
+            txtNomeProduto.Text = EstoqueSelecionada.nomeProduto;
+            txtQtdProduto.Text = Convert.ToString(EstoqueSelecionada.qtdProdutoDisponivel);
+           
             validar = false;
+        }
+
+        private void dgEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNomeProduto.Text = dgEstoque.CurrentRow.Cells["nomeProduto"].Value.ToString();
+            txtQtdProduto.Text = dgEstoque.CurrentRow.Cells["qtdProdutoDisponivel"].Value.ToString();
+        }
+
+       
+
+        private void txtQtdProduto_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+                        
+            if (!v.ValidarNumero(txtQtdProduto.Text) && txtQtdProduto.Text != "")
+            {
+                MessageBox.Show("Só número");
+                txtQtdProduto.Text = "0";
+            }
+        }
+
+        private void txtIdProduto_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtIdProduto.Text) && txtIdProduto.Text != "")
+            {
+                MessageBox.Show("Só letras");
+                txtIdProduto.Text = "";
+            }
         }
     }
 }

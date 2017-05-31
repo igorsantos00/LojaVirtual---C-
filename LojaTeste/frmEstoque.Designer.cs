@@ -37,7 +37,7 @@
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
-            this.txtqtdProdutoDisponivel = new System.Windows.Forms.TextBox();
+            this.txtQtdProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnBusca = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
@@ -51,16 +51,17 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(119, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 16);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Código Produto";
+            this.label1.Text = "Nome Produto";
             // 
             // txtIdProduto
             // 
             this.txtIdProduto.Location = new System.Drawing.Point(119, 52);
             this.txtIdProduto.Name = "txtIdProduto";
             this.txtIdProduto.Size = new System.Drawing.Size(193, 20);
-            this.txtIdProduto.TabIndex = 1;
+            this.txtIdProduto.TabIndex = 2;
+            this.txtIdProduto.TextChanged += new System.EventHandler(this.txtIdProduto_TextChanged);
             // 
             // label2
             // 
@@ -77,17 +78,28 @@
             // 
             this.txtNomeProduto.Location = new System.Drawing.Point(12, 369);
             this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.ReadOnly = true;
             this.txtNomeProduto.Size = new System.Drawing.Size(269, 20);
-            this.txtNomeProduto.TabIndex = 1;
+            this.txtNomeProduto.TabIndex = 5;
             // 
             // dgEstoque
             // 
+            this.dgEstoque.AllowUserToAddRows = false;
+            this.dgEstoque.AllowUserToDeleteRows = false;
+            this.dgEstoque.AllowUserToResizeRows = false;
             this.dgEstoque.BackgroundColor = System.Drawing.Color.MediumTurquoise;
             this.dgEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dgEstoque.Location = new System.Drawing.Point(11, 96);
+            this.dgEstoque.MultiSelect = false;
             this.dgEstoque.Name = "dgEstoque";
+            this.dgEstoque.ReadOnly = true;
+            this.dgEstoque.RowHeadersVisible = false;
+            this.dgEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEstoque.Size = new System.Drawing.Size(575, 180);
-            this.dgEstoque.TabIndex = 2;
+            this.dgEstoque.TabIndex = 3;
+            this.dgEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoque_CellContentClick);
+            this.dgEstoque.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // mnuPrincipal
             // 
@@ -104,10 +116,10 @@
             this.btnSair.AutoEllipsis = true;
             this.btnSair.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(160, 408);
+            this.btnSair.Location = new System.Drawing.Point(152, 408);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(118, 50);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 8;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -117,7 +129,7 @@
             this.btnAlterar.AutoEllipsis = true;
             this.btnAlterar.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnAlterar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(11, 408);
+            this.btnAlterar.Location = new System.Drawing.Point(12, 408);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(118, 50);
             this.btnAlterar.TabIndex = 7;
@@ -125,12 +137,13 @@
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
-            // txtqtdProdutoDisponivel
+            // txtQtdProduto
             // 
-            this.txtqtdProdutoDisponivel.Location = new System.Drawing.Point(300, 369);
-            this.txtqtdProdutoDisponivel.Name = "txtqtdProdutoDisponivel";
-            this.txtqtdProdutoDisponivel.Size = new System.Drawing.Size(162, 20);
-            this.txtqtdProdutoDisponivel.TabIndex = 9;
+            this.txtQtdProduto.Location = new System.Drawing.Point(300, 369);
+            this.txtQtdProduto.Name = "txtQtdProduto";
+            this.txtQtdProduto.Size = new System.Drawing.Size(162, 20);
+            this.txtQtdProduto.TabIndex = 6;
+            this.txtQtdProduto.TextChanged += new System.EventHandler(this.txtQtdProduto_TextChanged);
             // 
             // label3
             // 
@@ -151,7 +164,7 @@
             this.btnBusca.Location = new System.Drawing.Point(12, 36);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 36);
-            this.btnBusca.TabIndex = 10;
+            this.btnBusca.TabIndex = 1;
             this.btnBusca.Text = "Busca";
             this.btnBusca.UseVisualStyleBackColor = false;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
@@ -163,7 +176,7 @@
             this.btnSelecionar.Location = new System.Drawing.Point(12, 286);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(118, 50);
-            this.btnSelecionar.TabIndex = 11;
+            this.btnSelecionar.TabIndex = 4;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
@@ -176,7 +189,7 @@
             this.ClientSize = new System.Drawing.Size(596, 480);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnBusca);
-            this.Controls.Add(this.txtqtdProdutoDisponivel);
+            this.Controls.Add(this.txtQtdProduto);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnAlterar);
@@ -208,7 +221,7 @@
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnAlterar;
-        private System.Windows.Forms.TextBox txtqtdProdutoDisponivel;
+        private System.Windows.Forms.TextBox txtQtdProduto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBusca;
         private System.Windows.Forms.Button btnSelecionar;
