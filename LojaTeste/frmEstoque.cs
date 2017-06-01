@@ -154,8 +154,8 @@ namespace LojaTeste
                         
             if (!v.ValidarNumero(txtQtdProduto.Text) && txtQtdProduto.Text != "")
             {
-                MessageBox.Show("Só número");
-                txtQtdProduto.Text = "0";
+                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtQtdProduto.Text = "";
             }
         }
 
@@ -165,7 +165,7 @@ namespace LojaTeste
 
             if (!v.ValidaLetras(txtIdProduto.Text) && txtIdProduto.Text != "")
             {
-                MessageBox.Show("Só letras");
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdProduto.Text = "";
             }
         }

@@ -52,6 +52,7 @@
             this.txtNomeCategoria.Name = "txtNomeCategoria";
             this.txtNomeCategoria.Size = new System.Drawing.Size(238, 20);
             this.txtNomeCategoria.TabIndex = 2;
+            this.txtNomeCategoria.TextChanged += new System.EventHandler(this.txtNomeCategoria_TextChanged);
             // 
             // label1
             // 
@@ -70,6 +71,7 @@
             this.txtDescCategoria.Name = "txtDescCategoria";
             this.txtDescCategoria.Size = new System.Drawing.Size(349, 20);
             this.txtDescCategoria.TabIndex = 3;
+            this.txtDescCategoria.TextChanged += new System.EventHandler(this.txtDescCategoria_TextChanged);
             // 
             // lbldesCategoria
             // 
@@ -199,6 +201,7 @@
             this.txtIdCategoria.Name = "txtIdCategoria";
             this.txtIdCategoria.Size = new System.Drawing.Size(193, 20);
             this.txtIdCategoria.TabIndex = 1;
+            this.txtIdCategoria.TextChanged += new System.EventHandler(this.txtIdCategoria_TextChanged);
             // 
             // lblIdNomeCategoria
             // 

@@ -249,5 +249,38 @@ namespace LojaTeste
             txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
             validar = false;
         }
+
+        private void txtNomeCategoria_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtNomeCategoria.Text) && txtNomeCategoria.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNomeCategoria.Text = "";
+            }
+        }
+
+        private void txtDescCategoria_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtDescCategoria.Text) && txtDescCategoria.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDescCategoria.Text = "";
+            }
+        }
+
+        private void txtIdCategoria_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidarNumero(txtIdCategoria.Text) && txtIdCategoria.Text != "")
+            {
+                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtIdCategoria.Text = "";
+            }
+        }
     }
 }
