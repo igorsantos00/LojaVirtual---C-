@@ -15,22 +15,24 @@ namespace LojaTeste
     {
 
         private clsUsuario userLog;
+        private frmLogin login;
 
-        public frmMenuPrincipal(clsUsuario userLog)
+        public frmMenuPrincipal(clsUsuario userLog, frmLogin login)
         {
 
             InitializeComponent();
             this.userLog = userLog;
             timer1.Enabled = true;
+            this.login = login;
         }
 
-        public frmMenuPrincipal()
-        {
-            InitializeComponent();
-            Form login = new frmLogin();
-            login.ShowDialog();
+        //public frmMenuPrincipal()
+        //{
+        //    InitializeComponent();
+        //    Form login = new frmLogin();
+        //    login.ShowDialog();
 
-        }
+        //}
 
 
 
@@ -73,11 +75,12 @@ namespace LojaTeste
         private void imgCliente_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Deseja fazer logoff?");
-            Form Tela1 = new frmLogin();
-            Tela1.Show();
+            //Form Tela1 = new frmLogin();
+            //Tela1.Show();
             this.Hide();
-            Form frmMenuPrincipal = new frmMenuPrincipal();
-            frmMenuPrincipal.Show();
+            //Form frmMenuPrincipal = new frmMenuPrincipal();
+            //frmMenuPrincipal.Show();
+            login.Show();
 
         }
         private void timer1_Tick(object sender, EventArgs e)
@@ -151,6 +154,11 @@ namespace LojaTeste
         private void lblLogin_TextChanged(object sender, EventArgs e)
         {
             lblLogin.Text = userLog.nomeUsuario;
+        }
+
+        private void frmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            login.Dispose();
         }
     }
 }

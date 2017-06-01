@@ -35,7 +35,7 @@ namespace LojaTeste
                 if (log != null)
                 {
                     MessageBox.Show("Seja bem vindo!");
-                    Form tela = new frmMenuPrincipal(log);
+                    Form tela = new frmMenuPrincipal(log, this);
                     this.Hide();
                     tela.Show();
                 }
@@ -50,6 +50,10 @@ namespace LojaTeste
 
                 MessageBox.Show("Tente novamente");
                 
+            }
+            catch (ConexaoException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
 
         }

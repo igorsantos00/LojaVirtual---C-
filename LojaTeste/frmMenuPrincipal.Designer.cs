@@ -121,20 +121,20 @@
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             // 
             // movimentaçõesToolStripMenuItem
@@ -422,6 +422,7 @@
             this.Name = "frmMenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
             this.TextChanged += new System.EventHandler(this.frmMenuPrincipal_TextChanged);
             this.mnuPrincipal.ResumeLayout(false);

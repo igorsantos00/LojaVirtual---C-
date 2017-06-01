@@ -46,6 +46,7 @@
     <Compile Include="clsEstoque.cs" />
     <Compile Include="clsProduto.cs" />
     <Compile Include="clsUsuario.cs" />
+    <Compile Include="ConexaoException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clsVerifica.cs" />
   </ItemGroup>
