@@ -9,6 +9,7 @@ using System.Data;
 
 namespace dataModel
 {
+    
     public class clsProduto
     {
         public int idProduto { get; set; }

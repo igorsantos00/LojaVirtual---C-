@@ -18,8 +18,10 @@ namespace LojaTeste
         private int retorno;
         private bool validar = true;
         private clsProduto ProdutoSelecionado;
-        public frmProduto()
+        private clsUsuario userLog;
+        public frmProduto(clsUsuario userLog)
         {
+            this.userLog = userLog;
             InitializeComponent();
         }
 
@@ -97,6 +99,7 @@ namespace LojaTeste
 
         private void btnCarregarFoto_Click(object sender, EventArgs e)
         {
+            
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Arquivos de imagem (*.jpg)|*.jpg";
             if (ofd.ShowDialog() == DialogResult.OK)

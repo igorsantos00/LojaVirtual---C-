@@ -13,19 +13,26 @@ namespace LojaTeste
 {
     public partial class frmMenuPrincipal : Form
     {
+
+        private clsUsuario userLog;
+
+        public frmMenuPrincipal(clsUsuario userLog)
+        {
+
+            InitializeComponent();
+            this.userLog = userLog;
+            timer1.Enabled = true;
+        }
+
         public frmMenuPrincipal()
         {
             InitializeComponent();
             Form login = new frmLogin();
             login.ShowDialog();
+
         }
 
-        public frmMenuPrincipal(string text)
-        {
-            InitializeComponent();
-            lblLogin.Text = text;
-            timer1.Enabled = true;
-        }
+
 
         private void frnTeste2_Click(object sender, EventArgs e)
         {
@@ -46,8 +53,8 @@ namespace LojaTeste
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
-            //teste
-            //teste
+
+
         }
 
 
@@ -56,10 +63,10 @@ namespace LojaTeste
         {
         }
 
-      
+
         private void imgProduto_Click(object sender, EventArgs e)
         {
-            Form tela = new frmProduto();
+            Form tela = new frmProduto(userLog);
             tela.ShowDialog();
         }
 
@@ -71,7 +78,7 @@ namespace LojaTeste
             this.Hide();
             Form frmMenuPrincipal = new frmMenuPrincipal();
             frmMenuPrincipal.Show();
-            
+
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -86,14 +93,32 @@ namespace LojaTeste
 
         private void Usuario_Click(object sender, EventArgs e)
         {
-            Form tela = new frmUsuario();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmUsuario();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private void Categoria_Click(object sender, EventArgs e)
         {
-            Form tela = new frmCategoria();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmCategoria();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
         }
 
         private void Estoque_Click(object sender, EventArgs e)
@@ -104,8 +129,28 @@ namespace LojaTeste
 
         private void Produto_Click(object sender, EventArgs e)
         {
-            Form tela = new frmProduto();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmProduto(userLog);
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+
+        }
+
+
+        private void frmMenuPrincipal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLogin_TextChanged(object sender, EventArgs e)
+        {
+            lblLogin.Text = userLog.nomeUsuario;
         }
     }
 }

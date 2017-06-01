@@ -26,22 +26,32 @@ namespace LojaTeste
 
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-            clsUsuario log = new clsUsuario();
-          
-            log = log.Logar(txtLogin.Text,txtSenha.Text);
-
-            if (log != null)
+            try
             {
-                MessageBox.Show("Seja bem vindo!");
-                Form tela = new frmMenuPrincipal(txtLogin.Text);
-                this.Hide();
-                tela.Show();
+                clsUsuario log = new clsUsuario();
+
+                log = log.Logar(txtLogin.Text, txtSenha.Text);
+
+                if (log != null)
+                {
+                    MessageBox.Show("Seja bem vindo!");
+                    Form tela = new frmMenuPrincipal(log);
+                    this.Hide();
+                    tela.Show();
+                }
+                else
+                {
+
+                    MessageBox.Show("Login ou Senha invalido!");
+                }
             }
-            else
+            catch (SqlException sx)
             {
 
-                MessageBox.Show("Login ou Senha invalido!");
+                MessageBox.Show("Tente novamente");
+                
             }
+
         }
 
         private void btnSair_Click(object sender, EventArgs e)

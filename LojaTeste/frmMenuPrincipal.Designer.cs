@@ -38,12 +38,8 @@
             this.usuáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.produtoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusPedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tipoPagamentoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimentaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.imgUsuario = new System.Windows.Forms.PictureBox();
@@ -117,10 +113,7 @@
             this.cadastroToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.usuáriosToolStripMenuItem,
             this.categoriaToolStripMenuItem,
-            this.produtoToolStripMenuItem,
-            this.clienteToolStripMenuItem,
-            this.statusPedidoToolStripMenuItem,
-            this.tipoPagamentoToolStripMenuItem});
+            this.produtoToolStripMenuItem});
             this.cadastroToolStripMenuItem.Name = "cadastroToolStripMenuItem";
             this.cadastroToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.cadastroToolStripMenuItem.Text = "Cadastro";
@@ -144,29 +137,10 @@
             this.produtoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             // 
-            // clienteToolStripMenuItem
-            // 
-            this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.clienteToolStripMenuItem.Text = "Cliente";
-            // 
-            // statusPedidoToolStripMenuItem
-            // 
-            this.statusPedidoToolStripMenuItem.Name = "statusPedidoToolStripMenuItem";
-            this.statusPedidoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.statusPedidoToolStripMenuItem.Text = "Status Pedido";
-            // 
-            // tipoPagamentoToolStripMenuItem
-            // 
-            this.tipoPagamentoToolStripMenuItem.Name = "tipoPagamentoToolStripMenuItem";
-            this.tipoPagamentoToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.tipoPagamentoToolStripMenuItem.Text = "Tipo Pagamento";
-            // 
             // movimentaçõesToolStripMenuItem
             // 
             this.movimentaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pedidoToolStripMenuItem,
-            this.pedidoToolStripMenuItem1});
+            this.pedidoToolStripMenuItem});
             this.movimentaçõesToolStripMenuItem.Name = "movimentaçõesToolStripMenuItem";
             this.movimentaçõesToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.movimentaçõesToolStripMenuItem.Text = "Movimentações";
@@ -176,12 +150,6 @@
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
             this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.pedidoToolStripMenuItem.Text = "Estoque";
-            // 
-            // pedidoToolStripMenuItem1
-            // 
-            this.pedidoToolStripMenuItem1.Name = "pedidoToolStripMenuItem1";
-            this.pedidoToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
-            this.pedidoToolStripMenuItem1.Text = "Pedido";
             // 
             // label1
             // 
@@ -203,10 +171,11 @@
             this.lblLogin.ForeColor = System.Drawing.Color.SpringGreen;
             this.lblLogin.Location = new System.Drawing.Point(161, 35);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(71, 20);
+            this.lblLogin.Size = new System.Drawing.Size(29, 20);
             this.lblLogin.TabIndex = 5;
-            this.lblLogin.Text = "Usuário";
-            //this.lblLogin.Click += new System.EventHandler(this.lblLogin_Click);
+            this.lblLogin.Text = "LL";
+            this.lblLogin.BindingContextChanged += new System.EventHandler(this.lblLogin_TextChanged);
+            this.lblLogin.TextChanged += new System.EventHandler(this.lblLogin_TextChanged);
             // 
             // imgUsuario
             // 
@@ -240,7 +209,7 @@
             this.lblHora.BackColor = System.Drawing.Color.Transparent;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.White;
-            this.lblHora.Location = new System.Drawing.Point(321, 40);
+            this.lblHora.Location = new System.Drawing.Point(430, 40);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(73, 13);
             this.lblHora.TabIndex = 8;
@@ -250,7 +219,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::LojaTeste.Properties.Resources.TimeWrite;
-            this.pictureBox1.Location = new System.Drawing.Point(287, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(396, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(27, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -262,7 +231,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::LojaTeste.Properties.Resources.Risco1;
-            this.pictureBox2.Location = new System.Drawing.Point(236, 27);
+            this.pictureBox2.Location = new System.Drawing.Point(350, 27);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(16, 38);
             this.pictureBox2.TabIndex = 0;
@@ -454,6 +423,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
+            this.TextChanged += new System.EventHandler(this.frmMenuPrincipal_TextChanged);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();
@@ -479,11 +449,7 @@
         private System.Windows.Forms.ToolStripMenuItem movimentaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem categoriaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem statusPedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tipoPagamentoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pedidoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblLogin;

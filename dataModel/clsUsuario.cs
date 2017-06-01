@@ -30,7 +30,7 @@ namespace dataModel
             return referencia;
         }
 
-        public int Salvar(int idUsuario, string loginUsuario , string senhaUsuario, string nomeUsuario,string tipoPerfil, bool usuarioAtivo )
+        public int Salvar(int idUsuario, string loginUsuario, string senhaUsuario, string nomeUsuario, string tipoPerfil, bool usuarioAtivo)
         {
             int linhas = 0;
             try
@@ -94,7 +94,7 @@ namespace dataModel
 
         public static List<clsUsuario> SelecionarUsuario()
         {
-            string sql = "SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario";
+            string sql = @"SELECT idUsuario, loginUsuario, senhaUsuario, nomeUsuario, tipoPerfil, usuarioAtivo FROM dbo.Usuario";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
@@ -105,6 +105,7 @@ namespace dataModel
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
+               
                 if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                 {
 
@@ -119,7 +120,7 @@ namespace dataModel
                 {
                     U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
                 }
-                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeUsuario")))
                 {
                     U.nomeUsuario = dr.GetString(dr.GetOrdinal("nomeUsuario"));
                 }
@@ -169,7 +170,7 @@ namespace dataModel
                 {
                     U.senhaUsuario = dr.GetString(dr.GetOrdinal("senhaUsuario"));
                 }
-                if (!dr.IsDBNull(dr.GetOrdinal("senhaUsuario")))
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeUsuario")))
                 {
                     U.nomeUsuario = dr.GetString(dr.GetOrdinal("nomeUsuario"));
                 }
@@ -185,7 +186,7 @@ namespace dataModel
                 Usuario.Add(U);
             }
 
-           return Usuario;
+            return Usuario;
 
         }
 
@@ -223,7 +224,7 @@ namespace dataModel
                 clsConexao conexao = new clsConexao();
                 SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
-                cmd.CommandText = (@"Select idUsuario, loginusuario, senhausuario,tipoperfil from usuario 
+                cmd.CommandText = (@"Select idUsuario, loginusuario, senhausuario, nomeUsuario, tipoperfil, usuarioAtivo from dbo.usuario 
                                     where loginusuario = @login and senhausuario = @senha");
 
                 cmd.Parameters.Add("@login", SqlDbType.VarChar).Value = login;
@@ -246,7 +247,18 @@ namespace dataModel
                 {
                     log.idUsuario = dr.GetInt32(dr.GetOrdinal("idUsuario"));
                 }
-
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeUsuario")))
+                {
+                    log.nomeUsuario = dr.GetString(dr.GetOrdinal("nomeUsuario"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("tipoPerfil")))
+                {
+                    log.tipoPerfil = dr.GetString(dr.GetOrdinal("tipoPerfil"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("usuarioAtivo")))
+                {
+                    log.usuarioAtivo = dr.GetBoolean(dr.GetOrdinal("usuarioAtivo"));
+                }
 
 
             }
