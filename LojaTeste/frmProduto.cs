@@ -41,14 +41,14 @@ namespace LojaTeste
             //Redimenciona o Tamanho da Coluna
 
             dgProduto.Columns[0].Width = 50;
-            dgProduto.Columns[1].Width = 150;
+            dgProduto.Columns[1].Width = 170;
             dgProduto.Columns[2].Width = 347;
-            dgProduto.Columns[3].Width = 150;
-            dgProduto.Columns[4].Width = 150;
-            dgProduto.Columns[5].Width = 150;
-            dgProduto.Columns[6].Width = 150;
-            dgProduto.Columns[7].Width = 150;
-            dgProduto.Columns[8].Width = 150;
+            dgProduto.Columns[3].Width = 100;
+            dgProduto.Columns[4].Width = 100;
+            dgProduto.Columns[5].Width = 70;
+            dgProduto.Columns[6].Width = 50;
+            dgProduto.Columns[7].Width = 70;
+            dgProduto.Columns[8].Width = 70;
             dgProduto.Columns[9].Width = 150;
 
 

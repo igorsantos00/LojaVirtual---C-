@@ -36,6 +36,8 @@ namespace LojaTeste
             dgEstoque.Columns[1].Width = 190;
             dgEstoque.Columns[2].Width = 346;
 
+       
+
         }
 
         private void atualizarDgEstoque()
@@ -92,7 +94,7 @@ namespace LojaTeste
                 clsEstoque E = new clsEstoque();
                 try
                 {
-                    retorno = E.Salvar(EstoqueSelecionada.idProduto,  EstoqueSelecionada.qtdProdutoDisponivel);
+                    retorno = E.Salvar(EstoqueSelecionada.idProduto, Convert.ToInt32(txtQtdProduto.Text));
                 }
                 catch (Exception erro)
                 {

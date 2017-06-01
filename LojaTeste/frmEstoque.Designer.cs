@@ -216,7 +216,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIdProduto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNomeProduto;
         private System.Windows.Forms.DataGridView dgEstoque;
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.Button btnSair;
@@ -225,5 +224,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnBusca;
         private System.Windows.Forms.Button btnSelecionar;
+        protected System.Windows.Forms.TextBox txtNomeProduto;
     }
 }

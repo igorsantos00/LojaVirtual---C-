@@ -76,6 +76,7 @@ namespace LojaTeste
             {
                 List<clsUsuario> Usuario = clsUsuario.SelecionarUsuarioPorNome(txtNomeUsuario.Text);
                 dgUsuario.DataSource = Usuario;
+                txtNomeUsuario.Text = "";
                 dgUsuario.Refresh();
                
             }

@@ -24,33 +24,42 @@ namespace dataModel
             return referencia;
         }
 
-        public int Salvar(int idProduto,  int qtdProdutoDisponivel)
+        public int Salvar(int idProduto, int qtdProdutoDisponivel)
         {
             int linhas = 0;
-           
 
-
+            try
+            {
                 clsConexao conexao = new clsConexao();
                 SqlConnection cn = conexao.Conectar();
                 SqlCommand cmd = cn.CreateCommand();
 
 
                 cmd.CommandText = @"UPDATE Estoque 
-                                    SET qtdProdutoDisponivel = @qtdProdutoDisponivel
-                                        where idProduto = @idProduto";
+                                   SET qtdProdutoDisponivel = @qtdProdutoDisponivel
+                                   where idProduto = @idProduto";
 
-                cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
-
-               
+                cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
                 cmd.Parameters.Add("@qtdProdutoDisponivel", SqlDbType.Int).Value = qtdProdutoDisponivel;
-                cmd.ExecuteNonQuery();
+                linhas =  cmd.ExecuteNonQuery();
 
 
                 cn.Close();
                 cn.Dispose();
-           
+                return linhas;
 
-            return linhas;
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Erro \n" + ex.Message);
+                throw;
+            }
+
+
+            
+
+
+
         }
 
         public static List<clsEstoque> SelecionarEstoque()
