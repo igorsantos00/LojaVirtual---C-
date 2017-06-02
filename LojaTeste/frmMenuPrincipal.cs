@@ -49,8 +49,16 @@ namespace LojaTeste
 
         private void usuáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form tela = new frmUsuario();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmUsuario();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
@@ -63,6 +71,16 @@ namespace LojaTeste
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Pergunta se quer mesmo fazer logoff
+            DialogResult resultado = MessageBox.Show("Deseja Fazer Logoff? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+
+            this.Hide();
+            login.Show();
         }
 
 
@@ -74,12 +92,15 @@ namespace LojaTeste
 
         private void imgCliente_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Deseja fazer logoff?");
-            //Form Tela1 = new frmLogin();
-            //Tela1.Show();
+            //Pergunta se quer mesmo fazer logoff
+            DialogResult resultado = MessageBox.Show("Deseja Fazer Logoff? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+                     
             this.Hide();
-            //Form frmMenuPrincipal = new frmMenuPrincipal();
-            //frmMenuPrincipal.Show();
             login.Show();
 
         }
@@ -159,6 +180,42 @@ namespace LojaTeste
         private void frmMenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             login.Dispose();
+        }
+
+       
+
+        private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form tela = new frmEstoque();
+            tela.ShowDialog();
+        }
+
+        private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmCategoria();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+        }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (userLog.tipoPerfil == "A")
+            {
+                Form tela = new frmProduto(userLog);
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Somente administrador", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
     }
 }
