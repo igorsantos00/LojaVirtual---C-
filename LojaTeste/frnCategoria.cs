@@ -19,7 +19,7 @@ namespace LojaTeste
     {
         private clsCategoria CategoriaSelecionada;
         private int retorno;
-        private bool validar = true;
+        private bool validar = false;
 
         public frmCategoria()
         {
@@ -82,7 +82,7 @@ namespace LojaTeste
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
-            if (validar)
+            if (validar == false)
             {
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
@@ -100,29 +100,29 @@ namespace LojaTeste
                 clsCategoria C = new clsCategoria();
                 try
                 {
-                    retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    if (txtNomeCategoria.Text != CategoriaSelecionada.nomeCategoria || txtDescCategoria.Text != CategoriaSelecionada.descCategoria)
+                    {
+                        retorno = C.Salvar(CategoriaSelecionada.idCategoria, txtNomeCategoria.Text, txtDescCategoria.Text);
 
-                try
-                {
-                    int idCategoria = Convert.ToInt32(retorno);
-                    MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNomeCategoria.Text = null;
-                    txtDescCategoria.Text = null;
-                    validar = true;
+                        int idCategoria = Convert.ToInt32(retorno);
+                        MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtNomeCategoria.Text = null;
+                        txtDescCategoria.Text = null;
+                        validar = false;
+                        atualizarDgCategoria();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nada foi alterado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
+                    return;
                 }
 
-                atualizarDgCategoria();
             }
 
         }
@@ -132,40 +132,38 @@ namespace LojaTeste
             clsCategoria C = new clsCategoria();
             try
             {
-                retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (txtNomeCategoria.Text == "")
+                {
+                    MessageBox.Show("Campo 'Nome' invalido");
+                    return;
+                }
+                if (validar == false || txtNomeCategoria.Text != CategoriaSelecionada.nomeCategoria || txtDescCategoria.Text != CategoriaSelecionada.descCategoria)
+                {
+                    retorno = C.Salvar(0, txtNomeCategoria.Text, txtDescCategoria.Text);
 
-
-            if (txtNomeCategoria.Text == "")
-            {
-                MessageBox.Show("Campo 'Nome' invalido");
-                return;
-            }
-            try
-            {
-                int idCategoria = Convert.ToInt32(retorno);
-                MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNomeCategoria.Text = null;
-                txtDescCategoria.Text = null;
+                    int idCategoria = Convert.ToInt32(retorno);
+                    MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtNomeCategoria.Text = null;
+                    txtDescCategoria.Text = null;
+                    validar = false;
+                    atualizarDgCategoria();
+                }
+                else
+                {
+                    MessageBox.Show("Dados existente", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                return;
             }
-
-            atualizarDgCategoria();
 
         }
         private void btnExcluirCategoria_Click(object sender, EventArgs e)
         {
             //Verifica se tem algum registro selecionado
-            if (dgCategoria.SelectedRows.Count == 0)
+            if (validar == false)
             {
                 MessageBox.Show("Nenhuma categoria selecionada");
                 return;
@@ -186,101 +184,87 @@ namespace LojaTeste
 
             try
             {
+                
                 retorno = C.ExcluirCategorias(CategoriaSelecionada.idCategoria);
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            //Verificando se deu certo
-            if (retorno != 0)
-            {
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                txtNomeCategoria.Text = null;
+                txtDescCategoria.Text = null;
+                validar = false;
+                atualizarDgCategoria();
+            
             }
-            else
-
+            catch (SqlException  erro)
             {
-                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-            atualizarDgCategoria();
-
-        }
-
-        private void btnSelecionar_Click(object sender, EventArgs e)
-        {
-            //Verifica se tem algum registro selecionado
-            if (dgCategoria.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Nenhuma categoria selecionada");
+                MessageBox.Show("Erro  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validar = true;
                 return;
             }
 
+}
 
-            CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
-
-            //Inserindo os valores nos campos
-
-            txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
-            txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
-            validar = false;
-        }
-
-        private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //Verifica se tem algum registro selecionado
-            if (dgCategoria.SelectedRows.Count == 0)
-            {
-                MessageBox.Show("Nenhuma categoria selecionada");
-                return;
-            }
+private void btnSelecionar_Click(object sender, EventArgs e)
+{
+    //Verifica se tem algum registro selecionado
+    if (dgCategoria.SelectedRows.Count == 0)
+    {
+        MessageBox.Show("Nenhuma categoria selecionada");
+        return;
+    }
 
 
-            CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
+    CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
 
-            //Inserindo os valores nos campos
+    //Inserindo os valores nos campos
 
-            txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
-            txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
-            validar = false;
-        }
+    txtNomeCategoria.Text = CategoriaSelecionada.nomeCategoria;
+    txtDescCategoria.Text = CategoriaSelecionada.descCategoria;
+    validar = true;
+}
 
-        private void txtNomeCategoria_TextChanged(object sender, EventArgs e)
-        {
-            clsVerifica v = new clsVerifica();
+private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
+{
 
-            if (!v.ValidaLetras(txtNomeCategoria.Text) && txtNomeCategoria.Text != "")
-            {
-                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNomeCategoria.Text = "";
-            }
-        }
+    CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
 
-        private void txtDescCategoria_TextChanged(object sender, EventArgs e)
-        {
-            clsVerifica v = new clsVerifica();
+    //Inserindo os valores nos campos
 
-            if (!v.ValidaLetras(txtDescCategoria.Text) && txtDescCategoria.Text != "")
-            {
-                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtDescCategoria.Text = "";
-            }
-        }
+    txtNomeCategoria.Text = dgCategoria.CurrentRow.Cells["nomeCategoria"].Value.ToString();
+    txtDescCategoria.Text = dgCategoria.CurrentRow.Cells["descCategoria"].Value.ToString();
+    validar = true;
+}
 
-        private void txtIdCategoria_TextChanged(object sender, EventArgs e)
-        {
-            clsVerifica v = new clsVerifica();
+private void txtNomeCategoria_TextChanged(object sender, EventArgs e)
+{
+    clsVerifica v = new clsVerifica();
 
-            if (!v.ValidarNumero(txtIdCategoria.Text) && txtIdCategoria.Text != "")
-            {
-                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtIdCategoria.Text = "";
-            }
-        }
+    if (!v.ValidaLetras(txtNomeCategoria.Text) && txtNomeCategoria.Text != "")
+    {
+        MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        txtNomeCategoria.Text = "";
+    }
+}
+
+private void txtDescCategoria_TextChanged(object sender, EventArgs e)
+{
+    clsVerifica v = new clsVerifica();
+
+    if (!v.ValidaLetras(txtDescCategoria.Text) && txtDescCategoria.Text != "")
+    {
+        MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        txtDescCategoria.Text = "";
+    }
+}
+
+private void txtIdCategoria_TextChanged(object sender, EventArgs e)
+{
+    clsVerifica v = new clsVerifica();
+
+    if (!v.ValidarNumero(txtIdCategoria.Text) && txtIdCategoria.Text != "")
+    {
+        MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        txtIdCategoria.Text = "";
+    }
+}
     }
 }

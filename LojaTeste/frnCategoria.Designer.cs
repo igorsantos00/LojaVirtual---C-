@@ -51,7 +51,7 @@
             this.txtNomeCategoria.Location = new System.Drawing.Point(14, 391);
             this.txtNomeCategoria.Name = "txtNomeCategoria";
             this.txtNomeCategoria.Size = new System.Drawing.Size(238, 20);
-            this.txtNomeCategoria.TabIndex = 2;
+            this.txtNomeCategoria.TabIndex = 6;
             this.txtNomeCategoria.TextChanged += new System.EventHandler(this.txtNomeCategoria_TextChanged);
             // 
             // label1
@@ -70,7 +70,7 @@
             this.txtDescCategoria.Location = new System.Drawing.Point(269, 391);
             this.txtDescCategoria.Name = "txtDescCategoria";
             this.txtDescCategoria.Size = new System.Drawing.Size(349, 20);
-            this.txtDescCategoria.TabIndex = 3;
+            this.txtDescCategoria.TabIndex = 7;
             this.txtDescCategoria.TextChanged += new System.EventHandler(this.txtDescCategoria_TextChanged);
             // 
             // lbldesCategoria
@@ -102,7 +102,7 @@
             this.btnSair.Location = new System.Drawing.Point(281, 428);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(118, 36);
-            this.btnSair.TabIndex = 6;
+            this.btnSair.TabIndex = 10;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
@@ -116,7 +116,7 @@
             this.btnInserir.Location = new System.Drawing.Point(14, 428);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(118, 36);
-            this.btnInserir.TabIndex = 7;
+            this.btnInserir.TabIndex = 8;
             this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
@@ -129,7 +129,7 @@
             this.btnBusca.Location = new System.Drawing.Point(12, 36);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 36);
-            this.btnBusca.TabIndex = 8;
+            this.btnBusca.TabIndex = 1;
             this.btnBusca.Text = "Busca";
             this.btnBusca.UseVisualStyleBackColor = false;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
@@ -149,7 +149,7 @@
             this.dgCategoria.RowHeadersVisible = false;
             this.dgCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCategoria.Size = new System.Drawing.Size(606, 228);
-            this.dgCategoria.TabIndex = 9;
+            this.dgCategoria.TabIndex = 3;
             this.dgCategoria.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCategoria_CellContentClick);
             this.dgCategoria.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
@@ -162,7 +162,7 @@
             this.btnAlterar.Location = new System.Drawing.Point(145, 428);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(118, 36);
-            this.btnAlterar.TabIndex = 6;
+            this.btnAlterar.TabIndex = 9;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
@@ -177,7 +177,7 @@
             this.btnExcluirCategoria.Name = "btnExcluirCategoria";
             this.btnExcluirCategoria.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluirCategoria.Size = new System.Drawing.Size(118, 36);
-            this.btnExcluirCategoria.TabIndex = 6;
+            this.btnExcluirCategoria.TabIndex = 5;
             this.btnExcluirCategoria.Text = "Excluir";
             this.btnExcluirCategoria.UseVisualStyleBackColor = false;
             this.btnExcluirCategoria.Click += new System.EventHandler(this.btnExcluirCategoria_Click);
@@ -190,7 +190,7 @@
             this.btnSelecionar.Location = new System.Drawing.Point(12, 324);
             this.btnSelecionar.Name = "btnSelecionar";
             this.btnSelecionar.Size = new System.Drawing.Size(118, 36);
-            this.btnSelecionar.TabIndex = 10;
+            this.btnSelecionar.TabIndex = 4;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
@@ -200,7 +200,7 @@
             this.txtIdCategoria.Location = new System.Drawing.Point(119, 52);
             this.txtIdCategoria.Name = "txtIdCategoria";
             this.txtIdCategoria.Size = new System.Drawing.Size(193, 20);
-            this.txtIdCategoria.TabIndex = 1;
+            this.txtIdCategoria.TabIndex = 2;
             this.txtIdCategoria.TextChanged += new System.EventHandler(this.txtIdCategoria_TextChanged);
             // 
             // lblIdNomeCategoria
