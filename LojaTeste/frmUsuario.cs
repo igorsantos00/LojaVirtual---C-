@@ -51,16 +51,6 @@ namespace LojaTeste
 
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnSair_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnSairUsuario_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -170,8 +160,7 @@ namespace LojaTeste
                 int idCategoria = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtLogin.Text = null;
-                txtNomeCompleto = null;
-                txtNomeUsuario = null;
+                txtNomeCompleto.Text = null;
                 txtSenha1.Text = null;
                 txtSenha2.Text = null;
                 cmbTipo.Text = null;
@@ -211,8 +200,7 @@ namespace LojaTeste
                 {
                     retorno = C.Salvar(UsuarioSelecionado.idUsuario, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
                     txtLogin.Text = null;
-                    txtNomeCompleto = null;
-                    txtNomeUsuario = null;
+                    txtNomeCompleto.Text = null;
                     txtSenha1.Text = null;
                     txtSenha2.Text = null;
                     cmbTipo.Text = null;

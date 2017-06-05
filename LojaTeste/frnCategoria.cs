@@ -71,6 +71,7 @@ namespace LojaTeste
             {
                 List<clsCategoria> Categoria = clsCategoria.SelecionarCategoriaID(Convert.ToInt32(txtIdCategoria.Text));
                 dgCategoria.DataSource = Categoria;
+                txtIdCategoria.Text = "";
                 configuraDgCategoria();
             }
         }
