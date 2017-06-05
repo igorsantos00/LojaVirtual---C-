@@ -56,9 +56,10 @@
             this.lbCodigoProduto = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnCarregarFoto = new System.Windows.Forms.Button();
-            this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluirProduto = new System.Windows.Forms.Button();
             this.btnSelecionarProduto = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgImagem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgProduto)).BeginInit();
@@ -315,24 +316,13 @@
             this.btnCarregarFoto.BackColor = System.Drawing.Color.MediumTurquoise;
             this.btnCarregarFoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCarregarFoto.ForeColor = System.Drawing.Color.Black;
-            this.btnCarregarFoto.Location = new System.Drawing.Point(524, 517);
+            this.btnCarregarFoto.Location = new System.Drawing.Point(598, 516);
             this.btnCarregarFoto.Name = "btnCarregarFoto";
             this.btnCarregarFoto.Size = new System.Drawing.Size(135, 34);
             this.btnCarregarFoto.TabIndex = 25;
             this.btnCarregarFoto.Text = "Carregar Foto";
             this.btnCarregarFoto.UseVisualStyleBackColor = false;
             this.btnCarregarFoto.Click += new System.EventHandler(this.btnCarregarFoto_Click);
-            // 
-            // btnSalvar
-            // 
-            this.btnSalvar.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalvar.Location = new System.Drawing.Point(665, 517);
-            this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(68, 33);
-            this.btnSalvar.TabIndex = 26;
-            this.btnSalvar.Text = "Salvar Foto";
-            this.btnSalvar.UseVisualStyleBackColor = false;
             // 
             // btnExcluirProduto
             // 
@@ -359,15 +349,40 @@
             this.btnSelecionarProduto.UseVisualStyleBackColor = false;
             this.btnSelecionarProduto.Click += new System.EventHandler(this.btnSelecionarProduto_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(297, 511);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 45);
+            this.button1.TabIndex = 29;
+            this.button1.Text = "Alterar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(564, 45);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(82, 26);
+            this.btnLimpar.TabIndex = 30;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(745, 557);
+            this.Controls.Add(this.btnLimpar);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSelecionarProduto);
             this.Controls.Add(this.btnExcluirProduto);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCarregarFoto);
             this.Controls.Add(this.lbCodigoProduto);
             this.Controls.Add(this.txtIdProduto);
@@ -433,8 +448,9 @@
         private System.Windows.Forms.Label lbCodigoProduto;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button btnCarregarFoto;
-        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnExcluirProduto;
         private System.Windows.Forms.Button btnSelecionarProduto;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

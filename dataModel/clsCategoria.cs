@@ -176,7 +176,7 @@ namespace dataModel
 
         public List<clsCategoria> GetCategoria()
         {
-            string sql = "SELECT nomeCategoria FROM dbo.Categoria";
+            string sql = "SELECT nomeCategoria, idCategoria FROM dbo.Categoria";
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -192,6 +192,10 @@ namespace dataModel
                 if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
                 {
                     C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("idCategoria")))
+                {
+                    C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
                 }
                 Categoria.Add(C);
 

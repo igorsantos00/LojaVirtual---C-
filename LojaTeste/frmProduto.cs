@@ -256,10 +256,10 @@ namespace LojaTeste
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsProduto P = new clsProduto();
-          
-                retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.Text), chkativoProduto.Checked, 0, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
 
-                int idCategoria = Convert.ToInt32(retorno);
+            retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+
+                int idProduto = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtnomeProduto.Text = null;
                 txtdescProduto.Text = null;
@@ -291,6 +291,67 @@ namespace LojaTeste
             atualizarcomboCategoria();
         }
 
-   
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (validar == false)
+            {
+                MessageBox.Show("Nenhum Produto selecionado");
+                return;
+            }
+
+            //Pergunta se quer mesmo Alterar
+            DialogResult resultado = MessageBox.Show("Deseja Alterar", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                return;
+            }
+            else
+            {
+                clsProduto ProdutoSelecionado = new clsProduto();
+                clsProduto P = new clsProduto();
+                //  try
+                // {       
+                if (txtnomeProduto.Text != ProdutoSelecionado.nomeProduto || txtdescProduto.Text != ProdutoSelecionado.descProduto || Convert.ToDecimal(txtprecProduto.Text) != ProdutoSelecionado.precProduto || Convert.ToDecimal(txtdescontoPromocao.Text) != ProdutoSelecionado.descontoPromocao || Convert.ToInt32(txtidCategoria.SelectedValue) != ProdutoSelecionado.idCategoria || chkativoProduto.Checked != ProdutoSelecionado.ativoProduto || userLog.idUsuario != ProdutoSelecionado.idUsuario || Convert.ToInt32(txtqtdMinEstoque.Text) != ProdutoSelecionado.qtdMinEstoque || Convert.ToBoolean((imagem == null?new byte[0]:imagem) != ProdutoSelecionado.imagem))
+                    {
+                        retorno = P.Salvar(ProdutoSelecionado.idProduto, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+
+                        int idProduto = Convert.ToInt32(retorno);
+                        MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtnomeProduto.Text = null;
+                        txtdescProduto.Text = null;
+                        txtprecProduto.Text = null;
+                        txtdescontoPromocao.Text = null;
+                        txtqtdMinEstoque.Text = null;
+                        chkativoProduto.Checked = false;
+                        txtidCategoria.Text = null;
+                        imgImagem.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nada foi alterado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+               // }
+                //catch (Exception)
+               // {
+                //    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 //   return;
+               // }
+
+            }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtnomeProduto.Text = null;
+            txtdescProduto.Text = null;
+            txtprecProduto.Text = null;
+            txtdescontoPromocao.Text = null;
+            txtqtdMinEstoque.Text = null;
+            chkativoProduto.Checked = false;
+            txtidCategoria.Text = null;
+            imgImagem.Image = null;
+        }
     }
 }

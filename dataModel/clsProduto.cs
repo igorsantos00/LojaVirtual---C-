@@ -41,55 +41,6 @@ namespace dataModel
 
 
         {
-            if (Convert.ToString(idCategoria) == "kids")
-            {
-                idCategoria = 99;
-            }
-            else if (Convert.ToString(idCategoria) == "Carrinhos")
-            {
-                idCategoria = 1;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Blocos de Montar")
-            {
-                idCategoria = 2;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Tabuleiro")
-            {
-                idCategoria = 3;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Puzzle")
-            {
-                idCategoria = 4;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Classicos")
-            {
-                idCategoria = 5;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Bonecas")
-            {
-                idCategoria = 6;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Ação")
-            {
-                idCategoria = 84;
-
-            }
-            else if (Convert.ToString(idCategoria) == "Adultos")
-            {
-                idCategoria = 86;
-
-            }
-            else
-            {
-                idCategoria = 96;
-
-            }
 
             int linhas = 0;
             try
@@ -107,13 +58,13 @@ namespace dataModel
                     cmd.CommandText = "INSERT INTO Produto " +
                                     "(nomeProduto, descProduto, precProduto, descontoPromocao, idCategoria, ativoProduto, idUsuario, qtdMinEstoque, imagem)" +
                                     "VALUES " +
-                                    "(@nomeProduto, @descProduto, @precProduto, @descontoPromocao, @idCategoria, @ativoProduto, @idUsuario, @qtdMinEstoque, @imagem)";
+                                    "(@nomeProduto, @descProduto, @precProduto, @descontoPromocao, @idCategoria, @ativoProduto, @idUsuario, @qtdMinEstoque, @imagem);";
                 else
                 {
                     cmd.CommandText = "UPDATE Produto " +
                                         "SET nomeProduto      = @nomeProduto, " +
                                             "descProduto      = @descProduto, " +
-                                            "prescProduto     = @prescProduto, " +
+                                            "precProduto     = @precProduto, " +
                                             "descontoPromocao = @descontoPromocao, " +
                                             "idCategoria      = @idCategoria, " +
                                             "ativoProduto     = @ativoProduto, " +
@@ -125,22 +76,22 @@ namespace dataModel
                     cmd.Parameters.Add("idProduto", SqlDbType.Int).Value = idProduto;
                 }
 
-                cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar, 70).Value = this.nomeProduto;
-                cmd.Parameters.Add("@descProduto", SqlDbType.VarChar, 500).Value = this.descProduto;
-                cmd.Parameters.Add("@precProduto", SqlDbType.Money).Value = this.precProduto;
-                cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = this.descontoPromocao;
-                cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = this.idCategoria;
-                cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = this.ativoProduto;
-                cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = this.idUsuario;
-                cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = this.qtdMinEstoque;
-                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = this.imagem;
+                cmd.Parameters.Add("@nomeProduto", SqlDbType.VarChar, 70).Value = nomeProduto;
+                cmd.Parameters.Add("@descProduto", SqlDbType.VarChar, 500).Value = descProduto;
+                cmd.Parameters.Add("@precProduto", SqlDbType.Money).Value = precProduto;
+                cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = descontoPromocao;
+                cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
+                cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = ativoProduto;
+                cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+                cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = qtdMinEstoque;
+                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = imagem;
                 cmd.ExecuteNonQuery();
 
                 if (inserir == 0)
                 {
                     cmd.Parameters.Clear();
                     cmd.CommandText = "SELECT @@Identity";
-                    this.idProduto = Convert.ToInt32(cmd.ExecuteScalar());
+                    idProduto = Convert.ToInt32(cmd.ExecuteScalar());
                     linhas = cmd.ExecuteNonQuery();
                 }
 
@@ -160,9 +111,7 @@ namespace dataModel
 
         public static List<clsProduto> SelecionarProduto()
         {
-            string sql = @"SELECT idProduto,nomeProduto,descProduto,precProduto,descontoPromocao,P.IDCategoria, nomeCategoria, ativoProduto = CONVERT(BIT,CASE WHEN ATIVOPRODUTO NOT IN (0,1) THEN 0 ELSE ATIVOPRODUTO END),idUsuario,qtdMinEstoque,imagem 
-                         FROM dbo.Produto P INNER JOIN dbo.Categoria C
-                         ON P.idCategoria = C.idCategoria";
+            string sql = "SELECT idProduto,nomeProduto,descProduto,precProduto,descontoPromocao,P.IDCategoria, nomeCategoria, ativoProduto = CONVERT(BIT,CASE WHEN ATIVOPRODUTO NOT IN (0,1) THEN 0 ELSE ATIVOPRODUTO END), idUsuario, qtdMinEstoque, imagem FROM dbo.Produto P INNER JOIN dbo.Categoria C ON P.idCategoria = C.idCategoria";
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
             SqlCommand cmd = cn.CreateCommand();
