@@ -26,15 +26,6 @@ namespace LojaTeste
             this.login = login;
         }
 
-        //public frmMenuPrincipal()
-        //{
-        //    InitializeComponent();
-        //    Form login = new frmLogin();
-        //    login.ShowDialog();
-
-        //}
-
-
 
         private void frnTeste2_Click(object sender, EventArgs e)
         {
@@ -60,13 +51,6 @@ namespace LojaTeste
 
             }
         }
-
-        private void frmMenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
 
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,12 +78,12 @@ namespace LojaTeste
         {
             //Pergunta se quer mesmo fazer logoff
             DialogResult resultado = MessageBox.Show("Deseja Fazer Logoff? ", "Pergunta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
+
             if (resultado == DialogResult.No)
             {
                 return;
             }
-                     
+
             this.Hide();
             login.Show();
 
@@ -109,11 +93,6 @@ namespace LojaTeste
             lblHora.Text = DateTime.Now.ToString();
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            Form tela = new frmEstoque();
-            tela.ShowDialog();
-        }
 
         private void Usuario_Click(object sender, EventArgs e)
         {
@@ -147,8 +126,16 @@ namespace LojaTeste
 
         private void Estoque_Click(object sender, EventArgs e)
         {
-            Form tela = new frmEstoque();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A" || userLog.tipoPerfil == "C")
+            {
+                Form tela = new frmEstoque();
+                tela.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Permissão Invalida, consulte o administrador", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
 
         private void Produto_Click(object sender, EventArgs e)
@@ -166,12 +153,6 @@ namespace LojaTeste
 
         }
 
-
-        private void frmMenuPrincipal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void lblLogin_TextChanged(object sender, EventArgs e)
         {
             lblLogin.Text = userLog.nomeUsuario;
@@ -182,12 +163,16 @@ namespace LojaTeste
             login.Dispose();
         }
 
-       
+
 
         private void pedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form tela = new frmEstoque();
-            tela.ShowDialog();
+            if (userLog.tipoPerfil == "A" || userLog.tipoPerfil == "C")
+            {
+                Form tela = new frmEstoque();
+                tela.ShowDialog();
+            }
+
         }
 
         private void categoriaToolStripMenuItem_Click(object sender, EventArgs e)

@@ -105,7 +105,7 @@ namespace dataModel
             while (dr.Read())
             {
                 clsUsuario U = new clsUsuario();
-               
+
                 if (!dr.IsDBNull(dr.GetOrdinal("idUsuario")))
                 {
 
@@ -268,6 +268,24 @@ namespace dataModel
             }
 
             return log;
+
+        }
+
+        public bool VerificarUsuario(string txtLogin)
+        {
+            string sql = @"SELECT idUsuario FROM dbo.usuario 
+                         WHERE loginusuario = @txtLogin";
+
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.Add("@txtLogin", SqlDbType.VarChar).Value = txtLogin;
+
+
+
+            return Convert.ToBoolean(cmd.ExecuteScalar());
+
 
         }
 

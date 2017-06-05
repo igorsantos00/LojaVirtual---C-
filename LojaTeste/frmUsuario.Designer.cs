@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha2 = new System.Windows.Forms.TextBox();
             this.ckAtivo = new System.Windows.Forms.CheckBox();
+            this.btnLimparUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(139, 20);
             this.txtLogin.TabIndex = 1;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtNomeCompleto
             // 
@@ -89,6 +91,7 @@
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(464, 20);
             this.txtNomeCompleto.TabIndex = 2;
+            this.txtNomeCompleto.TextChanged += new System.EventHandler(this.txtNomeCompleto_TextChanged);
             // 
             // lblSenha
             // 
@@ -134,6 +137,7 @@
             // cmbTipo
             // 
             this.cmbTipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipo.FormattingEnabled = true;
             this.cmbTipo.Items.AddRange(new object[] {
             "A",
@@ -142,7 +146,6 @@
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 4;
-            this.cmbTipo.Text = "Selecione";
             // 
             // mnuPrincipal
             // 
@@ -194,7 +197,7 @@
             this.lblIdNomeCategoria.Name = "lblIdNomeCategoria";
             this.lblIdNomeCategoria.Size = new System.Drawing.Size(107, 16);
             this.lblIdNomeCategoria.TabIndex = 13;
-            this.lblIdNomeCategoria.Text = "Nome Usuario";
+            this.lblIdNomeCategoria.Text = "Nome Usuário";
             // 
             // txtNomeUsuario
             // 
@@ -202,6 +205,7 @@
             this.txtNomeUsuario.Name = "txtNomeUsuario";
             this.txtNomeUsuario.Size = new System.Drawing.Size(193, 20);
             this.txtNomeUsuario.TabIndex = 14;
+            this.txtNomeUsuario.TextChanged += new System.EventHandler(this.txtNomeUsuario_TextChanged);
             // 
             // btnSelecionarUsuario
             // 
@@ -301,12 +305,25 @@
             this.ckAtivo.TabIndex = 20;
             this.ckAtivo.UseVisualStyleBackColor = true;
             // 
+            // btnLimparUsuario
+            // 
+            this.btnLimparUsuario.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimparUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimparUsuario.Location = new System.Drawing.Point(504, 299);
+            this.btnLimparUsuario.Name = "btnLimparUsuario";
+            this.btnLimparUsuario.Size = new System.Drawing.Size(118, 36);
+            this.btnLimparUsuario.TabIndex = 21;
+            this.btnLimparUsuario.Text = "Limpar";
+            this.btnLimparUsuario.UseVisualStyleBackColor = false;
+            this.btnLimparUsuario.Click += new System.EventHandler(this.btnLimparUsuario_Click);
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(634, 491);
+            this.Controls.Add(this.btnLimparUsuario);
             this.Controls.Add(this.ckAtivo);
             this.Controls.Add(this.btnSairUsuario);
             this.Controls.Add(this.btnAlterarUsuario);
@@ -364,5 +381,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSenha2;
         private System.Windows.Forms.CheckBox ckAtivo;
+        private System.Windows.Forms.Button btnLimparUsuario;
     }
 }

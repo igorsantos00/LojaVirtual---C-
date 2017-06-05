@@ -394,8 +394,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuPrincipal_FormClosed);
-            this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
-            this.TextChanged += new System.EventHandler(this.frmMenuPrincipal_TextChanged);
+            //this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
+            //this.TextChanged += new System.EventHandler(this.frmMenuPrincipal_TextChanged);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();

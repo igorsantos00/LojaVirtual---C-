@@ -21,7 +21,7 @@ namespace LojaTeste
 
         private clsUsuario UsuarioSelecionado;
         private int retorno;
-        private bool validar;
+        private bool validar = false;
 
         private void configuraDgUsuario()
         {
@@ -68,7 +68,7 @@ namespace LojaTeste
                 dgUsuario.DataSource = Usuario;
                 txtNomeUsuario.Text = "";
                 dgUsuario.Refresh();
-               
+
             }
 
         }
@@ -76,6 +76,8 @@ namespace LojaTeste
         private void frmUsuario_Load(object sender, EventArgs e)
         {
             atualizarDgUsuario();
+          
+            
         }
 
         private void btnSelecionarUsuario_Click(object sender, EventArgs e)
@@ -83,7 +85,7 @@ namespace LojaTeste
             //Verifica se tem algum registro selecionado
             if (dgUsuario.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Nenhuma categoria selecionada");
+                MessageBox.Show("Nenhum Usuário selecionado");
                 return;
             }
 
@@ -95,17 +97,20 @@ namespace LojaTeste
             txtNomeCompleto.Text = UsuarioSelecionado.nomeUsuario;
             txtLogin.Text = UsuarioSelecionado.loginUsuario;
             cmbTipo.Text = UsuarioSelecionado.tipoPerfil;
+            txtSenha1.Text = UsuarioSelecionado.senhaUsuario;
+            txtSenha2.Text = UsuarioSelecionado.senhaUsuario;
             ckAtivo.Text = Convert.ToString(UsuarioSelecionado.usuarioAtivo);
             ckAtivo.Checked = Convert.ToBoolean(dgUsuario.CurrentRow.Cells["usuarioAtivo"].Value);
-            validar = false;
+            validar = true;
         }
 
         private void btnExcluirUsuario_Click(object sender, EventArgs e)
         {
             //Verifica se tem algum registro selecionado
-            if (dgUsuario.SelectedRows.Count == 0)
+
+            if (validar == false)
             {
-                MessageBox.Show("Nenhuma Usuario selecionado");
+                MessageBox.Show("Nenhum Usuário selecionado");
                 return;
             }
 
@@ -125,28 +130,24 @@ namespace LojaTeste
             try
             {
                 retorno = C.ExcluirUsuario(CategoriaSelecionada.idUsuario);
+                int idCategoria = Convert.ToInt32(retorno);
+                MessageBox.Show("Excluído com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLogin.Text = null;
+                txtNomeCompleto.Text = null;
+                txtSenha1.Text = null;
+                txtSenha2.Text = null;
+                cmbTipo.Text = null;
+                ckAtivo.Checked = false;
+                validar = false;
+                atualizarDgUsuario();
+
             }
-            catch (Exception erro)
+            catch (Exception)
             {
-                MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                validar = true;
                 return;
             }
-
-            //Verificando se deu certo
-            if (retorno != 0)
-            {
-                int idCategoria = Convert.ToInt32(retorno);
-                MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            else
-
-            {
-                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            }
-
-            atualizarDgUsuario();
 
         }
 
@@ -155,34 +156,70 @@ namespace LojaTeste
             clsUsuario U = new clsUsuario();
             try
             {
-                retorno = U.Salvar(0, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
+                if (U.VerificarUsuario(txtLogin.Text) || txtLogin.Text == "")
+                {
+                    MessageBox.Show("Campo 'Login' inválido", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (txtSenha1.Text == "")
+                {
+                    MessageBox.Show("Qual a senha", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSenha1.Text = "";
+                    txtSenha2.Text = "";
+                    return;
+                }
+                if (txtSenha1.Text != txtSenha2.Text)
+                {
+                    MessageBox.Show("Senhas não correspondentes", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSenha2.Text = "";
+                    return;
+                }
+                if (cmbTipo.Text == null)
+                {
+                    MessageBox.Show("Qual o Tipo do usuário", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
 
-                int idCategoria = Convert.ToInt32(retorno);
-                MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtLogin.Text = null;
-                txtNomeCompleto.Text = null;
-                txtSenha1.Text = null;
-                txtSenha2.Text = null;
-                cmbTipo.Text = null;
-                ckAtivo.Checked = false;
+                }
+               
 
+                if (validar == false || txtLogin.Text != UsuarioSelecionado.loginUsuario)
+                {
+
+                    retorno = U.Salvar(0, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
+
+                    int idCategoria = Convert.ToInt32(retorno);
+                    MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtLogin.Text = null;
+                    txtNomeCompleto.Text = null;
+                    txtSenha1.Text = null;
+                    txtSenha2.Text = null;
+                    cmbTipo.Text = null;
+                    ckAtivo.Checked = false;
+                    validar = false;
+                    atualizarDgUsuario();
+
+                }
+                else
+                {
+                    MessageBox.Show("Dados existente", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
 
             }
             catch (Exception)
             {
-                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            atualizarDgUsuario();
+
         }
 
         private void btnAlterarUsuario_Click(object sender, EventArgs e)
         {
-            if (validar)
+            if (validar == false)
             {
-                MessageBox.Show("Nenhum Usuario selecionado");
+                MessageBox.Show("Nenhum Usuário selecionado");
                 return;
             }
 
@@ -195,43 +232,98 @@ namespace LojaTeste
             }
             else
             {
+                if (txtSenha1.Text == "")
+                {
+                    MessageBox.Show("Senha não pode ser em branco", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSenha1.Text = "";
+                    txtSenha2.Text = "";
+                    return;
+                }
+                if (txtSenha1.Text != txtSenha2.Text)
+                {
+                    MessageBox.Show("Senhas não correspondentes", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSenha2.Text = "";
+                    return;
+                }
+               
                 clsUsuario C = new clsUsuario();
                 try
                 {
-                    retorno = C.Salvar(UsuarioSelecionado.idUsuario, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
-                    txtLogin.Text = null;
-                    txtNomeCompleto.Text = null;
-                    txtSenha1.Text = null;
-                    txtSenha2.Text = null;
-                    cmbTipo.Text = null;
-                    ckAtivo.Checked = false;
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    if (txtLogin.Text != UsuarioSelecionado.loginUsuario || txtNomeCompleto.Text != UsuarioSelecionado.nomeUsuario || txtSenha1.Text != UsuarioSelecionado.senhaUsuario || cmbTipo.Text != UsuarioSelecionado.tipoPerfil || ckAtivo.Checked != UsuarioSelecionado.usuarioAtivo)
+                    {
+                        retorno = C.Salvar(UsuarioSelecionado.idUsuario, txtLogin.Text, txtSenha1.Text, txtNomeCompleto.Text, cmbTipo.Text, ckAtivo.Checked);
 
-                try
-                {
-                    int idCategoria = Convert.ToInt32(retorno);
-                    MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    validar = true;
+                        int idCategoria = Convert.ToInt32(retorno);
+                        MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtLogin.Text = null;
+                        txtNomeCompleto.Text = null;
+                        txtSenha1.Text = null;
+                        txtSenha2.Text = null;
+                        cmbTipo.Text = null;
+                        ckAtivo.Checked = false;
+                        validar = false;
+                        atualizarDgUsuario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nada foi alterado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    throw;
+                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-
-                atualizarDgUsuario();
             }
         }
 
         private void dgUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnLimparUsuario_Click(object sender, EventArgs e)
+        {
+            txtLogin.Text = null;
+            txtNomeCompleto.Text = null;
+            txtSenha1.Text = null;
+            txtSenha2.Text = null;
+            cmbTipo.Text = null;
+            ckAtivo.Checked = false;
+            validar = false;
+        }
+
+        private void txtNomeUsuario_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtNomeUsuario.Text) && txtNomeUsuario.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNomeUsuario.Text = "";
+            }
+        }
+
+        private void txtNomeCompleto_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtNomeCompleto.Text) && txtNomeCompleto.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtNomeCompleto.Text = "";
+            }
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtLogin.Text) && txtLogin.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtLogin.Text = "";
+            }
         }
     }
 }
