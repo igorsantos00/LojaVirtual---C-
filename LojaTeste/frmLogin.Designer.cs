@@ -95,6 +95,7 @@
             this.txtLogin.Size = new System.Drawing.Size(100, 29);
             this.txtLogin.TabIndex = 6;
             this.txtLogin.Text = "admin";
+            //this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // label1
             // 
@@ -127,7 +128,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Usuário";
-            this.Load += new System.EventHandler(this.frmLogin_Load);
+            //this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

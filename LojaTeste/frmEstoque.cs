@@ -16,7 +16,7 @@ namespace LojaTeste
     {
         private clsEstoque EstoqueSelecionada;
         private int retorno;
-        private bool validar;
+        private bool validar = false;
 
         public frmEstoque()
         {
@@ -28,7 +28,7 @@ namespace LojaTeste
 
             dgEstoque.Columns[0].HeaderText = "Código";
             dgEstoque.Columns[1].HeaderText = "Nome";
-            dgEstoque.Columns[2].HeaderText = "Quantidade Disponivel";
+            dgEstoque.Columns[2].HeaderText = "Quantidade Disponível";
 
             //Redimenciona o Tamanho da Coluna
 
@@ -36,7 +36,7 @@ namespace LojaTeste
             dgEstoque.Columns[1].Width = 190;
             dgEstoque.Columns[2].Width = 346;
 
-       
+
 
         }
 
@@ -76,9 +76,9 @@ namespace LojaTeste
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (validar)
+            if (validar == false)
             {
-                MessageBox.Show("Nenhuma categoria selecionada");
+                MessageBox.Show("Nenhum Produto selecionado");
                 return;
             }
 
@@ -94,29 +94,28 @@ namespace LojaTeste
                 clsEstoque E = new clsEstoque();
                 try
                 {
-                    retorno = E.Salvar(EstoqueSelecionada.idProduto, Convert.ToInt32(txtQtdProduto.Text));
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                    if (txtQtdProduto.Text != Convert.ToString(EstoqueSelecionada.qtdProdutoDisponivel))
+                    {
+                        retorno = E.Salvar(EstoqueSelecionada.idProduto, Convert.ToInt32(txtQtdProduto.Text));
 
-                try
-                {
-                    int idProduto = Convert.ToInt32(retorno);
-                    MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtNomeProduto.Text = null;
-                    txtQtdProduto.Text = null;
-                    validar = true;
+                        int idProduto = Convert.ToInt32(retorno);
+                        MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtNomeProduto.Text = null;
+                        txtQtdProduto.Text = null;
+                        validar = false;
+                        atualizarDgEstoque();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nada foi alterado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw;
                 }
 
-                atualizarDgEstoque();
             }
 
         }
@@ -126,7 +125,7 @@ namespace LojaTeste
             //Verifica se tem algum registro selecionado
             if (dgEstoque.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Nenhuma categoria selecionada");
+                MessageBox.Show("Nenhum Produto selecionado");
                 return;
             }
 
@@ -136,22 +135,14 @@ namespace LojaTeste
             //Inserindo os valores nos campos
             txtNomeProduto.Text = EstoqueSelecionada.nomeProduto;
             txtQtdProduto.Text = Convert.ToString(EstoqueSelecionada.qtdProdutoDisponivel);
-           
-            validar = false;
-        }
 
-        private void dgEstoque_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtNomeProduto.Text = dgEstoque.CurrentRow.Cells["nomeProduto"].Value.ToString();
-            txtQtdProduto.Text = dgEstoque.CurrentRow.Cells["qtdProdutoDisponivel"].Value.ToString();
+            validar = true;
         }
-
-       
 
         private void txtQtdProduto_TextChanged(object sender, EventArgs e)
         {
             clsVerifica v = new clsVerifica();
-                        
+
             if (!v.ValidarNumero(txtQtdProduto.Text) && txtQtdProduto.Text != "")
             {
                 MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

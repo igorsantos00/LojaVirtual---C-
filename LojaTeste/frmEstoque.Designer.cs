@@ -98,7 +98,7 @@
             this.dgEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEstoque.Size = new System.Drawing.Size(575, 180);
             this.dgEstoque.TabIndex = 3;
-            this.dgEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoque_CellContentClick);
+            //this.dgEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoque_CellContentClick);
             this.dgEstoque.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // mnuPrincipal

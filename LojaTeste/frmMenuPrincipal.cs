@@ -133,7 +133,7 @@ namespace LojaTeste
             }
             else
             {
-                MessageBox.Show("Permissão Invalida, consulte o administrador", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Permissão Inválida, consulte o administrador", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }

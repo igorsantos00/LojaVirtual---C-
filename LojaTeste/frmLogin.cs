@@ -19,11 +19,7 @@ namespace LojaTeste
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             try
@@ -31,10 +27,17 @@ namespace LojaTeste
                 clsUsuario log = new clsUsuario();
 
                 log = log.Logar(txtLogin.Text, txtSenha.Text);
-
+               
                 if (log != null)
                 {
+                    bool ativo = Convert.ToBoolean(log.usuarioAtivo);
+                    if (ativo == false)
+                    {
+                        MessageBox.Show("Usuário desativado, contate o administrador!");
+                        return;
+                    }
                     MessageBox.Show("Seja bem vindo!");
+                   
                     Form tela = new frmMenuPrincipal(log, this);
                     this.Hide();
                     tela.Show();
@@ -42,7 +45,8 @@ namespace LojaTeste
                 else
                 {
 
-                    MessageBox.Show("Login ou Senha invalido!");
+                    MessageBox.Show("Login ou Senha inválido!");
+                    txtSenha.Text = "";
                 }
             }
             catch (SqlException sx)
@@ -64,5 +68,7 @@ namespace LojaTeste
             this.Close();
             this.Hide();
         }
+
+       
     }
 }
