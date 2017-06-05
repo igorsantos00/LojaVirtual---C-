@@ -296,6 +296,25 @@ namespace dataModel
 
             string sql = "Delete FROM dbo.Produto " +
            "WHERE idProduto = @idProduto";
+            
+
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.Add("@idProduto", SqlDbType.Int).Value = idProduto;
+
+            int linhas = cmd.ExecuteNonQuery();
+
+            AtualizaEstoque();
+            return linhas;
+
+        }
+
+        public void AtualizaEstoque()
+        {
+            string sql = "Delete FROM dbo.Estoque " +
+           "WHERE idProduto = @idProduto";
 
             clsConexao conexao = new clsConexao();
             SqlConnection cn = conexao.Conectar();
@@ -306,11 +325,12 @@ namespace dataModel
             int linhas = cmd.ExecuteNonQuery();
 
 
-            return linhas;
+            
+
 
         }
 
-   
+
     }
 }
 

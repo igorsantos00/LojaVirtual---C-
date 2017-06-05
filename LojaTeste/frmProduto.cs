@@ -235,7 +235,7 @@ namespace LojaTeste
             txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
             txtidCategoria.Text = dgProduto.CurrentRow.Cells["nomeCategoria"].Value.ToString();
 
-            if (((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0)
+            if (((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
             {
                 MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
                 imgImagem.Image = Image.FromStream(imagem);
