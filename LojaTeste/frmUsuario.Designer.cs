@@ -82,7 +82,7 @@
             this.txtLogin.Location = new System.Drawing.Point(12, 401);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(139, 20);
-            this.txtLogin.TabIndex = 1;
+            this.txtLogin.TabIndex = 9;
             this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtNomeCompleto
@@ -90,7 +90,7 @@
             this.txtNomeCompleto.Location = new System.Drawing.Point(12, 361);
             this.txtNomeCompleto.Name = "txtNomeCompleto";
             this.txtNomeCompleto.Size = new System.Drawing.Size(464, 20);
-            this.txtNomeCompleto.TabIndex = 2;
+            this.txtNomeCompleto.TabIndex = 7;
             this.txtNomeCompleto.TextChanged += new System.EventHandler(this.txtNomeCompleto_TextChanged);
             // 
             // lblSenha
@@ -109,7 +109,7 @@
             this.txtSenha1.Location = new System.Drawing.Point(157, 401);
             this.txtSenha1.Name = "txtSenha1";
             this.txtSenha1.Size = new System.Drawing.Size(130, 20);
-            this.txtSenha1.TabIndex = 3;
+            this.txtSenha1.TabIndex = 10;
             this.txtSenha1.UseSystemPasswordChar = true;
             // 
             // label1
@@ -145,7 +145,7 @@
             this.cmbTipo.Location = new System.Drawing.Point(501, 361);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipo.TabIndex = 4;
+            this.cmbTipo.TabIndex = 8;
             // 
             // mnuPrincipal
             // 
@@ -171,7 +171,7 @@
             this.dgUsuario.RowHeadersVisible = false;
             this.dgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgUsuario.Size = new System.Drawing.Size(610, 197);
-            this.dgUsuario.TabIndex = 11;
+            this.dgUsuario.TabIndex = 3;
             this.dgUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgUsuario_CellContentClick);
             this.dgUsuario.DoubleClick += new System.EventHandler(this.btnSelecionarUsuario_Click);
             // 
@@ -183,7 +183,7 @@
             this.btnBusca.Location = new System.Drawing.Point(12, 43);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 36);
-            this.btnBusca.TabIndex = 12;
+            this.btnBusca.TabIndex = 1;
             this.btnBusca.Text = "Busca";
             this.btnBusca.UseVisualStyleBackColor = false;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
@@ -204,7 +204,7 @@
             this.txtNomeUsuario.Location = new System.Drawing.Point(134, 59);
             this.txtNomeUsuario.Name = "txtNomeUsuario";
             this.txtNomeUsuario.Size = new System.Drawing.Size(193, 20);
-            this.txtNomeUsuario.TabIndex = 14;
+            this.txtNomeUsuario.TabIndex = 2;
             this.txtNomeUsuario.TextChanged += new System.EventHandler(this.txtNomeUsuario_TextChanged);
             // 
             // btnSelecionarUsuario
@@ -215,7 +215,7 @@
             this.btnSelecionarUsuario.Location = new System.Drawing.Point(12, 299);
             this.btnSelecionarUsuario.Name = "btnSelecionarUsuario";
             this.btnSelecionarUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnSelecionarUsuario.TabIndex = 15;
+            this.btnSelecionarUsuario.TabIndex = 4;
             this.btnSelecionarUsuario.Text = "Selecionar";
             this.btnSelecionarUsuario.UseVisualStyleBackColor = false;
             this.btnSelecionarUsuario.Click += new System.EventHandler(this.btnSelecionarUsuario_Click);
@@ -230,7 +230,7 @@
             this.btnExcluirUsuario.Name = "btnExcluirUsuario";
             this.btnExcluirUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnExcluirUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnExcluirUsuario.TabIndex = 16;
+            this.btnExcluirUsuario.TabIndex = 5;
             this.btnExcluirUsuario.Text = "Excluir";
             this.btnExcluirUsuario.UseVisualStyleBackColor = false;
             this.btnExcluirUsuario.Click += new System.EventHandler(this.btnExcluirUsuario_Click);
@@ -244,7 +244,7 @@
             this.btnInserirUsuario.Location = new System.Drawing.Point(12, 443);
             this.btnInserirUsuario.Name = "btnInserirUsuario";
             this.btnInserirUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnInserirUsuario.TabIndex = 17;
+            this.btnInserirUsuario.TabIndex = 13;
             this.btnInserirUsuario.Text = "Inserir";
             this.btnInserirUsuario.UseVisualStyleBackColor = false;
             this.btnInserirUsuario.Click += new System.EventHandler(this.btnInserirUsuario_Click);
@@ -258,7 +258,7 @@
             this.btnAlterarUsuario.Location = new System.Drawing.Point(154, 443);
             this.btnAlterarUsuario.Name = "btnAlterarUsuario";
             this.btnAlterarUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnAlterarUsuario.TabIndex = 18;
+            this.btnAlterarUsuario.TabIndex = 14;
             this.btnAlterarUsuario.Text = "Alterar";
             this.btnAlterarUsuario.UseVisualStyleBackColor = false;
             this.btnAlterarUsuario.Click += new System.EventHandler(this.btnAlterarUsuario_Click);
@@ -272,7 +272,7 @@
             this.btnSairUsuario.Location = new System.Drawing.Point(293, 443);
             this.btnSairUsuario.Name = "btnSairUsuario";
             this.btnSairUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnSairUsuario.TabIndex = 19;
+            this.btnSairUsuario.TabIndex = 15;
             this.btnSairUsuario.Text = "Sair";
             this.btnSairUsuario.UseVisualStyleBackColor = false;
             this.btnSairUsuario.Click += new System.EventHandler(this.btnSairUsuario_Click);
@@ -293,7 +293,7 @@
             this.txtSenha2.Location = new System.Drawing.Point(293, 401);
             this.txtSenha2.Name = "txtSenha2";
             this.txtSenha2.Size = new System.Drawing.Size(183, 20);
-            this.txtSenha2.TabIndex = 3;
+            this.txtSenha2.TabIndex = 11;
             this.txtSenha2.UseSystemPasswordChar = true;
             // 
             // ckAtivo
@@ -302,7 +302,7 @@
             this.ckAtivo.Location = new System.Drawing.Point(501, 404);
             this.ckAtivo.Name = "ckAtivo";
             this.ckAtivo.Size = new System.Drawing.Size(15, 14);
-            this.ckAtivo.TabIndex = 20;
+            this.ckAtivo.TabIndex = 12;
             this.ckAtivo.UseVisualStyleBackColor = true;
             // 
             // btnLimparUsuario
@@ -312,7 +312,7 @@
             this.btnLimparUsuario.Location = new System.Drawing.Point(504, 299);
             this.btnLimparUsuario.Name = "btnLimparUsuario";
             this.btnLimparUsuario.Size = new System.Drawing.Size(118, 36);
-            this.btnLimparUsuario.TabIndex = 21;
+            this.btnLimparUsuario.TabIndex = 6;
             this.btnLimparUsuario.Text = "Limpar";
             this.btnLimparUsuario.UseVisualStyleBackColor = false;
             this.btnLimparUsuario.Click += new System.EventHandler(this.btnLimparUsuario_Click);

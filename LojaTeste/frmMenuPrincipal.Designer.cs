@@ -118,21 +118,21 @@
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.usuáriosToolStripMenuItem_Click);
             // 
             // categoriaToolStripMenuItem
             // 
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             this.categoriaToolStripMenuItem.Click += new System.EventHandler(this.categoriaToolStripMenuItem_Click);
             // 
             // produtoToolStripMenuItem
             // 
             this.produtoToolStripMenuItem.Name = "produtoToolStripMenuItem";
-            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.produtoToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.produtoToolStripMenuItem.Text = "Produto";
             this.produtoToolStripMenuItem.Click += new System.EventHandler(this.produtoToolStripMenuItem_Click);
             // 
@@ -246,7 +246,7 @@
             this.btUsuario.Location = new System.Drawing.Point(450, 151);
             this.btUsuario.Name = "btUsuario";
             this.btUsuario.Size = new System.Drawing.Size(140, 140);
-            this.btUsuario.TabIndex = 9;
+            this.btUsuario.TabIndex = 1;
             this.btUsuario.UseVisualStyleBackColor = false;
             this.btUsuario.Click += new System.EventHandler(this.Usuario_Click);
             // 
@@ -260,7 +260,7 @@
             this.btCategoria.Location = new System.Drawing.Point(450, 324);
             this.btCategoria.Name = "btCategoria";
             this.btCategoria.Size = new System.Drawing.Size(140, 140);
-            this.btCategoria.TabIndex = 9;
+            this.btCategoria.TabIndex = 3;
             this.btCategoria.UseVisualStyleBackColor = false;
             this.btCategoria.Click += new System.EventHandler(this.Categoria_Click);
             // 
@@ -274,7 +274,7 @@
             this.btEstoque.Location = new System.Drawing.Point(801, 324);
             this.btEstoque.Name = "btEstoque";
             this.btEstoque.Size = new System.Drawing.Size(140, 140);
-            this.btEstoque.TabIndex = 9;
+            this.btEstoque.TabIndex = 4;
             this.btEstoque.UseVisualStyleBackColor = false;
             this.btEstoque.Click += new System.EventHandler(this.Estoque_Click);
             // 
@@ -288,7 +288,7 @@
             this.btProduto.Location = new System.Drawing.Point(801, 151);
             this.btProduto.Name = "btProduto";
             this.btProduto.Size = new System.Drawing.Size(140, 140);
-            this.btProduto.TabIndex = 9;
+            this.btProduto.TabIndex = 2;
             this.btProduto.UseVisualStyleBackColor = false;
             this.btProduto.Click += new System.EventHandler(this.Produto_Click);
             // 
@@ -336,7 +336,7 @@
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 0;
             this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.imgCliente_Click);
+           // this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
             // pictureBox7
             // 
@@ -348,6 +348,7 @@
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 0;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
             // pictureBox8
             // 
@@ -394,8 +395,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuPrincipal_FormClosed);
-            //this.Load += new System.EventHandler(this.frmMenuPrincipal_Load);
-            //this.TextChanged += new System.EventHandler(this.frmMenuPrincipal_TextChanged);
             this.mnuPrincipal.ResumeLayout(false);
             this.mnuPrincipal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUsuario)).EndInit();

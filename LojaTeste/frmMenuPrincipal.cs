@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using dataModel;
+using System.IO;
 
 namespace LojaTeste
 {
@@ -202,5 +203,39 @@ namespace LojaTeste
 
             }
         }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            //OpenFileDialog ofd = new OpenFileDialog();
+            //ofd.Filter = "Arquivos de imagem (*.jpg)|*.jpg";
+            //if (ofd.ShowDialog() == DialogResult.OK)
+            //{
+            //    if (ofd.CheckFileExists)
+            //    {
+            //        pictureBox7.Image = File.ReadAllBytes(ofd.FileName);
+
+            //    }
+            //    else
+            //    {
+            //        imagem = new byte[0];
+            //        MessageBox.Show("Arquivo Inválido! Tente novamente...");
+            //    }
+            //}
+        }
+
+        private void mostraFoto(Byte[] dados)
+        {
+            //if (dados.Length > 0)
+            //{
+            //    MemoryStream mem = new MemoryStream(dados);
+            //    imgImagem.Image = Image.FromStream(mem);
+            //}
+            //else
+            //{
+            //    imgImagem.Image = null;
+            //}
+        }
+
+       
     }
 }

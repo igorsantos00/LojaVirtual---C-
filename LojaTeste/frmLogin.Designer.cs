@@ -45,7 +45,7 @@
             this.btnSair.Location = new System.Drawing.Point(379, 301);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(118, 50);
-            this.btnSair.TabIndex = 9;
+            this.btnSair.TabIndex = 4;
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
@@ -61,7 +61,7 @@
             this.btnConfirmar.Location = new System.Drawing.Point(224, 301);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(118, 50);
-            this.btnConfirmar.TabIndex = 8;
+            this.btnConfirmar.TabIndex = 3;
             this.btnConfirmar.UseVisualStyleBackColor = true;
             this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
@@ -71,7 +71,7 @@
             this.txtSenha.Location = new System.Drawing.Point(349, 252);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 29);
-            this.txtSenha.TabIndex = 7;
+            this.txtSenha.TabIndex = 2;
             this.txtSenha.Text = "pipoca";
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -93,9 +93,8 @@
             this.txtLogin.Location = new System.Drawing.Point(349, 192);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 29);
-            this.txtLogin.TabIndex = 6;
+            this.txtLogin.TabIndex = 1;
             this.txtLogin.Text = "admin";
-            //this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // label1
             // 
@@ -128,7 +127,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login Usuário";
-            //this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
