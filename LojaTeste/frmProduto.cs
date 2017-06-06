@@ -238,7 +238,7 @@ namespace LojaTeste
             if (((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
             {
                 MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
-                imgImagem.Image = Image.FromStream(imagem);
+                imgImagem.Image = Image.FromStream(imagem);00
             }
             else
             {

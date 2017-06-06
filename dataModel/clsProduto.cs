@@ -81,7 +81,7 @@ namespace dataModel
                 cmd.Parameters.Add("@precProduto", SqlDbType.Money).Value = precProduto;
                 cmd.Parameters.Add("@descontoPromocao", SqlDbType.Money).Value = descontoPromocao;
                 cmd.Parameters.Add("@idCategoria", SqlDbType.Int).Value = idCategoria;
-                cmd.Parameters.Add("@ativoProduto", SqlDbType.VarChar, 1).Value = ativoProduto;
+                cmd.Parameters.Add("@ativoProduto", SqlDbType.Bit).Value = ativoProduto;
                 cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = qtdMinEstoque;
                 cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = imagem;
