@@ -225,7 +225,7 @@ namespace LojaTeste
 
         private void dgCategoria_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            clsCategoria CategoriaSelecionada = new clsCategoria();
             CategoriaSelecionada = (dgCategoria.SelectedRows[0].DataBoundItem as clsCategoria);
 
             //Inserindo os valores nos campos
@@ -266,6 +266,13 @@ namespace LojaTeste
                 MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtIdCategoria.Text = "";
             }
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtDescCategoria.Text = null;
+            txtIdCategoria.Text = null;
+            txtNomeCategoria.Text = null;
         }
     }
 }

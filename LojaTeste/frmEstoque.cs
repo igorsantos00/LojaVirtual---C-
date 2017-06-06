@@ -160,5 +160,12 @@ namespace LojaTeste
                 txtIdProduto.Text = "";
             }
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtIdProduto.Text = null;
+            txtNomeProduto.Text = null;
+            txtQtdProduto.Text = null;
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace LojaTeste
         private bool validar = false;
         private clsProduto ProdutoSelecionado;
         private clsUsuario userLog;
+        int idCategoria;
         public frmProduto(clsUsuario userLog)
         {
             this.userLog = userLog;
@@ -237,6 +238,8 @@ namespace LojaTeste
             chkativoProduto.Checked = Convert.ToBoolean(dgProduto.CurrentRow.Cells["ativoProduto"].Value);
             txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
             txtidCategoria.Text = dgProduto.CurrentRow.Cells["nomeCategoria"].Value.ToString();
+            idCategoria = Convert.ToInt32(dgProduto.CurrentRow.Cells["idCategoria"].Value.ToString());
+
 
             if ((dgProduto.SelectedRows[0].Cells["imagem"].Value) != null)//(((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
             {
@@ -251,7 +254,7 @@ namespace LojaTeste
                 imgImagem.Image = null;
             }
             
-            atualizarcomboCategoria();
+            //atualizarcomboCategoria();
             validar = true;
 
         }
@@ -330,9 +333,9 @@ namespace LojaTeste
                  try
                  {       
                 
-                if (txtnomeProduto.Text != ProdutoSelecionado.nomeProduto || txtdescProduto.Text != ProdutoSelecionado.descProduto || Convert.ToDecimal(txtprecProduto.Text) != ProdutoSelecionado.precProduto || Convert.ToDecimal(txtdescontoPromocao.Text) != ProdutoSelecionado.descontoPromocao || Convert.ToInt32(txtidCategoria.SelectedValue) != ProdutoSelecionado.idCategoria || chkativoProduto.Checked != ProdutoSelecionado.ativoProduto || userLog.idUsuario != ProdutoSelecionado.idUsuario || Convert.ToInt32(txtqtdMinEstoque.Text) != ProdutoSelecionado.qtdMinEstoque || Convert.ToBoolean((imagem == null?new byte[0]:imagem) != ProdutoSelecionado.imagem))
+                if (txtnomeProduto.Text != ProdutoSelecionado.nomeProduto || txtdescProduto.Text != ProdutoSelecionado.descProduto || Convert.ToDecimal(txtprecProduto.Text) != ProdutoSelecionado.precProduto || Convert.ToDecimal(txtdescontoPromocao.Text) != ProdutoSelecionado.descontoPromocao || idCategoria != ProdutoSelecionado.idCategoria || chkativoProduto.Checked != ProdutoSelecionado.ativoProduto || userLog.idUsuario != ProdutoSelecionado.idUsuario || Convert.ToInt32(txtqtdMinEstoque.Text) != ProdutoSelecionado.qtdMinEstoque || Convert.ToBoolean((imagem == null?new byte[0]:imagem) != ProdutoSelecionado.imagem))
                     {
-                        retorno = P.Salvar(Convert.ToInt32(txtIdProduto.Text), txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+                        retorno = P.Salvar(Convert.ToInt32(txtIdProduto.Text), txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), idCategoria, chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
 
                         int idProduto = Convert.ToInt32(retorno);
                         MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);

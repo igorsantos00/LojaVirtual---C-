@@ -43,6 +43,7 @@
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.lblIdNomeCategoria = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCategoria)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,12 +215,25 @@
             this.lblIdNomeCategoria.TabIndex = 1;
             this.lblIdNomeCategoria.Text = "Código Categoria";
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(335, 36);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(90, 36);
+            this.btnLimpar.TabIndex = 11;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(630, 487);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dgCategoria);
             this.Controls.Add(this.btnBusca);
@@ -261,5 +275,6 @@
         private System.Windows.Forms.Button btnSelecionar;
         private System.Windows.Forms.TextBox txtIdCategoria;
         private System.Windows.Forms.Label lblIdNomeCategoria;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }

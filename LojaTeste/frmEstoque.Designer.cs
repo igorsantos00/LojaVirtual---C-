@@ -41,6 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnBusca = new System.Windows.Forms.Button();
             this.btnSelecionar = new System.Windows.Forms.Button();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgEstoque)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +99,6 @@
             this.dgEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgEstoque.Size = new System.Drawing.Size(575, 180);
             this.dgEstoque.TabIndex = 3;
-            //this.dgEstoque.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgEstoque_CellContentClick);
             this.dgEstoque.DoubleClick += new System.EventHandler(this.btnSelecionar_Click);
             // 
             // mnuPrincipal
@@ -181,12 +181,25 @@
             this.btnSelecionar.UseVisualStyleBackColor = false;
             this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(344, 37);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(79, 35);
+            this.btnLimpar.TabIndex = 9;
+            this.btnLimpar.Text = "Limpar";
+            this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // frmEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::LojaTeste.Properties.Resources.layoutTelas1;
             this.ClientSize = new System.Drawing.Size(596, 480);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.btnBusca);
             this.Controls.Add(this.txtQtdProduto);
@@ -225,5 +238,6 @@
         private System.Windows.Forms.Button btnBusca;
         private System.Windows.Forms.Button btnSelecionar;
         protected System.Windows.Forms.TextBox txtNomeProduto;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
