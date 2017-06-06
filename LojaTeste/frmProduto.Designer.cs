@@ -82,6 +82,7 @@
             this.txtnomeProduto.Name = "txtnomeProduto";
             this.txtnomeProduto.Size = new System.Drawing.Size(359, 20);
             this.txtnomeProduto.TabIndex = 4;
+            this.txtnomeProduto.TextChanged += new System.EventHandler(this.txtnomeProduto_TextChanged_1);
             // 
             // label3
             // 
@@ -101,6 +102,7 @@
             this.txtdescProduto.Name = "txtdescProduto";
             this.txtdescProduto.Size = new System.Drawing.Size(332, 69);
             this.txtdescProduto.TabIndex = 6;
+            this.txtdescProduto.TextChanged += new System.EventHandler(this.txtdescProduto_TextChanged_1);
             // 
             // lblPreco
             // 
@@ -120,6 +122,7 @@
             this.txtprecProduto.Name = "txtprecProduto";
             this.txtprecProduto.Size = new System.Drawing.Size(116, 20);
             this.txtprecProduto.TabIndex = 8;
+            this.txtprecProduto.TextChanged += new System.EventHandler(this.txtprecProduto_TextChanged_1);
             // 
             // txtidCategoria
             // 
@@ -193,7 +196,6 @@
             this.mnuPrincipal.Size = new System.Drawing.Size(745, 24);
             this.mnuPrincipal.TabIndex = 18;
             this.mnuPrincipal.Text = "menuStrip1";
-            this.mnuPrincipal.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.mnuPrincipal_ItemClicked);
             // 
             // imgImagem
             // 
@@ -236,6 +238,7 @@
             this.txtdescontoPromocao.Name = "txtdescontoPromocao";
             this.txtdescontoPromocao.Size = new System.Drawing.Size(46, 20);
             this.txtdescontoPromocao.TabIndex = 8;
+            this.txtdescontoPromocao.TextChanged += new System.EventHandler(this.txtdescontoPromocao_TextChanged_1);
             // 
             // lbldescontoPromocao
             // 
@@ -254,6 +257,7 @@
             this.txtqtdMinEstoque.Name = "txtqtdMinEstoque";
             this.txtqtdMinEstoque.Size = new System.Drawing.Size(85, 20);
             this.txtqtdMinEstoque.TabIndex = 8;
+            this.txtqtdMinEstoque.TextChanged += new System.EventHandler(this.txtqtdMinEstoque_TextChanged_1);
             // 
             // produtoBindingSource
             // 

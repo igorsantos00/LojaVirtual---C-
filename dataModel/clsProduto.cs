@@ -64,7 +64,7 @@ namespace dataModel
                     cmd.CommandText = "UPDATE Produto " +
                                         "SET nomeProduto      = @nomeProduto, " +
                                             "descProduto      = @descProduto, " +
-                                            "precProduto     = @precProduto, " +
+                                            "precProduto      = @precProduto, " +
                                             "descontoPromocao = @descontoPromocao, " +
                                             "idCategoria      = @idCategoria, " +
                                             "ativoProduto     = @ativoProduto, " +
@@ -84,7 +84,16 @@ namespace dataModel
                 cmd.Parameters.Add("@ativoProduto", SqlDbType.Bit).Value = ativoProduto;
                 cmd.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
                 cmd.Parameters.Add("@qtdMinEstoque", SqlDbType.Int).Value = qtdMinEstoque;
-                cmd.Parameters.Add("@imagem", SqlDbType.Image).Value = imagem;
+                if (imagem == null)
+                {
+                    imagem = new byte[0];
+                    cmd.Parameters.Add("@imagem", SqlDbType.Image, imagem.Length).Value = imagem;
+                }
+                else
+                {
+                    cmd.Parameters.Add("@imagem", SqlDbType.Image, imagem.Length).Value = imagem;
+                }
+                
                 cmd.ExecuteNonQuery();
 
                 if (inserir == 0)

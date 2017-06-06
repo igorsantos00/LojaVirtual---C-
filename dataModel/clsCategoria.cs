@@ -204,5 +204,36 @@ namespace dataModel
 
         }
 
+        public static List<clsCategoria> GetUCategoria(string nomeCategoria)
+        {
+            string sql = "SELECT nomeCategoria, idCategoria FROM dbo.Categoria WHERE nomeCategoria = @nomeCategoria";
+
+            clsConexao conexao = new clsConexao();
+            SqlConnection cn = conexao.Conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = sql;
+            cmd.Parameters.Add("@nomeCategoria", SqlDbType.VarChar, 50).Value = nomeCategoria;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            List<clsCategoria> Categoria = new List<clsCategoria>();
+            while (dr.Read())
+            {
+                clsCategoria C = new clsCategoria();
+
+                if (!dr.IsDBNull(dr.GetOrdinal("nomeCategoria")))
+                {
+                    C.nomeCategoria = dr.GetString(dr.GetOrdinal("nomeCategoria"));
+                }
+                if (!dr.IsDBNull(dr.GetOrdinal("idCategoria")))
+                {
+                    C.idCategoria = dr.GetInt32(dr.GetOrdinal("idCategoria"));
+                }
+                Categoria.Add(C);
+
+            }
+            return Categoria;
+
+        }
+
     }
 }

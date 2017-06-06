@@ -16,7 +16,7 @@ namespace LojaTeste
     {
         byte[] imagem;
         private int retorno;
-        private bool validar = true;
+        private bool validar = false;
         private clsProduto ProdutoSelecionado;
         private clsUsuario userLog;
         public frmProduto(clsUsuario userLog)
@@ -117,11 +117,12 @@ namespace LojaTeste
             }
         }
 
-        private void mostraFoto(Byte[] dados)
+        private void mostraFoto(Byte[] imagem)
         {
-            if (dados.Length > 0)
+            if (imagem.Length > 0)
             {
-                MemoryStream mem = new MemoryStream(dados);
+                imgImagem.Image = null;
+                MemoryStream mem = new MemoryStream(imagem);
                 imgImagem.Image = Image.FromStream(mem);
             }
             else
@@ -170,9 +171,9 @@ namespace LojaTeste
             txtprecProduto.Text = Convert.ToString(ProdutoSelecionado.precProduto);
             txtdescontoPromocao.Text = Convert.ToString(ProdutoSelecionado.descontoPromocao);
             txtqtdMinEstoque.Text = Convert.ToString(ProdutoSelecionado.qtdMinEstoque);
-            
 
-            validar = false;
+            atualizarcomboCategoria();
+            validar = true;
         }
 
         private void btnExcluirProduto_Click_1(object sender, EventArgs e)
@@ -226,6 +227,8 @@ namespace LojaTeste
 
         private void dgProduto_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+            txtIdProduto.Text = dgProduto.CurrentRow.Cells["idProduto"].Value.ToString();
             txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
             txtdescProduto.Text = dgProduto.CurrentRow.Cells["descProduto"].Value.ToString();
             txtprecProduto.Text = dgProduto.CurrentRow.Cells["precProduto"].Value.ToString();
@@ -235,30 +238,31 @@ namespace LojaTeste
             txtnomeProduto.Text = dgProduto.CurrentRow.Cells["nomeProduto"].Value.ToString();
             txtidCategoria.Text = dgProduto.CurrentRow.Cells["nomeCategoria"].Value.ToString();
 
-            if (((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
+            if ((dgProduto.SelectedRows[0].Cells["imagem"].Value) != null)//(((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
             {
-                MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
-                imgImagem.Image = Image.FromStream(imagem);00
+                imagem = (byte[])dgProduto.CurrentRow.Cells["imagem"].Value;
+                mostraFoto((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
+                //MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
+                //imgImagem.Image = Image.FromStream(imagem);
+
             }
             else
             {
                 imgImagem.Image = null;
             }
+            
+            atualizarcomboCategoria();
+            validar = true;
+
         }
-
-        private void mnuPrincipal_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
-    
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
             clsProduto P = new clsProduto();
-
-            retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
-
+            try
+            {
+                retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+            
                 int idProduto = Convert.ToInt32(retorno);
                 MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtnomeProduto.Text = null;
@@ -269,9 +273,22 @@ namespace LojaTeste
                 chkativoProduto.Checked = false;
                 txtidCategoria.Text = null;
                 imgImagem.Image = null;
-         
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             atualizarDgProduto();
+        }
+        public void UpdateCategoria()
+        {
+            clsCategoria C = new clsCategoria();
+            List<clsCategoria> Categoria = clsCategoria.GetUCategoria(Convert.ToString(txtidCategoria.Text));
+            //txtidCategoria.DataSource = C.GetUCategoria(Convert.ToString(txtidCategoria));
+            txtidCategoria.ValueMember = "idCategoria";
+            txtidCategoria.DisplayMember = "nomeCategoria";
         }
 
 
@@ -310,14 +327,16 @@ namespace LojaTeste
             {
                 clsProduto ProdutoSelecionado = new clsProduto();
                 clsProduto P = new clsProduto();
-                //  try
-                // {       
+                 try
+                 {       
+                
                 if (txtnomeProduto.Text != ProdutoSelecionado.nomeProduto || txtdescProduto.Text != ProdutoSelecionado.descProduto || Convert.ToDecimal(txtprecProduto.Text) != ProdutoSelecionado.precProduto || Convert.ToDecimal(txtdescontoPromocao.Text) != ProdutoSelecionado.descontoPromocao || Convert.ToInt32(txtidCategoria.SelectedValue) != ProdutoSelecionado.idCategoria || chkativoProduto.Checked != ProdutoSelecionado.ativoProduto || userLog.idUsuario != ProdutoSelecionado.idUsuario || Convert.ToInt32(txtqtdMinEstoque.Text) != ProdutoSelecionado.qtdMinEstoque || Convert.ToBoolean((imagem == null?new byte[0]:imagem) != ProdutoSelecionado.imagem))
                     {
-                        retorno = P.Salvar(ProdutoSelecionado.idProduto, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+                        retorno = P.Salvar(Convert.ToInt32(txtIdProduto.Text), txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
 
                         int idProduto = Convert.ToInt32(retorno);
                         MessageBox.Show("Alterado com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txtIdProduto.Text = null;
                         txtnomeProduto.Text = null;
                         txtdescProduto.Text = null;
                         txtprecProduto.Text = null;
@@ -326,24 +345,26 @@ namespace LojaTeste
                         chkativoProduto.Checked = false;
                         txtidCategoria.Text = null;
                         imgImagem.Image = null;
+                        atualizarDgProduto();
                     }
                     else
                     {
                         MessageBox.Show("Nada foi alterado", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-               // }
-                //catch (Exception)
-               // {
-                //    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 //   return;
-               // }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   return;
+                }
 
             }
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+            txtIdProduto.Text = null;
             txtnomeProduto.Text = null;
             txtdescProduto.Text = null;
             txtprecProduto.Text = null;
@@ -352,6 +373,61 @@ namespace LojaTeste
             chkativoProduto.Checked = false;
             txtidCategoria.Text = null;
             imgImagem.Image = null;
+        }
+
+        private void txtnomeProduto_TextChanged_1(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtnomeProduto.Text) && txtnomeProduto.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtnomeProduto.Text = "";
+            }
+        }
+
+        private void txtqtdMinEstoque_TextChanged_1(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidarNumero(txtqtdMinEstoque.Text) && txtqtdMinEstoque.Text != "")
+            {
+                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtqtdMinEstoque.Text = "";
+            }
+        }
+
+        private void txtprecProduto_TextChanged_1(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidarNumero(txtprecProduto.Text) && txtprecProduto.Text != "")
+            {
+                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtprecProduto.Text = "";
+            }
+        }
+
+        private void txtdescontoPromocao_TextChanged_1(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidarNumero(txtdescontoPromocao.Text) && txtdescontoPromocao.Text != "")
+            {
+                MessageBox.Show("Somente números", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtdescontoPromocao.Text = "";
+            }
+        }
+
+        private void txtdescProduto_TextChanged_1(object sender, EventArgs e)
+        {
+            clsVerifica v = new clsVerifica();
+
+            if (!v.ValidaLetras(txtdescProduto.Text) && txtdescProduto.Text != "")
+            {
+                MessageBox.Show("Primeira tem que ser letra", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtdescProduto.Text = "";
+            }
         }
     }
 }
