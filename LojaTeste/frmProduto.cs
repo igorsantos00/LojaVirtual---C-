@@ -167,13 +167,28 @@ namespace LojaTeste
 
             //Inserindo os valores nos campos
 
+            txtidCategoria.Text = dgProduto.CurrentRow.Cells["nomeCategoria"].Value.ToString();
+            txtIdProduto.Text = Convert.ToString(ProdutoSelecionado.idProduto);
+            chkativoProduto.Checked = ProdutoSelecionado.ativoProduto;
             txtnomeProduto.Text = ProdutoSelecionado.nomeProduto;
             txtdescProduto.Text = ProdutoSelecionado.descProduto;
             txtprecProduto.Text = Convert.ToString(ProdutoSelecionado.precProduto);
             txtdescontoPromocao.Text = Convert.ToString(ProdutoSelecionado.descontoPromocao);
             txtqtdMinEstoque.Text = Convert.ToString(ProdutoSelecionado.qtdMinEstoque);
+            if ((dgProduto.SelectedRows[0].Cells["imagem"].Value) != null)
+            {
+                imagem = (byte[])dgProduto.CurrentRow.Cells["imagem"].Value;
+                mostraFoto((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
 
-            atualizarcomboCategoria();
+
+            }
+            else
+            {
+                imgImagem.Image = null;
+            }
+
+
+
             validar = true;
         }
 
@@ -241,12 +256,11 @@ namespace LojaTeste
             idCategoria = Convert.ToInt32(dgProduto.CurrentRow.Cells["idCategoria"].Value.ToString());
 
 
-            if ((dgProduto.SelectedRows[0].Cells["imagem"].Value) != null)//(((byte[])dgProduto.CurrentRow.Cells["imagem"].Value).Length != 0 )
+            if ((dgProduto.SelectedRows[0].Cells["imagem"].Value) != null)
             {
                 imagem = (byte[])dgProduto.CurrentRow.Cells["imagem"].Value;
                 mostraFoto((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
-                //MemoryStream imagem = new MemoryStream((byte[])dgProduto.CurrentRow.Cells["imagem"].Value);
-                //imgImagem.Image = Image.FromStream(imagem);
+                
 
             }
             else
@@ -254,7 +268,7 @@ namespace LojaTeste
                 imgImagem.Image = null;
             }
             
-            //atualizarcomboCategoria();
+           
             validar = true;
 
         }
@@ -264,22 +278,27 @@ namespace LojaTeste
             clsProduto P = new clsProduto();
             try
             {
-                retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
-            
-                int idProduto = Convert.ToInt32(retorno);
-                MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtnomeProduto.Text = null;
-                txtdescProduto.Text = null;
-                txtprecProduto.Text = null;
-                txtdescontoPromocao.Text = null;
-                txtqtdMinEstoque.Text = null;
-                chkativoProduto.Checked = false;
-                txtidCategoria.Text = null;
-                imgImagem.Image = null;
+                if (validar == false || txtnomeProduto.Text != ProdutoSelecionado.nomeProduto || txtdescProduto.Text != ProdutoSelecionado.descProduto || Convert.ToDecimal(txtprecProduto.Text) != ProdutoSelecionado.precProduto || Convert.ToDecimal(txtdescontoPromocao.Text) != ProdutoSelecionado.descontoPromocao || idCategoria != ProdutoSelecionado.idCategoria || chkativoProduto.Checked != ProdutoSelecionado.ativoProduto || userLog.idUsuario != ProdutoSelecionado.idUsuario || Convert.ToInt32(txtqtdMinEstoque.Text) != ProdutoSelecionado.qtdMinEstoque || Convert.ToBoolean((imagem == null ? new byte[0] : imagem) != ProdutoSelecionado.imagem))
+                {
+
+
+                    retorno = P.Salvar(0, txtnomeProduto.Text, txtdescProduto.Text, Convert.ToDecimal(txtprecProduto.Text), Convert.ToDecimal(txtdescontoPromocao.Text), Convert.ToInt32(txtidCategoria.SelectedValue), chkativoProduto.Checked, userLog.idUsuario, Convert.ToInt32(txtqtdMinEstoque.Text), imagem);
+
+                    int idProduto = Convert.ToInt32(retorno);
+                    MessageBox.Show("Inserido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtnomeProduto.Text = null;
+                    txtdescProduto.Text = null;
+                    txtprecProduto.Text = null;
+                    txtdescontoPromocao.Text = null;
+                    txtqtdMinEstoque.Text = null;
+                    chkativoProduto.Checked = false;
+                    txtidCategoria.Text = null;
+                    imgImagem.Image = null;
+                }
             }
             catch (Exception)
             {
-                MessageBox.Show("Erro verifique os campos  /n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro verifique os campos  \n Detalhes: " + retorno, "Atencão", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 

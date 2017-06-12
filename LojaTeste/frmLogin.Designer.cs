@@ -72,7 +72,6 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(100, 29);
             this.txtSenha.TabIndex = 2;
-            this.txtSenha.Text = "pipoca";
             this.txtSenha.UseSystemPasswordChar = true;
             // 
             // label2
@@ -94,7 +93,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(100, 29);
             this.txtLogin.TabIndex = 1;
-            this.txtLogin.Text = "admin";
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // label1
             // 

@@ -69,6 +69,9 @@ namespace LojaTeste
             this.Hide();
         }
 
-       
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

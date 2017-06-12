@@ -81,7 +81,7 @@
             this.txtnomeProduto.Location = new System.Drawing.Point(15, 299);
             this.txtnomeProduto.Name = "txtnomeProduto";
             this.txtnomeProduto.Size = new System.Drawing.Size(359, 20);
-            this.txtnomeProduto.TabIndex = 4;
+            this.txtnomeProduto.TabIndex = 7;
             this.txtnomeProduto.TextChanged += new System.EventHandler(this.txtnomeProduto_TextChanged_1);
             // 
             // label3
@@ -101,7 +101,7 @@
             this.txtdescProduto.Multiline = true;
             this.txtdescProduto.Name = "txtdescProduto";
             this.txtdescProduto.Size = new System.Drawing.Size(332, 69);
-            this.txtdescProduto.TabIndex = 6;
+            this.txtdescProduto.TabIndex = 13;
             this.txtdescProduto.TextChanged += new System.EventHandler(this.txtdescProduto_TextChanged_1);
             // 
             // lblPreco
@@ -121,16 +121,18 @@
             this.txtprecProduto.Location = new System.Drawing.Point(122, 346);
             this.txtprecProduto.Name = "txtprecProduto";
             this.txtprecProduto.Size = new System.Drawing.Size(116, 20);
-            this.txtprecProduto.TabIndex = 8;
+            this.txtprecProduto.TabIndex = 9;
             this.txtprecProduto.TextChanged += new System.EventHandler(this.txtprecProduto_TextChanged_1);
             // 
             // txtidCategoria
             // 
+            this.txtidCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txtidCategoria.FormattingEnabled = true;
             this.txtidCategoria.Location = new System.Drawing.Point(257, 346);
+            this.txtidCategoria.MaxDropDownItems = 10;
             this.txtidCategoria.Name = "txtidCategoria";
             this.txtidCategoria.Size = new System.Drawing.Size(115, 21);
-            this.txtidCategoria.TabIndex = 9;
+            this.txtidCategoria.TabIndex = 10;
             this.txtidCategoria.Click += new System.EventHandler(this.txtidCategoria_Click);
             // 
             // lblCategoria
@@ -173,7 +175,7 @@
             this.chkativoProduto.Location = new System.Drawing.Point(105, 397);
             this.chkativoProduto.Name = "chkativoProduto";
             this.chkativoProduto.Size = new System.Drawing.Size(50, 17);
-            this.chkativoProduto.TabIndex = 14;
+            this.chkativoProduto.TabIndex = 12;
             this.chkativoProduto.Text = "Ativo";
             this.chkativoProduto.UseVisualStyleBackColor = false;
             // 
@@ -214,7 +216,7 @@
             this.btnSair.Location = new System.Drawing.Point(150, 511);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(118, 45);
-            this.btnSair.TabIndex = 19;
+            this.btnSair.TabIndex = 16;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -227,7 +229,7 @@
             this.btnInserir.Location = new System.Drawing.Point(15, 511);
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(118, 45);
-            this.btnInserir.TabIndex = 20;
+            this.btnInserir.TabIndex = 15;
             this.btnInserir.Text = "Confirmar";
             this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
@@ -237,7 +239,7 @@
             this.txtdescontoPromocao.Location = new System.Drawing.Point(15, 394);
             this.txtdescontoPromocao.Name = "txtdescontoPromocao";
             this.txtdescontoPromocao.Size = new System.Drawing.Size(46, 20);
-            this.txtdescontoPromocao.TabIndex = 8;
+            this.txtdescontoPromocao.TabIndex = 11;
             this.txtdescontoPromocao.TextChanged += new System.EventHandler(this.txtdescontoPromocao_TextChanged_1);
             // 
             // lbldescontoPromocao
@@ -276,7 +278,7 @@
             this.dgProduto.Name = "dgProduto";
             this.dgProduto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgProduto.Size = new System.Drawing.Size(718, 199);
-            this.dgProduto.TabIndex = 21;
+            this.dgProduto.TabIndex = 6;
             this.dgProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProduto_CellContentClick_1);
             // 
             // btnBuscarProduto
@@ -286,7 +288,7 @@
             this.btnBuscarProduto.Location = new System.Drawing.Point(15, 45);
             this.btnBuscarProduto.Name = "btnBuscarProduto";
             this.btnBuscarProduto.Size = new System.Drawing.Size(99, 27);
-            this.btnBuscarProduto.TabIndex = 22;
+            this.btnBuscarProduto.TabIndex = 1;
             this.btnBuscarProduto.Text = "Buscar";
             this.btnBuscarProduto.UseVisualStyleBackColor = false;
             this.btnBuscarProduto.Click += new System.EventHandler(this.btnBuscarProduto_Click);
@@ -296,7 +298,7 @@
             this.txtIdProduto.Location = new System.Drawing.Point(135, 52);
             this.txtIdProduto.Name = "txtIdProduto";
             this.txtIdProduto.Size = new System.Drawing.Size(144, 20);
-            this.txtIdProduto.TabIndex = 23;
+            this.txtIdProduto.TabIndex = 2;
             // 
             // lbCodigoProduto
             // 
@@ -323,7 +325,7 @@
             this.btnCarregarFoto.Location = new System.Drawing.Point(598, 516);
             this.btnCarregarFoto.Name = "btnCarregarFoto";
             this.btnCarregarFoto.Size = new System.Drawing.Size(135, 34);
-            this.btnCarregarFoto.TabIndex = 25;
+            this.btnCarregarFoto.TabIndex = 18;
             this.btnCarregarFoto.Text = "Carregar Foto";
             this.btnCarregarFoto.UseVisualStyleBackColor = false;
             this.btnCarregarFoto.Click += new System.EventHandler(this.btnCarregarFoto_Click);
@@ -335,7 +337,7 @@
             this.btnExcluirProduto.Location = new System.Drawing.Point(425, 45);
             this.btnExcluirProduto.Name = "btnExcluirProduto";
             this.btnExcluirProduto.Size = new System.Drawing.Size(110, 27);
-            this.btnExcluirProduto.TabIndex = 27;
+            this.btnExcluirProduto.TabIndex = 4;
             this.btnExcluirProduto.Text = "Excluir";
             this.btnExcluirProduto.UseVisualStyleBackColor = false;
             this.btnExcluirProduto.Click += new System.EventHandler(this.btnExcluirProduto_Click_1);
@@ -348,7 +350,7 @@
             this.btnSelecionarProduto.Location = new System.Drawing.Point(297, 45);
             this.btnSelecionarProduto.Name = "btnSelecionarProduto";
             this.btnSelecionarProduto.Size = new System.Drawing.Size(104, 26);
-            this.btnSelecionarProduto.TabIndex = 28;
+            this.btnSelecionarProduto.TabIndex = 3;
             this.btnSelecionarProduto.Text = "Selecionar";
             this.btnSelecionarProduto.UseVisualStyleBackColor = false;
             this.btnSelecionarProduto.Click += new System.EventHandler(this.btnSelecionarProduto_Click_1);
@@ -360,7 +362,7 @@
             this.button1.Location = new System.Drawing.Point(297, 511);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 45);
-            this.button1.TabIndex = 29;
+            this.button1.TabIndex = 17;
             this.button1.Text = "Alterar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -372,7 +374,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(564, 45);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(82, 26);
-            this.btnLimpar.TabIndex = 30;
+            this.btnLimpar.TabIndex = 5;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
