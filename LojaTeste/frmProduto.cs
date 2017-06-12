@@ -229,6 +229,14 @@ namespace LojaTeste
             {
                 int idProduto = Convert.ToInt32(retorno);
                 MessageBox.Show("Excluido com sucesso", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtnomeProduto.Text = null;
+                txtdescProduto.Text = null;
+                txtprecProduto.Text = null;
+                txtdescontoPromocao.Text = null;
+                txtqtdMinEstoque.Text = null;
+                chkativoProduto.Checked = false;
+                txtidCategoria.Text = null;
+                imgImagem.Image = null;
 
             }
             else

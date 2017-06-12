@@ -231,7 +231,12 @@ namespace LojaTeste
             //Inserindo os valores nos campos
 
             txtNomeCategoria.Text = dgCategoria.CurrentRow.Cells["nomeCategoria"].Value.ToString();
+            if (dgCategoria.CurrentRow.Cells["descCategoria"].Value == null) {
+                txtDescCategoria.Text = null;
+            }
+            else { 
             txtDescCategoria.Text = dgCategoria.CurrentRow.Cells["descCategoria"].Value.ToString();
+        }
             validar = true;
         }
 

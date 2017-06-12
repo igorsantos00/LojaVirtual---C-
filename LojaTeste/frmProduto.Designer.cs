@@ -230,7 +230,7 @@
             this.btnInserir.Name = "btnInserir";
             this.btnInserir.Size = new System.Drawing.Size(118, 45);
             this.btnInserir.TabIndex = 15;
-            this.btnInserir.Text = "Confirmar";
+            this.btnInserir.Text = "Inserir";
             this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click);
             // 
